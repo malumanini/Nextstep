@@ -17,7 +17,7 @@ nav {
     position: fixed;
     z-index: 1000;
     padding: 0 50px;
-    background-color: #006c80;
+    background-color: #013D52;
 }
 /*Icone Menu do Navbar*/
 nav .menu-icon {
@@ -57,7 +57,7 @@ nav .menu-icon {
     transition: transform 0.3s;
 }
 .menu-icon.active .bar {
-    box-shadow: -15px 0px 1px #006c80;
+    box-shadow: -15px 0px 1px #00bdde;
     transform: translateX(10px);
     transition: box-shadow 0.2s, transform 0.3s;
 }
@@ -98,20 +98,18 @@ nav .menu ul li {
 }
 nav .menu ul li a {    
     display: flex;
-    justify-content: center;
     font-family: HelveticaWorld, sans-serif;
     text-decoration: none;
-    text-align: center;
-    font-size: 1em;
-    font-weight: 900;
+    text-align: left;
+    font-size: 0.8em;
+    font-weight: 700;
     padding: 5px;
-    color: black;
-    background-color: white;
+    color: white;
     border-radius: 35px;
 }  
 nav .menu ul li a:hover {
     color: white;
-    background-color: black;
+    background-color: #00bdde;
     transition: background-color 0.3s ease;
 }
 #logout-botao{
@@ -157,7 +155,7 @@ nav .menu li img{
 
 #darkmode-botao{
     width: 55px;
-    height: 55px;
+    height: 40px;
     background-color:  #00bdde;
     color: rgba(0, 0, 0, 0.7);
     border-radius: 100px;
@@ -190,10 +188,16 @@ main{
 footer{
     width: 100%;
     min-height: 100px;
-    background-color:  #006c80;
+    background-color:  #013D52;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 15px 0;
     margin-top: auto;
+}
+
+.div-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espaço entre ícone e texto */
 }
