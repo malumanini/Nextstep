@@ -155,6 +155,27 @@ nav .menu li img{
     box-shadow: 0 5px 10px #004753;
 } 
 
+#darkmode-botao{
+    width: 55px;
+    height: 55px;
+    background-color:  #00bdde;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 100px;
+    display: inline-block;
+    margin: 10px 0px;
+    border: none;
+    z-index: 1000;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+}
+.darkmode img {
+    margin: 2px;
+    width: 30px;
+    height: 30px;
+    filter: invert(18%) sepia(32%) saturate(1172%) hue-rotate(308deg) brightness(92%) contrast(92%);
+}
+
 /*Main*/
 main{
     display: flex;
