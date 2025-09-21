@@ -16,7 +16,7 @@ nav {
     justify-content: space-between;
     position: fixed;
     z-index: 1000;
-    padding: 0 50px;
+    padding: 0px 50px;
     background-color: #013D52;
 }
 /*Icone Menu do Navbar*/
@@ -131,6 +131,9 @@ nav .menu li img{
     vertical-align: middle;
 }
 
+nav #button-index{
+    margin-right: 100px;
+}
 .botao{
     width: 150px;
     background-color: #0097b2;
