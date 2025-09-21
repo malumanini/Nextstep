@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Currículo ATS</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        body {
+            background: #f7f8fa;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .curriculo-container {
+            max-width: 900px;
+            margin: 120px auto 40px auto;
+            padding: 0 20px;
+        }
+        .secao {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 32px;
+            padding: 24px 32px;
+        }
+        .secao-titulo {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+        .linha-form {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .campo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .campo label {
+            font-size: 0.95em;
+            margin-bottom: 6px;
+            color: #222;
+        }
+        .campo input, .campo textarea {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #fafbfc;
+        }
+        .campo textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+        .secao-acoes {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .botao-acao {
+            background: #013D52;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .botao-acao:hover {
+            background: #028aa2;
+        }
+        .remover {
+            color: #e11d48;
+            background: none;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        @media (max-width: 700px) {
+            .curriculo-container { padding: 0 2px; }
+            .secao { padding: 16px 6px; }
+            .linha-form { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav>
+        <div class="div-menu">
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <span class="menu-text">Nextstep</span>
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a class="menu-botao" href="">Novo Currículo</a></li>
+                <li><a class="menu-botao" href="">Dados Pessoais</a></li>
+                <li><a class="menu-botao" href="">Formação</a></li>
+                <li><a class="menu-botao" href="">Experiência</a></li>
+                <li><a class="menu-botao" href="">Habilidades</a></li>
+            </ul>
+        </div>
+        <div class="button-container" id="button-index">
+            <a class="botao" id="cadastrar-link" href="cadastrar.html">Cadastrar-se</a>
+            <a class="botao" id="login-link" href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <div class="curriculo-container">
+        <!-- Informações Pessoais -->
+        <div class="secao">
+            <div class="secao-titulo">Informações Pessoais</div>
+            <div class="linha-form">
+                <div class="campo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="João da Silva" required>
+                </div>
+                <div class="campo">
+                    <label for="titulo">Título Profissional</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Desenvolvedor de Software" required>
+                </div>
+            </div>
+            <div class="linha-form">
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" name="telefone" placeholder="(31) 91234-5678" required maxlength="20">
+                </div>
+            </div>
+            <div class="linha-form">
+                <div class="campo">
+                    <label for="linkedin">LinkedIn (opcional)</label>
+                    <input type="text" id="linkedin" name="linkedin" placeholder="linkedin.com/in/seuusuario">
+                </div>
+                <div class="campo">
+                    <label for="portfolio">Portfólio/Site (opcional)</label>
+                    <input type="text" id="portfolio" name="portfolio" placeholder="meusite.com">
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumo Profissional -->
+        <div class="secao">
+            <div class="secao-titulo">Resumo Profissional
+                <button class="botao-acao" type="button">Aprimorar com IA</button>
+            </div>
+            <div class="campo">
+                <textarea id="resumo" name="resumo" placeholder="Descreva seu perfil profissional..." required></textarea>
+            </div>
+        </div>
+
+        <!-- Experiência Profissional -->
+        <div class="secao" id="experiencia">
+            <div class="secao-titulo">Experiência Profissional</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" onclick="adicionarExperiencia()">+ Adicionar Experiência</button>
+            </div>
+            <div id="experiencia-lista">
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Empresa</label>
+                        <input type="text" name="empresa[]" placeholder="Nome da empresa" required>
+                    </div>
+                    <div class="campo">
+                        <label>Cargo</label>
+                        <input type="text" name="cargo[]" placeholder="Seu cargo" required>
+                    </div>
+                </div>
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Data de Início</label>
+                        <input type="text" name="inicio[]" placeholder="MM/AAAA" required pattern="^(0[1-9]|1[0-2])\/\d{4}$">
+                    </div>
+                    <div class="campo">
+                        <label>Data de Término</label>
+                        <input type="text" name="fim[]" placeholder="MM/AAAA ou 'Atual'" required>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label>Responsabilidades e Conquistas</label>
+                    <textarea name="responsabilidades[]" placeholder="Descreva suas principais atividades..." required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formação Acadêmica -->
+        <div class="secao" id="formacao">
+            <div class="secao-titulo">Formação Acadêmica</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" onclick="adicionarFormacao()">+ Adicionar Formação</button>
+            </div>
+            <div id="formacao-lista">
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Instituição</label>
+                        <input type="text" name="instituicao[]" placeholder="Nome da instituição" required>
+                    </div>
+                    <div class="campo">
+                        <label>Curso</label>
+                        <input type="text" name="curso[]" placeholder="Nome do curso" required>
+                    </div>
+                </div>
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Ano de Conclusão</label>
+                        <input type="text" name="ano[]" placeholder="AAAA" required pattern="^\d{4}$">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="secao" id="habilidades">
+            <div class="secao-titulo">Habilidades</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" onclick="adicionarHabilidade()">+ Adicionar Habilidade</button>
+            </div>
+            <div id="habilidades-lista">
+                <div class="linha-form">
+                    <div class="campo" style="flex:2;">
+                        <input type="text" name="habilidade[]" placeholder="Ex: JavaScript" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="secao" id="idiomas">
+            <div class="secao-titulo">Idiomas</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" onclick="adicionarIdioma()">+ Adicionar Idioma</button>
+            </div>
+            <div id="idiomas-lista">
+                <div class="linha-form">
+                    <div class="campo" style="flex:2;">
+                        <input type="text" name="idioma[]" placeholder="Ex: Inglês (Fluente)" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="botao-acao" style="width: 200px; margin: 0 auto; display: block;">Gerar Currículo</button>
+    </div>
+
+    <script src="../js/menu_navbar.js"></script>
+    <script>
+        // Máscara para telefone brasileiro
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 11) v = v.slice(0, 11);
+            let r = '';
+            if (v.length > 1) r += '(' + v.slice(0, 2) + ') ';
+            if (v.length > 7) r += v.slice(2, 7) + '-' + v.slice(7);
+            else if (v.length > 2) r += v.slice(2);
+            e.target.value = r.trim();
+        });
+
+        // Funções para adicionar campos dinâmicos
+        function adicionarExperiencia() {
+            const lista = document.getElementById('experiencia-lista');
+            const bloco = document.createElement('div');
+            bloco.innerHTML = `
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Empresa</label>
+                        <input type="text" name="empresa[]" placeholder="Nome da empresa" required>
+                    </div>
+                    <div class="campo">
+                        <label>Cargo</label>
+                        <input type="text" name="cargo[]" placeholder="Seu cargo" required>
+                    </div>
+                    <button class="remover" type="button" onclick="this.parentElement.parentElement.remove()">🗑️</button>
+                </div>
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Data de Início</label>
+                        <input type="text" name="inicio[]" placeholder="MM/AAAA" required pattern="^(0[1-9]|1[0-2])\/\\d{4}$">
+                    </div>
+                    <div class="campo">
+                        <label>Data de Término</label>
+                        <input type="text" name="fim[]" placeholder="MM/AAAA ou 'Atual'" required>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label>Responsabilidades e Conquistas</label>
+                    <textarea name="responsabilidades[]" placeholder="Descreva suas principais atividades..." required></textarea>
+                </div>
+            `;
+            lista.appendChild(bloco);
+        }
+        function adicionarFormacao() {
+            const lista = document.getElementById('formacao-lista');
+            const bloco = document.createElement('div');
+            bloco.innerHTML = `
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Instituição</label>
+                        <input type="text" name="instituicao[]" placeholder="Nome da instituição" required>
+                    </div>
+                    <div class="campo">
+                        <label>Curso</label>
+                        <input type="text" name="curso[]" placeholder="Nome do curso" required>
+                    </div>
+                    <button class="remover" type="button" onclick="this.parentElement.parentElement.remove()">🗑️</button>
+                </div>
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Ano de Conclusão</label>
+                        <input type="text" name="ano[]" placeholder="AAAA" required pattern="^\\d{4}$">
+                    </div>
+                </div>
+            `;
+            lista.appendChild(bloco);
+        }
+        function adicionarHabilidade() {
+            const lista = document.getElementById('habilidades-lista');
+            const bloco = document.createElement('div');
+            bloco.innerHTML = `
+                <div class="linha-form">
+                    <div class="campo" style="flex:2;">
+                        <input type="text" name="habilidade[]" placeholder="Ex: JavaScript" required>
+                    </div>
+                    <button class="remover" type="button" onclick="this.parentElement.parentElement.remove()">🗑️</button>
+                </div>
+            `;
+            lista.appendChild(bloco);
+        }
+        function adicionarIdioma() {
+            const lista = document.getElementById('idiomas-lista');
+            const bloco = document.createElement('div');
+            bloco.innerHTML = `
+                <div class="linha-form">
+                    <div class="campo" style="flex:2;">
+                        <input type="text" name="idioma[]" placeholder="Ex: Inglês (Fluente)" required>
+                    </div>
+                    <button class="remover" type="button" onclick="this.parentElement.parentElement.remove()">🗑️</button>
+                </div>
+            `;
+            lista.appendChild(bloco);
+        }
+    </script>
+</body>
+</html>

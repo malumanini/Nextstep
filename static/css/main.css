@@ -134,7 +134,7 @@ nav .menu li img{
 nav #button-index{
     margin-right: 100px;
 }
-.botao{
+.botao, .botao-logado{
     width: 150px;
     background-color: #0097b2;
     color: rgba(0, 0, 0, 0.7);
@@ -149,12 +149,14 @@ nav #button-index{
     margin: 10px 0px;
     border: none;
 
-} .botao:hover{
+} .botao:hover {
     cursor: pointer;
     background-color: #00bdde;
     font-size: 1.1em;
     box-shadow: 0 5px 10px #004753;
 } 
+
+
 
 #darkmode-botao{
     width: 55px;
