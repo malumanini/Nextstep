@@ -1,0 +1,86 @@
+
+        body {
+            background: #f7f8fa;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .curriculo-container {
+            max-width: 900px;
+            margin: 120px auto 40px auto;
+            padding: 0 20px;
+        }
+        .secao {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 32px;
+            padding: 24px 32px;
+        }
+        .secao-titulo {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+        .linha-form {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .campo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .campo label {
+            font-size: 0.95em;
+            margin-bottom: 6px;
+            color: #222;
+        }
+        .campo input, .campo textarea {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #fafbfc;
+        }
+        .campo textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+        .secao-acoes {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .botao-acao {
+            background: #013D52;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .botao-acao:hover {
+            background: #028aa2;
+        }
+        .remover {
+            color: #e11d48;
+            background: none;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        
+        @media (max-width: 700px) {
+            .curriculo-container { padding: 0 2px; }
+            .secao { padding: 16px 6px; }
+            .linha-form { flex-direction: column; gap: 8px; }
+        }
