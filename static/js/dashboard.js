@@ -203,7 +203,6 @@ function handleResponsiveChanges() {
         
         if (sidebar) {
             sidebar.style.position = 'fixed';
-            sidebar.style.top = '60px';
             sidebar.style.left = '0';
             sidebar.style.width = '250px';
             sidebar.style.maxWidth = 'none';
