@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextstep - Planos e Preços</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/planos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="planos-header">
+        <nav class="header-nav">
+            <div class="nav-brand">
+                <img src="../images/Logo.png" alt="NextStep Logo" class="nav-logo">
+                <span class="brand-text">NextStep</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Dashboard</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="cadastrar.html" class="nav-link btn-login">Cadastrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Transforme Sua Carreira com Currículos Inteligentes</h1>
+            <p class="hero-subtitle">Crie currículos profissionais otimizados para sistemas ATS e aumente suas chances de conseguir a vaga dos seus sonhos</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10,000+</span>
+                    <span class="stat-label">Currículos criados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-label">Taxa de sucesso</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Avaliação dos usuários</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos Section -->
+    <section class="plans-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Escolha o Plano Ideal para Você</h2>
+                <p class="section-subtitle">Comece grátis e evolua conforme sua carreira cresce</p>
+            </div>
+
+            <div class="plans-grid">
+                <!-- Plano Gratuito -->
+                <div class="plan-card free-plan">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="plan-name">Gratuito</h3>
+                        <p class="plan-description">Perfeito para começar</p>
+                    </div>
+                    
+                    <div class="plan-price">
+                        <span class="price-value">R$ 0</span>
+                        <span class="price-period">/mês</span>
+                    </div>
+
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>3 modelos básicos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Geração de PDF</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Até 2 currículos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Suporte por email</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline plan-btn" id="plano-gratuito">
+                        Começar Grátis
+                    </button>
+                </div>
+
+                <!-- Plano Premium -->
+                <div class="plan-card premium-plan featured">
+                    <div class="plan-badge">
+                        <i class="fas fa-crown"></i>
+                        Mais Popular
+                    </div>
+                    
+                    <div class="plan-header">
+                        <div class="plan-icon premium">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="plan-name">Premium</h3>
+                        <p class="plan-description">Para profissionais que querem se destacar</p>
+                    </div>
+                    
+                    <div class="plan-price">
+                        <span class="price-value">R$ 29</span>
+                        <span class="price-period">/mês</span>
+                        <div class="price-savings">50% OFF no primeiro mês</div>
+                    </div>
+
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Todos os modelos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>PDF + DOCX</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Currículos ilimitados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Análise de IA</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Templates exclusivos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Otimização ATS</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Suporte prioritário</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-premium plan-btn" id="plano-premium">
+                        <i class="fas fa-crown"></i>
+                        Assinar Premium
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Por que escolher o NextStep Premium?</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>Inteligência Artificial</h4>
+                    <p>Nossa IA analisa seu perfil e sugere melhorias personalizadas para destacar suas competências</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Otimização para ATS</h4>
+                    <p>Currículos otimizados para sistemas de recrutamento automatizado, aumentando suas chances</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>Templates Exclusivos</h4>
+                    <p>Acesso a modelos premium criados por designers profissionais</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Segurança Total</h4>
+                    <p>Seus dados são protegidos com criptografia de ponta a ponta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O que nossos usuários dizem</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Consegui 3 entrevistas na primeira semana usando o NextStep Premium. A análise de IA foi fundamental!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h5>Maria Silva</h5>
+                            <span>Desenvolvedora Frontend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Os templates premium são incríveis! Meu currículo nunca ficou tão profissional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h5>João Santos</h5>
+                            <span>Analista de Dados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"A otimização para ATS funcionou perfeitamente. Recebi retorno de 80% das vagas que me candidatei."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h5>Ana Costa</h5>
+                            <span>Gerente de Marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Posso cancelar minha assinatura a qualquer momento?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Você pode cancelar sua assinatura a qualquer momento. Não há taxas de cancelamento e você continuará tendo acesso aos recursos premium até o final do período pago.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>O que acontece com meus currículos se eu cancelar?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Seus currículos ficam salvos e você pode continuar editando-os. Apenas os recursos premium (análise de IA, templates exclusivos) ficam indisponíveis.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Há garantia de reembolso?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos 30 dias de garantia de reembolso. Se não ficar satisfeito, devolvemos 100% do valor pago.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para dar o próximo passo na sua carreira?</h2>
+                <p>Junte-se a milhares de profissionais que já transformaram suas carreiras com o NextStep</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-premium cta-btn" id="cta-premium">
+                        <i class="fas fa-crown"></i>
+                        Assinar Premium Agora
+                    </button>
+                    <button class="btn btn-outline cta-btn" id="cta-gratuito">
+                        <i class="fas fa-user"></i>
+                        Começar Grátis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="planos-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../images/Logo.png" alt="NextStep Logo" class="footer-logo">
+                    <span class="brand-text">NextStep</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Ajuda</a>
+                    <a href="#" class="footer-link">Termos</a>
+                    <a href="#" class="footer-link">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NextStep. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/planos.js"></script>
+</body>
+</html>
