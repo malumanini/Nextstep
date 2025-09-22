@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const corPrincipalInput = document.getElementById('cor-principal');
     const colorPresets = document.querySelectorAll('.color-preset');
     const fonteSelect = document.getElementById('fonte');
-    const gerarCurriculoBtn = document.getElementById('gerar-curriculo');
+    const escolherModeloBtn = document.getElementById('escolher-modelo');
     
     let selectedTemplate = null;
     let selectedColor = '#013D52';
@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
         selectedFont = this.value;
     });
 
-     // Geração do currículo
-     gerarCurriculoBtn.addEventListener('click', function() {
+     // Escolha do modelo
+     escolherModeloBtn.addEventListener('click', function() {
         if (!selectedTemplate) {
             alert('Por favor, selecione um modelo de currículo primeiro!');
             return;
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Simula loading
         this.classList.add('loading');
-        this.innerHTML = '<i class="fas fa-spinner"></i> Gerando Currículo...';
+        this.innerHTML = '<i class="fas fa-spinner"></i> Escolhendo Modelo...';
         this.disabled = true;
 
         // Simula processamento
@@ -181,24 +181,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validação antes de gerar
-    function validateSelection() {
-        if (!selectedTemplate) {
-            gerarCurriculoBtn.style.opacity = '0.5';
-            gerarCurriculoBtn.style.cursor = 'not-allowed';
-        } else {
-            gerarCurriculoBtn.style.opacity = '1';
-            gerarCurriculoBtn.style.cursor = 'pointer';
+    // Validação visual quando template é selecionado
+    function updateButtonState() {
+        if (selectedTemplate) {
+            escolherModeloBtn.style.opacity = '1';
+            escolherModeloBtn.style.cursor = 'pointer';
         }
     }
 
-    // Atualiza validação quando template é selecionado
+    // Atualiza estado do botão quando template é selecionado
     templateCards.forEach(card => {
-        card.addEventListener('click', validateSelection);
+        card.addEventListener('click', updateButtonState);
     });
-
-    // Inicializa validação
-    validateSelection();
 
 
 });
