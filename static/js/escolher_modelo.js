@@ -36,5 +36,74 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.display = showCard ? 'block' : 'none';
         });
     }
+    
+    // Seleção de template
+    function selectTemplate(card) {
+        // Remove seleção anterior
+        templateCards.forEach(c => c.classList.remove('selected'));
+        
+        // Adiciona seleção atual
+        card.classList.add('selected');
+        selectedTemplate = card;
+        
+        // Atualiza botão
+        const btn = card.querySelector('.template-select-btn');
+        btn.innerHTML = '<i class="fas fa-check"></i> Selecionado';
+        btn.classList.add('selected');
+        
+        // Remove seleção dos outros botões
+        document.querySelectorAll('.template-select-btn').forEach(b => {
+            if (b !== btn) {
+                b.innerHTML = '<i class="fas fa-check"></i> Selecionar';
+                b.classList.remove('selected');
+            }
+        });
+    }
+
+    // Personalização de cor
+    function updateColorPresets() {
+        colorPresets.forEach(preset => {
+            preset.classList.remove('active');
+            if (preset.dataset.color === selectedColor) {
+                preset.classList.add('active');
+            }
+        });
+    }
+
+    // Event listeners
+    categoriaSelect.addEventListener('change', applyFilters);
+    corSelect.addEventListener('change', applyFilters);
+
+    templateCards.forEach(card => {
+        card.addEventListener('click', function() {
+            selectTemplate(this);
+        });
+        
+        // Previne seleção dupla ao clicar no botão
+        const btn = card.querySelector('.template-select-btn');
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            selectTemplate(card);
+        });
+    });
+
+    // Personalização de cor
+    corPrincipalInput.addEventListener('change', function() {
+        selectedColor = this.value;
+        updateColorPresets();
+    });
+
+    colorPresets.forEach(preset => {
+        preset.addEventListener('click', function() {
+            selectedColor = this.dataset.color;
+            corPrincipalInput.value = selectedColor;
+            updateColorPresets();
+        });
+    });
+
+    // Personalização de fonte
+    fonteSelect.addEventListener('change', function() {
+        selectedFont = this.value;
+    });
 
 });
