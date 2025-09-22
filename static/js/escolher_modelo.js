@@ -106,4 +106,99 @@ document.addEventListener('DOMContentLoaded', function() {
         selectedFont = this.value;
     });
 
+     // Geração do currículo
+     gerarCurriculoBtn.addEventListener('click', function() {
+        if (!selectedTemplate) {
+            alert('Por favor, selecione um modelo de currículo primeiro!');
+            return;
+        }
+
+        // Simula loading
+        this.classList.add('loading');
+        this.innerHTML = '<i class="fas fa-spinner"></i> Gerando Currículo...';
+        this.disabled = true;
+
+        // Simula processamento
+        setTimeout(() => {
+            // Aqui você pode redirecionar para a página de geração ou fazer a lógica de geração
+            const templateName = selectedTemplate.querySelector('.template-name').textContent;
+            const personalizacao = {
+                template: templateName,
+                cor: selectedColor,
+                fonte: selectedFont
+            };
+
+            // Salva as preferências no localStorage
+            localStorage.setItem('curriculoPersonalizacao', JSON.stringify(personalizacao));
+            
+            // Redireciona para a página de geração
+            window.location.href = 'gerador_curriculo.html';
+        }, 2000);
+    });
+
+    // Carrega personalizações salvas
+    function loadSavedPreferences() {
+        const saved = localStorage.getItem('curriculoPersonalizacao');
+        if (saved) {
+            const prefs = JSON.parse(saved);
+            selectedColor = prefs.cor || '#013D52';
+            selectedFont = prefs.fonte || 'Arial';
+            
+            corPrincipalInput.value = selectedColor;
+            fonteSelect.value = selectedFont;
+            updateColorPresets();
+        }
+    }
+
+    // Inicialização
+    loadSavedPreferences();
+    applyFilters();
+
+    // Animação de entrada dos cards
+    templateCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+
+    // Efeito de hover nos cards
+    templateCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('selected')) {
+                this.style.transform = 'translateY(-5px)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('selected')) {
+                this.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Validação antes de gerar
+    function validateSelection() {
+        if (!selectedTemplate) {
+            gerarCurriculoBtn.style.opacity = '0.5';
+            gerarCurriculoBtn.style.cursor = 'not-allowed';
+        } else {
+            gerarCurriculoBtn.style.opacity = '1';
+            gerarCurriculoBtn.style.cursor = 'pointer';
+        }
+    }
+
+    // Atualiza validação quando template é selecionado
+    templateCards.forEach(card => {
+        card.addEventListener('click', validateSelection);
+    });
+
+    // Inicializa validação
+    validateSelection();
+
+
 });
