@@ -5,19 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nextstep - Gerador de Currículo</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/gerador_curriculo.css">
 </head>
 <body>
     <!--NAVBAR-->
-    <nav>
-        <div class="div-menu">
-            <a href="../index.html"><span class="menu-text">Nextstep</span></a>
-        </div>
-        <div class="button-container" id="button-index">
-            <a class="botao" id="cadastrar-link" href="cadastrar.html">Cadastrar-se</a>
-            <a class="botao" id="login-link" href="login.html">Login</a>
-        </div>
-    </nav>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="../images/Logo.png" alt="NextStep Logo" class="sidebar-logo">
+            <div class="sidebar-nav">
+                <a href="../index.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link active">
+                    <i class="fas fa-plus"></i>
+                    <span>Criar novo currículo</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Meus Curriculos</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
 
     <div class="curriculo-container">
         <!-- Informações Pessoais -->
@@ -158,6 +182,8 @@
         <button class="botao-acao" style="width: 200px; margin: 0 auto; display: block;">Gerar Currículo</button>
     </div>
 
+        </main>
+    </div>
     <script src="../js/gerador_curriculo.js"></script>
 </body>
 </html>
