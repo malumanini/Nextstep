@@ -86,7 +86,7 @@ body {
     background-color: #02465e;
     width: 250px;
     min-height: 100vh;
-    padding: 80px 0 20px 0;
+    padding: 0px 0 20px 0;
     position: fixed;
     left: 0;
     z-index: 999;
