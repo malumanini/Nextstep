@@ -2,64 +2,40 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize dashboard functionality
-    initSidebarToggle();
+    initMobileMenu();
     initCardAnimations();
     initButtonInteractions();
     initResponsiveFeatures();
 });
 
-// Sidebar toggle for mobile
-function initSidebarToggle() {
+// Mobile menu functionality
+function initMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.querySelector('.main-content');
-    
-    // Create mobile menu button
-    const menuButton = document.createElement('button');
-    menuButton.innerHTML = '<i class="fas fa-bars"></i>';
-    menuButton.className = 'mobile-menu-btn';
-    menuButton.style.cssText = `
-        display: none;
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 1001;
-        background: #02465e;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1.2rem;
-    `;
-    
-    document.body.appendChild(menuButton);
-    
-    // Toggle sidebar on mobile
-    menuButton.addEventListener('click', function() {
-        sidebar.classList.toggle('open');
-    });
-    
-    // Close sidebar when clicking outside on mobile
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            if (!sidebar.contains(e.target) && !menuButton.contains(e.target)) {
+
+    if (mobileMenuToggle && sidebar) {
+        mobileMenuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            mobileMenuToggle.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function() {
                 sidebar.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
             }
-        }
-    });
-    
-    // Show/hide menu button based on screen size
-    function handleResize() {
-        if (window.innerWidth <= 768) {
-            menuButton.style.display = 'block';
-        } else {
-            menuButton.style.display = 'none';
-            sidebar.classList.remove('open');
-        }
+        });
     }
-    
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
 }
 
 // Card animations and interactions
@@ -179,34 +155,17 @@ function initResponsiveFeatures() {
 
 function handleResponsiveChanges() {
     const cards = document.querySelectorAll('.card');
-    const sidebar = document.querySelector('.sidebar');
     
     if (window.innerWidth <= 768) {
         // Mobile optimizations
         cards.forEach(card => {
             card.style.marginBottom = '15px';
         });
-        
-        // Adjust sidebar for mobile
-        if (sidebar) {
-            sidebar.style.position = 'fixed';
-            sidebar.style.top = '60px';
-            sidebar.style.left = '0';
-            sidebar.style.width = '100%';
-            sidebar.style.maxWidth = '300px';
-        }
     } else {
         // Desktop optimizations
         cards.forEach(card => {
             card.style.marginBottom = '0';
         });
-        
-        if (sidebar) {
-            sidebar.style.position = 'fixed';
-            sidebar.style.left = '0';
-            sidebar.style.width = '250px';
-            sidebar.style.maxWidth = 'none';
-        }
     }
 }
 
@@ -305,35 +264,6 @@ function addLoadingState(button, text = 'Carregando...') {
     };
 }
 
-// Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-
-    if (mobileMenuToggle && sidebar) {
-        mobileMenuToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('open');
-            mobileMenuToggle.classList.toggle('active');
-        });
-
-        // Fechar menu ao clicar em um link
-        const sidebarLinks = document.querySelectorAll('.sidebar-link');
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                sidebar.classList.remove('open');
-                mobileMenuToggle.classList.remove('active');
-            });
-        });
-
-        // Fechar menu ao clicar fora
-        document.addEventListener('click', function(e) {
-            if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                sidebar.classList.remove('open');
-                mobileMenuToggle.classList.remove('active');
-            }
-        });
-    }
-});
 
 // Export functions for potential use in other scripts
 window.DashboardUtils = {
