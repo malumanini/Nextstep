@@ -3,7 +3,6 @@
 /* Mobile Header */
 .mobile-header {
     display: none;
-    background: #013D52;
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -74,7 +73,7 @@
 
 /* Sidebar */
 .sidebar {
-    background-color: #02465e;
+    background-color:#3A6473;
     width: 250px;
     min-height: 100vh;
     padding: 0px 0 20px 0;
