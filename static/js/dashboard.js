@@ -120,24 +120,7 @@ function initButtonInteractions() {
     const downloadBtns = document.querySelectorAll('.btn-secondary');
     const suggestionsBtn = document.querySelector('.btn-outline');
     
-    if (editBtn) {
-        editBtn.addEventListener('click', function() {
-            showNotification('Redirecionando para edição...', 'info');
-        });
-    }
-    
-    downloadBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const format = this.textContent.includes('PDF') ? 'PDF' : 'DOCX';
-            showNotification(`Baixando currículo em ${format}...`, 'success');
-        });
-    });
-    
-    if (suggestionsBtn) {
-        suggestionsBtn.addEventListener('click', function() {
-            showNotification('Carregando sugestões...', 'info');
-        });
-    }
+    // Button interactions removed to improve performance
 }
 
 // Responsive features
@@ -169,42 +152,7 @@ function handleResponsiveChanges() {
     }
 }
 
-// Notification system
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        z-index: 1002;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        max-width: 300px;
-        word-wrap: break-word;
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Auto remove after 3 seconds
-    setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 3000);
-}
+// Notification system removed for better performance
 
 // Sidebar navigation interactions
 function initSidebarNavigation() {
@@ -212,8 +160,6 @@ function initSidebarNavigation() {
     
     sidebarLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             // Remove active class from all links
             sidebarLinks.forEach(l => l.classList.remove('active'));
             
@@ -226,9 +172,6 @@ function initSidebarNavigation() {
                 this.style.transform = 'scale(1)';
             }, 150);
             
-            // Show notification
-            const linkText = this.querySelector('span').textContent;
-            showNotification(`Navegando para: ${linkText}`, 'info');
         });
     });
 }
@@ -267,7 +210,6 @@ function addLoadingState(button, text = 'Carregando...') {
 
 // Export functions for potential use in other scripts
 window.DashboardUtils = {
-    showNotification,
     addLoadingState,
     handleResponsiveChanges
 };
