@@ -1,5 +1,72 @@
 /* Página de Escolha de Modelo de Currículo */
 
+/* Mobile Header */
+.mobile-header {
+    display: none;
+    background: #013D52;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.mobile-brand-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
 .page-header {
     text-align: center;
     margin-bottom: 40px;
@@ -406,5 +473,272 @@
     
     .page-title {
         font-size: 2rem;
+    }
+}
+
+/* Responsividade para diferentes dispositivos */
+
+/* Desktop (1200px e acima) */
+@media (min-width: 1200px) {
+    .templates-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+    
+    .template-card {
+        padding: 40px;
+    }
+}
+
+/* Tablet (768px a 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .templates-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .template-card {
+        padding: 30px;
+    }
+    
+    .filters-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .customization-options {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Mobile (767px e abaixo) */
+@media (max-width: 767px) {
+    /* Mostrar mobile header */
+    .mobile-header {
+        display: block;
+    }
+    
+    /* Esconder sidebar */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    /* Ajustar main content */
+    .main-content {
+        margin-left: 0;
+        padding-top: 80px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .templates-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .template-card {
+        padding: 25px 20px;
+        margin: 0 10px;
+    }
+    
+    .template-card.featured {
+        transform: none;
+    }
+    
+    .template-card.featured:hover {
+        transform: translateY(-5px);
+    }
+    
+    .filters-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+    
+    .customization-options {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .customization-group {
+        width: 100%;
+    }
+    
+    .color-picker {
+        width: 100%;
+    }
+    
+    .color-presets {
+        justify-content: center;
+    }
+    
+    .font-select {
+        width: 100%;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .benefit-card {
+        padding: 25px 20px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .testimonial-card {
+        padding: 25px 20px;
+    }
+    
+    .faq-list {
+        padding: 0 20px;
+    }
+    
+    .faq-question {
+        padding: 20px;
+    }
+    
+    .faq-answer {
+        padding: 0 20px 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Mobile pequeno (480px e abaixo) */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .template-card {
+        padding: 20px 15px;
+        margin: 0 5px;
+    }
+    
+    .plan-name {
+        font-size: 1.5rem;
+    }
+    
+    .price-value {
+        font-size: 2.5rem;
+    }
+    
+    .benefit-card,
+    .testimonial-card {
+        padding: 20px 15px;
+    }
+    
+    .benefit-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .faq-question h4 {
+        font-size: 1rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para telas muito pequenas (320px e abaixo) */
+@media (max-width: 320px) {
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .template-card {
+        padding: 15px 10px;
+        margin: 0;
+    }
+    
+    .plan-name {
+        font-size: 1.3rem;
+    }
+    
+    .price-value {
+        font-size: 2rem;
+    }
+    
+    .benefit-card,
+    .testimonial-card {
+        padding: 15px 10px;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
     }
 }

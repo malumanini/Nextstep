@@ -1,5 +1,66 @@
 /* Dashboard Specific Styles */
 
+/* Mobile Header */
+.mobile-header {
+    display: none;
+    background: #013D52;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Reset and base styles */
 * {
     box-sizing: border-box;
@@ -88,6 +149,7 @@ body {
     min-height: 100vh;
     padding: 0px 0 20px 0;
     position: fixed;
+    top: 0;
     left: 0;
     z-index: 999;
     flex-shrink: 0;
@@ -493,7 +555,7 @@ body {
     }
     
     .main-content {
-        margin-left: 200px;
+        margin-left: 220px;
     }
     
     .cards-container {
@@ -502,20 +564,57 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .header-content {
-        padding: 0 15px;
+/* Tablet (769px a 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .sidebar {
+        width: 200px;
     }
     
-    .header-nav {
+    .main-content {
+        margin-left: 260px;
+        padding: 30px 20px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+    
+    .card {
+        padding: 25px;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .card-actions {
         gap: 10px;
     }
     
-    .nav-link {
-        padding: 6px 8px;
+    .btn {
+        padding: 10px 16px;
         font-size: 0.9rem;
     }
     
+    .content-footer {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mostrar mobile header */
+    .mobile-header {
+        display: block;
+    }
+    
+    /* Esconder sidebar */
     .sidebar {
         width: 100%;
         transform: translateX(-100%);
@@ -526,9 +625,10 @@ body {
         transform: translateX(0);
     }
     
+    /* Ajustar main content */
     .main-content {
         margin-left: 0;
-        padding: 20px 15px;
+        padding: 100px 15px 20px;
     }
     
     .page-title {
