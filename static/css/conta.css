@@ -146,6 +146,37 @@
     border: 1px solid #e9ecef;
 }
 
+.darkmode .section {
+    background: #181a1b;
+}
+
+.darkmode .section-title h2{
+    color: #00bdde !important;
+}
+
+.darkmode .section-title p{
+    color: #fff !important;
+}
+
+.darkmode .page-header h1{
+    color: #00bdde !important;
+}
+.darkmode .page-header p{
+    color: #fff !important;
+}
+.darkmode .status-grid .status-card{
+    background: #181a1b;
+}
+.darkmode .status-card .status-content h3, p{
+    color: #00bdde !important;
+}
+.darkmode .status-card .status-content h3, p{
+    color: #00bdde !important;
+}
+.darkmode .status-card .status-content .status-description{
+    color:  #fff !important;
+}
+
 .section-header {
     display: flex;
     align-items: center;
