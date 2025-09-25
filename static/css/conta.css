@@ -414,15 +414,30 @@
 
 /* Responsive Design */
 
-/* Tablet (769px a 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
+/* Desktop (1200px e acima) */
+@media (min-width: 1200px) {
+    .main-content {
+        padding: 40px;
+    }
+    
+    .account-content {
+        max-width: 1200px;
+    }
+    
+    .section {
+        padding: 40px;
+    }
+}
+
+/* Tablet (769px a 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
     .sidebar {
-        width: 200px;
+        width: 220px;
     }
     
     .main-content {
         margin-left: 220px;
-        padding: 30px 20px;
+        padding: 30px 25px;
     }
     
     .form-row {
@@ -432,6 +447,7 @@
     
     .status-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     .section-icon {
@@ -439,10 +455,18 @@
         height: 50px;
         font-size: 1.3rem;
     }
+    
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section {
+        padding: 25px;
+    }
 }
 
-/* Mobile (768px e abaixo) */
-@media (max-width: 768px) {
+/* Tablet Small (481px a 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
     .mobile-header {
         display: block;
     }
@@ -459,7 +483,7 @@
     
     .main-content {
         margin-left: 0;
-        padding: 100px 15px 20px;
+        padding: 100px 20px 20px;
     }
     
     .form-row {
@@ -469,20 +493,27 @@
     
     .status-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .page-header h1 {
         font-size: 2rem;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
     }
     
     .section {
         padding: 20px;
+        margin-bottom: 20px;
     }
     
     .section-header {
         flex-direction: column;
         text-align: center;
+        margin-bottom: 20px;
     }
     
     .section-icon {
@@ -492,29 +523,177 @@
         height: 45px;
         font-size: 1.2rem;
     }
-}
-
-@media (max-width: 480px) {
-    .main-content {
-        padding: 100px 15px 20px;
+    
+    .section-title h2 {
+        font-size: 1.3rem;
     }
     
-    .section {
-        padding: 15px;
+    .section-title p {
+        font-size: 0.9rem;
+    }
+    
+    .status-card {
+        padding: 20px;
+    }
+    
+    .status-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .status-content h3 {
+        font-size: 1rem;
+    }
+    
+    .status-value {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile (480px e abaixo) */
+@media (max-width: 480px) {
+    .mobile-header {
+        display: block;
+    }
+    
+    .mobile-nav {
+        padding: 0 20px;
+    }
+    
+    .mobile-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 90px 15px 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .status-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .page-header h1 {
         font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .page-header p {
+        font-size: 0.95rem;
+    }
+    
+    .section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .section-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section-title p {
+        font-size: 0.85rem;
+    }
+    
+    .status-card {
+        padding: 15px;
+    }
+    
+    .status-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .status-content h3 {
+        font-size: 0.95rem;
+    }
+    
+    .status-value {
+        font-size: 1.2rem;
+    }
+    
+    .status-description {
+        font-size: 0.8rem;
     }
     
     .btn {
         width: 100%;
         justify-content: center;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile Very Small (320px e abaixo) */
+@media (max-width: 320px) {
+    .main-content {
+        padding: 80px 10px 15px;
+    }
+    
+    .section {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.6rem;
     }
     
     .section-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .status-card {
+        padding: 12px;
+    }
+    
+    .status-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
     }
 }
