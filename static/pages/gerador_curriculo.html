@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/gerador_curriculo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!--NAVBAR-->
@@ -22,6 +23,10 @@
                 <a href="#" class="sidebar-link active">
                     <i class="fas fa-plus"></i>
                     <span>Criar novo currículo</span>
+                </a>
+                <a href="escolher_modelo.html" class="sidebar-link">
+                    <i class="fas fa-palette"></i>
+                    <span>Escolher Modelo</span>
                 </a>
                 <a href="#" class="sidebar-link">
                     <i class="fas fa-briefcase"></i>
@@ -90,7 +95,7 @@
         <!-- Resumo Profissional -->
         <div class="secao">
             <div class="secao-titulo">Resumo Profissional
-                <button class="botao-acao" type="button">Aprimorar com IA</button>
+                <button class="botao-acao" type="button" id="aprimorar-resumo">Aprimorar com IA</button>
             </div>
             <div class="campo">
                 <textarea id="resumo" name="resumo" placeholder="Descreva seu perfil profissional..." required></textarea>
@@ -101,7 +106,7 @@
         <div class="secao" id="experiencia">
             <div class="secao-titulo">Experiência Profissional</div>
             <div class="secao-acoes">
-                <button class="botao-acao" type="button" onclick="adicionarExperiencia()">+ Adicionar Experiência</button>
+                <button class="botao-acao" type="button" id="adicionar-experiencia" onclick="adicionarExperiencia()">+ Adicionar Experiência</button>
             </div>
             <div id="experiencia-lista">
                 <div class="linha-form">
@@ -135,7 +140,7 @@
         <div class="secao" id="formacao">
             <div class="secao-titulo">Formação Acadêmica</div>
             <div class="secao-acoes">
-                <button class="botao-acao" type="button" onclick="adicionarFormacao()">+ Adicionar Formação</button>
+                <button class="botao-acao" type="button" id="adicionar-formacao" onclick="adicionarFormacao()">+ Adicionar Formação</button>
             </div>
             <div id="formacao-lista">
                 <div class="linha-form">
@@ -161,7 +166,7 @@
         <div class="secao" id="habilidades">
             <div class="secao-titulo">Habilidades</div>
             <div class="secao-acoes">
-                <button class="botao-acao" type="button" onclick="adicionarHabilidade()">+ Adicionar Habilidade</button>
+                <button class="botao-acao" type="button" id="adicionar-habilidade" onclick="adicionarHabilidade()">+ Adicionar Habilidade</button>
             </div>
             <div id="habilidades-lista">
                 <div class="linha-form">
@@ -176,7 +181,7 @@
         <div class="secao" id="idiomas">
             <div class="secao-titulo">Idiomas</div>
             <div class="secao-acoes">
-                <button class="botao-acao" type="button" onclick="adicionarIdioma()">+ Adicionar Idioma</button>
+                <button class="botao-acao" type="button" id="adicionar-idioma" onclick="adicionarIdioma()">+ Adicionar Idioma</button>
             </div>
             <div id="idiomas-lista">
                 <div class="linha-form">
@@ -187,11 +192,12 @@
             </div>
         </div>
 
-        <button class="botao-acao" style="width: 200px; margin: 0 auto; display: block;">Gerar Currículo</button>
+        <button class="botao-acao" id="gerar-curriculo" style="width: 200px; margin: 0 auto; display: block;">Gerar Currículo</button>
     </div>
 
         </main>
     </div>
     <script src="../js/gerador_curriculo.js"></script>
+    <script src="../js/darkmode.js"></script>
 </body>
 </html>

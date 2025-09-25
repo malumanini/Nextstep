@@ -13,6 +13,12 @@
             margin: 0 0 0 200px;
             padding: 0 20px;
         }
+        .curriculo-card{
+            border: 2px solid #013D52;
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin: 40px 0;
+        }
         .secao {
             background: #fff;
             border-radius: 12px;
@@ -40,6 +46,11 @@
             margin-bottom: 6px;
             color: #222;
         }
+
+.darkmode .campo label {
+    color:#c4c4c4;
+}
+
         .campo input, .campo textarea {
             padding: 10px;
             border: 1px solid #e0e0e0;
@@ -67,8 +78,12 @@
             cursor: pointer;
             transition: background 0.2s;
         }
+        
         .botao-acao:hover {
             background: #028aa2;
+        }
+        #gerar-curriculo {
+            font-size: 1.3em;
         }
         .remover {
             color: #e11d48;

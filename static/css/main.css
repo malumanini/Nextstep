@@ -172,7 +172,7 @@ nav #button-index{
     right: 30px;
     bottom: 10px;
 }
-.darkmode img {
+.darkmode #darkmode-icon{
     margin: 2px;
     width: 30px;
     height: 30px;
@@ -247,3 +247,107 @@ footer{
         height: 100px;
     }
 }
+
+
+
+/* Dark mode */
+body.darkmode,
+body.darkmode body,
+body.darkmode .main-container, 
+body.darkmode footer,
+body.darkmode .sidebar,
+body.darkmode .main-content,
+body.darkmode .secao,
+body.darkmode .campo,
+body.darkmode .botao-acao {
+    background-color: #181a1b !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+body.darkmode .sidebar {
+    background-color: #23272a !important;
+}
+
+body.darkmode .sidebar-link,
+body.darkmode .sidebar-link i {
+    color: #e0e0e0 !important;
+}
+
+body.darkmode input,
+body.darkmode textarea {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+body.darkmode .secao-titulo {
+    color: #fff !important;
+}
+
+body.darkmode .botao-acao {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+body.darkmode .btn-secondary, body.darkmode .btn-outline, body.darkmode h1{
+    color: white;
+}
+
+body.darkmode .btn-secondary:hover{
+    color: black;
+}
+
+body.darkmode .sidebar-logo,
+body.darkmode .login-image {
+     filter: invert(0.3);
+}
+
+body.darkmode .course-card, body.darkmode .skill-category, body.darkmode .cert-card, body.darkmode .phhrase-card{
+    background-color: #23272aa5 !important;
+}
+
+
+body.darkmode .course-card, body.darkmode .skill-category, body.darkmode .cert-card, body.darkmode .phhrase-card{
+    border-color: #013D52 !important;
+}
+
+
+body.darkmode .course-card, body.darkmode .skill-category, body.darkmode .cert-card, body.darkmode .phhrase-card{
+    color: white;
+}
+
+body.darkmode .course-card h3, body.darkmode .skill-category h3, body.darkmode .cert-card h3, body.darkmode .phhrase-card h3{
+    color: #00bdde !important;
+}
+
+body.darkmode .phhrase-card p{
+    color: #00bdde;
+}
+
+body.darkmode #aprimorar-resumo, body.darkmode #adicionar-experiencia, body.darkmode #adicionar-formacao, body.darkmode #adicionar-habilidade, body.darkmode #adicionar-idioma, body.darkmode #gerar-curriculo{
+     background: #013D52 !important;
+}
+
+body.darkmode #aprimorar-resumo:hover, body.darkmode #adicionar-experiencia:hover, body.darkmode #adicionar-formacao:hover, body.darkmode #adicionar-habilidade:hover, body.darkmode #adicionar-idioma:hover, body.darkmode #gerar-curriculo:hover{
+     background: #049fbb !important;
+}
+
+body.darkmode .filters-section, body.darkmode .filters-section select, body.darkmode .template-card, body.darkmode .template-preview, body.darkmode .mockup-content, body.darkmode .customization-section, body.darkmode .customization-section select, body.darkmode .tag{
+    background: #23272aa5 !important;
+    color: white !important;
+    border-color: #013D52 !important;
+}
+
+ body.darkmode .tag{
+    background-color: #1f8b9e !important;
+ }
+
+ body.darkmode .tag:hover{
+    background-color: #00bdde !important;
+ }
+
+ body.darkmode .template-name, body.darkmode label, body.darkmode .section-title{
+    color: #ffffff !important;
+ }
