@@ -94,8 +94,154 @@
             margin-left: 8px;
         }
         
-        @media (max-width: 700px) {
-            .curriculo-container { padding: 0 2px; }
-            .secao { padding: 16px 6px; }
-            .linha-form { flex-direction: column; gap: 8px; }
+        /* Mobile Header */
+        .mobile-header {
+            display: none;
+            background: #013D52;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mobile-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .mobile-menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .mobile-header {
+                display: block;
+            }
+            
+            .sidebar {
+                width: 100%;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-top: 100px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .curriculo-container {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .secao {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            .linha-form {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .secao-titulo {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .campo input, .campo textarea {
+                font-size: 16px; /* Previne zoom no iOS */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-nav {
+                padding: 0 15px;
+            }
+            
+            .mobile-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .main-content {
+                padding-top: 90px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .secao {
+                padding: 15px 10px;
+                margin-bottom: 15px;
+            }
+            
+            .secao-titulo {
+                font-size: 1.1rem;
+            }
+            
+            .botao-acao {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            #gerar-curriculo {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-header {
+                display: none !important;
+            }
         }
