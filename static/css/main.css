@@ -291,7 +291,7 @@ body.darkmode .botao-acao {
     border: 1px solid #333 !important;
 }
 
-body.darkmode .btn-secondary, body.darkmode .btn-outline{
+body.darkmode .btn-secondary, body.darkmode .btn-outline, body.darkmode h1{
     color: white;
 }
 
@@ -333,3 +333,21 @@ body.darkmode #aprimorar-resumo, body.darkmode #adicionar-experiencia, body.dark
 body.darkmode #aprimorar-resumo:hover, body.darkmode #adicionar-experiencia:hover, body.darkmode #adicionar-formacao:hover, body.darkmode #adicionar-habilidade:hover, body.darkmode #adicionar-idioma:hover, body.darkmode #gerar-curriculo:hover{
      background: #049fbb !important;
 }
+
+body.darkmode .filters-section, body.darkmode .filters-section select, body.darkmode .template-card, body.darkmode .template-preview, body.darkmode .mockup-content, body.darkmode .customization-section, body.darkmode .customization-section select, body.darkmode .tag{
+    background: #23272aa5 !important;
+    color: white !important;
+    border-color: #013D52 !important;
+}
+
+ body.darkmode .tag{
+    background-color: #1f8b9e !important;
+ }
+
+ body.darkmode .tag:hover{
+    background-color: #00bdde !important;
+ }
+
+ body.darkmode .template-name, body.darkmode label, body.darkmode .section-title{
+    color: #ffffff !important;
+ }
