@@ -46,6 +46,11 @@
             margin-bottom: 6px;
             color: #222;
         }
+
+.darkmode .campo label {
+    color:#c4c4c4;
+}
+
         .campo input, .campo textarea {
             padding: 10px;
             border: 1px solid #e0e0e0;
@@ -73,9 +78,12 @@
             cursor: pointer;
             transition: background 0.2s;
         }
+        
         .botao-acao:hover {
             background: #028aa2;
-            font-size: 1.2em;
+        }
+        #gerar-curriculo {
+            font-size: 1.3em;
         }
         .remover {
             color: #e11d48;

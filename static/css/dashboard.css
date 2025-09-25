@@ -122,7 +122,6 @@ body {
 /* Desktop layout improvements */
 @media (min-width: 1200px) {
     .main-container {
-        background: linear-gradient(135deg, #f5f5f5 0%, #e8f4f8 100%);
         display: block;
     }
     

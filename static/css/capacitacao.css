@@ -158,12 +158,18 @@
     margin-bottom: 10px;
 }
 
+.darkmode .page-title {
+    color: #c4c4c4;
+}
 .page-subtitle {
     font-size: 1.1rem;
     color: #666;
     margin-bottom: 40px;
 }
 
+.darkmode .page-subtitle {
+    color: #939292;
+}
 /* Sections */
 .section {
     margin-bottom: 50px;
@@ -194,12 +200,18 @@
     margin: 0 0 5px 0;
 }
 
+.darkmode .section-title h2 {
+    color: #c4c4c4;
+}
+
 .section-title p {
     color: #666;
     margin: 0;
     font-size: 1rem;
 }
-
+.darkmode .section-title p {
+    color: #939292;
+}
 /* Courses Grid */
 .courses-grid {
     display: grid;
@@ -368,7 +380,6 @@
 }
 
 .phrase-card {
-    background: #f8f9fa;
     border-radius: 8px;
     padding: 15px;
     display: flex;
@@ -388,6 +399,10 @@
     color: #333;
     font-style: italic;
     flex: 1;
+}
+
+.darkmode .phrase-card p {
+    color: #c4c4c4;
 }
 
 .btn-copy {
