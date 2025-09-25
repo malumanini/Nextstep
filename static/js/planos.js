@@ -7,6 +7,55 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctaPremiumBtn = document.getElementById('cta-premium');
     const ctaGratuitoBtn = document.getElementById('cta-gratuito');
     const faqItems = document.querySelectorAll('.faq-item');
+    
+    // Mobile Menu Elements
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    // Mobile Menu Functionality
+    function initMobileMenu() {
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                // Toggle hamburger animation
+                this.classList.toggle('active');
+                // Show mobile menu
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        }
+
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    closeMobileMenu();
+                }
+            });
+        }
+
+        // Close menu when clicking on links
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+    }
+
+    function closeMobileMenu() {
+        mobileMenuOverlay.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Initialize mobile menu
+    initMobileMenu();
 
     // Redirecionamento para login/cadastro
     function redirectToAuth(planType) {
