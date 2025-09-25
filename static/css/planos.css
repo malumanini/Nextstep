@@ -631,3 +631,12 @@ body {
     border-top: 1px solid #097992;
     opacity: 0.8;
 }
+
+body.darkmode span{
+    color: #e0e0e0;
+}
+body.darkmode #plano-gratuito, body.darkmode #plano-premium{
+    background: #02AECD !important;
+    border: 2px solid #097992;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
