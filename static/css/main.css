@@ -351,3 +351,33 @@ body.darkmode .filters-section, body.darkmode .filters-section select, body.dark
  body.darkmode .template-name, body.darkmode label, body.darkmode .section-title{
     color: #ffffff !important;
  }
+
+
+body.darkmode .main-content,
+body.darkmode .plans-section,
+body.darkmode .plan-card,
+body.darkmode .benefit-card,
+body.darkmode .benefits-section,
+body.darkmode .cta-section,
+body.darkmode .planos-footer {
+    background-color: #181a1b !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+body.darkmode .plan-card,
+body.darkmode .benefit-card {
+    background-color: #23272a !important;
+    color: #e0e0e0 !important;
+}
+
+body.darkmode .plan-card .btn,
+body.darkmode .benefit-card .btn {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+body.darkmode h3,h4, body.darkmode .price-value {
+    color: #049BB9 !important;
+}
