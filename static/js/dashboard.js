@@ -29,7 +29,7 @@ function initMobileMenu() {
         });
 
         // Fechar menu ao clicar fora
-        document.addEventListener('click', function(e) {
+    document.addEventListener('click', function(e) {
             if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
                 sidebar.classList.remove('open');
                 mobileMenuToggle.classList.remove('active');
