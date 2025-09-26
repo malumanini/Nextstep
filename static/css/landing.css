@@ -22,7 +22,7 @@ body {
 }
 
 .header-nav {
-    width: 100%;
+    width: 98%;
     margin: 0;
     padding: 0 20px;
     display: flex;
@@ -37,8 +37,8 @@ body {
 }
 
 .nav-logo {
-    width: 40px;
-    height: 40px;
+    width: 150px;
+    height: 70px;
     object-fit: contain;
 }
 
@@ -698,6 +698,7 @@ body {
     border-top: 1px solid #097992;
     opacity: 0.8;
 }
+
 
 /* Dark Mode */
 body.darkmode {
