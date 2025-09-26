@@ -1390,3 +1390,7 @@ body.darkmode #plano-gratuito, body.darkmode #plano-premium{
     border: 2px solid #097992;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
+
+#darkmode-botao{
+    height: 35px;
+}
