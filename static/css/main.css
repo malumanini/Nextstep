@@ -160,7 +160,7 @@ nav #button-index{
 
 #darkmode-botao{
     width: 55px;
-    height: 40px;
+    height: 55px;
     background-color:  #00bdde;
     color: rgba(0, 0, 0, 0.7);
     border-radius: 100px;
@@ -366,13 +366,15 @@ body.darkmode .planos-footer {
 }
 
 body.darkmode .plan-card,
-body.darkmode .benefit-card {
+body.darkmode .benefit-card, 
+body.darkmode .curriculo-card {
     background-color: #23272a !important;
     color: #e0e0e0 !important;
 }
 
 body.darkmode .plan-card .btn,
-body.darkmode .benefit-card .btn {
+body.darkmode .benefit-card .btn,
+body.darkmode .btn-secondary {
     background: #23272a !important;
     color: #e0e0e0 !important;
     border: 1px solid #333 !important;
@@ -380,4 +382,9 @@ body.darkmode .benefit-card .btn {
 
 body.darkmode h3,h4, body.darkmode .price-value {
     color: #049BB9 !important;
+}
+
+body.darkmode .btn-secondary:hover {
+    background: #333 !important;
+    border: 1px solid #a3a3a3 !important;
 }
