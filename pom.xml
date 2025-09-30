@@ -35,6 +35,14 @@
             <version>42.7.3</version>
         </dependency>
 
+        <!-- Driver de criptografia -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+
+
         <!-- Gson (JSON parser, útil no CRUD) -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
