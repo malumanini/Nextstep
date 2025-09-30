@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,21 @@
     <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
-    <!--NAVBAR-->
     <nav>
         <div class="div-menu">
             <a href="index.html"><span class="menu-text">Nextstep</span></a>
         </div>
-            <div class="button-container" id="button-index">
-                <!-- Botões de login/cadastro (visíveis apenas quando não logado) -->
-                <a class="botao" id="cadastrar-link" href="cadastrar.html">Cadastrar-se</a>
-                <a class="botao" id="login-link" href="login.html">Login</a>
-            </div>
+        <div class="button-container" id="button-index">
+            <a class="botao" href="cadastro.html">Cadastrar-se</a>
+            <a class="botao" href="login.html">Login</a>
+        </div>
     </nav>
 
-    <!--MAIN-->
     <main>
         <img src="../static/img/Logo.png" alt="Login Image" class="login-image">
         <div class="container">
             <div class="main-container">
-                <h1 class="title" id="Login">Login</h1>
+                <h1 class="title">Login</h1>
                 <form id="loginForm">
                     <div class="input-container">
                         <input type="text" name="email" id="email" placeholder="E-mail" required>
@@ -39,30 +36,20 @@
                             <span id="loadingText" style="display: none;">Entrando...</span>
                         </button>
                     </div>
-                    <div class="button-container">
-                        <button class="botao" id="loginButton" type="submit">
-                            <span id="loginText">Cadastrar-se</span>
-                        </button>
-                    </div>
                 </form>
             </div>
         </div>
     </main>
 
-    <!-- Botao Dark Mode -->
     <a class="botao" id="darkmode-botao" href="">
         <div class="darkmode">
             <img src="../static/img/dark.png" alt="">
         </div>
     </a>
-    <!--FOOTER-->
-    <footer>
-    </footer>
-    
-    <!--SCRIPT JS-->
+
+    <footer></footer>
+
     <script src="../static/js/darkmode.js"></script>
     <script src="../static/js/login_Back-end.js"></script>
 </body>
 </html>
-
-

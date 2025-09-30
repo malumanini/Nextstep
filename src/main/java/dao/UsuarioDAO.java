@@ -35,7 +35,6 @@ public class UsuarioDAO {
         }
     }
 
-
     public List<Usuario> listar() {
         List<Usuario> lista = new ArrayList<>();
         String sql = "SELECT * FROM usuario ORDER BY id";
@@ -46,7 +45,7 @@ public class UsuarioDAO {
                     rs.getInt("id"),
                     rs.getString("nome"),
                     rs.getString("email"),
-                    rs.getString("senha"),
+                    null,
                     rs.getString("plano")
                 ));
             }
@@ -66,7 +65,7 @@ public class UsuarioDAO {
                     rs.getInt("id"),
                     rs.getString("nome"),
                     rs.getString("email"),
-                    rs.getString("senha"),
+                    null,
                     rs.getString("plano")
                 );
             }
@@ -109,14 +108,12 @@ public class UsuarioDAO {
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 String senhaHash = rs.getString("senha");
-
-                // Verifica se a senha digitada confere com o hash
                 if (BCrypt.checkpw(senhaDigitada, senhaHash)) {
                     return new Usuario(
                         rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getString("email"),
-                        senhaHash, // cuidado: não expor a senha em resposta real
+                        null, // não expor hash
                         rs.getString("plano")
                     );
                 }
@@ -124,6 +121,6 @@ public class UsuarioDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null; // login inválido
+        return null;
     }
 }
