@@ -12,7 +12,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     if (res.ok) {
       const usuario = await res.json();
       alert("Bem-vindo " + usuario.nome);
-      window.location.href = "/dashboard";
+      window.location.href = "index.html";
     } else {
       alert("Email ou senha incorretos!");
     }

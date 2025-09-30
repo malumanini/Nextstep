@@ -12,7 +12,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     });
     if (res.ok) {
       alert("Cadastro realizado com sucesso!");
-      window.location.href = "/login";
+      window.location.href = "index.html";
     } else {
       alert("Erro ao cadastrar usuário!");
     }

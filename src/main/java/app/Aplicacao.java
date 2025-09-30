@@ -17,27 +17,30 @@ public class Aplicacao {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Gson gson = new Gson();
 
-        // Cadastro
+        // Cadastro de usuário
         post("/cadastro", (req, res) -> {
             Usuario u = gson.fromJson(req.body(), Usuario.class);
             usuarioDAO.inserir(u);
-            res.status(201);
-            return "Usuário cadastrado com sucesso!";
+            res.redirect("/index.html"); // redireciona
+            return null;
         });
 
-        // Login
+
+        // Login de usuário
         post("/login", (req, res) -> {
             Usuario dados = gson.fromJson(req.body(), Usuario.class);
             Usuario u = usuarioDAO.autenticar(dados.getEmail(), dados.getSenha());
             if (u != null) {
                 req.session().attribute("usuarioLogado", u);
-                u.setSenha(null);
-                return gson.toJson(u);
+                res.type("application/json");
+                return gson.toJson(u); // retorna dados do usuário
             } else {
                 res.status(401);
-                return "Email ou senha incorretos!";
+                res.type("application/json");
+                return gson.toJson("Email ou senha incorretos!");
             }
         });
+
 
         // Dashboard protegido
         get("/dashboard", (req, res) -> {
