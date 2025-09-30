@@ -23,13 +23,12 @@ public class UsuarioDAO {
     }
 
     public void inserir(Usuario u) {
-        String sql = "INSERT INTO usuario (nome, email, senha, plano) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
-            String senhaHash = BCrypt.hashpw(u.getSenha(), BCrypt.gensalt()); // gera o hash seguro
+            String senhaHash = BCrypt.hashpw(u.getSenha(), BCrypt.gensalt());
             st.setString(1, u.getNome());
             st.setString(2, u.getEmail());
             st.setString(3, senhaHash);
-            st.setString(4, u.getPlano());
             st.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

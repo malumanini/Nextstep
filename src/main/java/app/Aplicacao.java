@@ -35,6 +35,17 @@ public class Aplicacao {
             }
         });
 
+        // Método para redirecionar o usuário caso esteja logado
+        get("/dashboard", (req, res) -> {
+            Usuario u = req.session().attribute("usuarioLogado");
+            if (u == null) {
+                res.redirect("/login");
+                return null;
+            }
+            res.type("text/html");
+            return new String(Files.readAllBytes(Paths.get("src/main/resources/templates/dashboard.html")));
+        });
+
         get("/cadastro", (req, res) -> {
             res.type("text/html");
             return new String(Files.readAllBytes(Paths.get("src/main/resources/templates/cadastro.html")));
@@ -43,11 +54,6 @@ public class Aplicacao {
         get("/login", (req, res) -> {
             res.type("text/html");
             return new String(Files.readAllBytes(Paths.get("src/main/resources/templates/login.html")));
-        });
-
-        get("/dashboard", (req, res) -> {
-            res.type("text/html");
-            return new String(Files.readAllBytes(Paths.get("src/main/resources/templates/dashboard.html")));
         });
 
     }
