@@ -1,5 +1,54 @@
-package main.java.app;
+package app;
 
-public class aplicacao {
-    
+import static spark.Spark.*;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import com.google.gson.Gson;
+import dao.UsuarioDAO;
+import model.Usuario;
+
+public class Aplicacao {
+    public static void main(String[] args) {
+        port(4567);
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Gson gson = new Gson();
+
+        // Rota de cadastro
+        post("/cadastro", (req, res) -> {
+            Usuario u = gson.fromJson(req.body(), Usuario.class);
+            usuarioDAO.inserir(u);
+            res.status(201);
+            return "Usuário cadastrado com sucesso!";
+        });
+
+        // Rota de login
+        post("/login", (req, res) -> {
+            Usuario dados = gson.fromJson(req.body(), Usuario.class);
+            Usuario u = usuarioDAO.autenticar(dados.getEmail(), dados.getSenha());
+            if (u != null) {
+                return gson.toJson(u);
+            } else {
+                res.status(401);
+                return "Email ou senha incorretos!";
+            }
+        });
+
+        get("/cadastro", (req, res) -> {
+            res.type("text/html");
+            return new String(Files.readAllBytes(Paths.get("src/main/resources/templates/cadastro.html")));
+        });
+
+        get("/login", (req, res) -> {
+            res.type("text/html");
+            return new String(Files.readAllBytes(Paths.get("src/main/resources/templates/login.html")));
+        });
+
+        get("/dashboard", (req, res) -> {
+            res.type("text/html");
+            return new String(Files.readAllBytes(Paths.get("src/main/resources/templates/dashboard.html")));
+        });
+
+    }
 }
