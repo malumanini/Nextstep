@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextStep - Minha Conta</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/conta.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-nav">
+            <div class="mobile-brand">
+                <img src="../static/img/Logo.png" alt="NextStep Logo" class="mobile-logo">
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="../static/img/Logo.png" alt="NextStep Logo" class="sidebar-logo">
+            <div class="sidebar-nav">
+                <a href="landing.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="gerador_curriculo.html" class="sidebar-link">
+                    <i class="fas fa-plus"></i>
+                    <span>Criar novo currículo</span>
+                </a>
+                <a href="meus_curriculos.html" class="sidebar-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Meus Currículos</span>
+                </a>
+                <a href="capacitacao.html" class="sidebar-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Capacitação</span>
+                </a>
+                <a href="planos.html" class="sidebar-link">
+                    <i class="fas fa-crown"></i>
+                    <span>Planos</span>
+                </a>
+                <a href="conta.html" class="sidebar-link active">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Minha Conta</h1>
+                <p>Gerencie suas informações pessoais e configurações</p>
+            </div>
+
+            <div class="account-content">
+                <!-- Informações Pessoais -->
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="section-title">
+                            <h2>Informações Pessoais</h2>
+                            <p>Atualize seus dados pessoais</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-container">
+                        <form class="account-form" id="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nome">Nome Completo</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="tel" id="telefone" name="telefone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cidade">Cidade</label>
+                                    <input type="text" id="cidade" name="cidade">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    Salvar Alterações
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Segurança -->
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="section-title">
+                            <h2>Segurança</h2>
+                            <p>Altere sua senha</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-container">
+                        <form class="account-form" id="security-form">
+                            <div class="form-group">
+                                <label for="senha-atual">Senha Atual</label>
+                                <input type="password" id="senha-atual" name="senha-atual" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nova-senha">Nova Senha</label>
+                                    <input type="password" id="nova-senha" name="nova-senha" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmar-senha">Confirmar Nova Senha</label>
+                                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-key"></i>
+                                    Alterar Senha
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Status da Conta -->
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="section-title">
+                            <h2>Status da Conta</h2>
+                            <p>Informações sobre seu plano</p>
+                        </div>
+                    </div>
+                    
+                    <div class="status-grid">
+                        <div class="status-card">
+                            <div class="status-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="status-content">
+                                <h3>Plano Atual</h3>
+                                <p class="status-value">Gratuito</p>
+                                <a href="planos.html" class="btn btn-secondary">
+                                    <i class="fas fa-arrow-up"></i>
+                                    Fazer Upgrade
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="status-card">
+                            <div class="status-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="status-content">
+                                <h3>Currículos Criados</h3>
+                                <p class="status-value">3 de 5</p>
+                                <span class="status-description">Limite do plano gratuito</span>
+                            </div>
+                        </div>
+
+                        <div class="status-card">
+                            <div class="status-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="status-content">
+                                <h3>Membro desde</h3>
+                                <p class="status-value">Janeiro 2025</p>
+                                <span class="status-description">Conta ativa</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <a class="botao" id="darkmode-botao" href="">
+        <div class="darkmode">
+            <img id="darkmode-icon" src="../static/img/dark.png">
+        </div>
+    </a>
+
+    <script src="../static/js/conta.js"></script>
+    <script src="../static/js/darkmode.js"></script>
+</body>
+</html>

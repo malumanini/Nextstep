@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextstep - Meus Currículos</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/gerador_curriculo.css">
+    <link rel="stylesheet" href="../static/css/meus_curriculos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<style>
+    .btn-secondary, .btn-outline {
+        color: black;
+    }
+    
+</style>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-nav">
+            <div class="mobile-brand">
+                <img src="../static/img/Logo.png" alt="NextStep Logo" class="mobile-logo">
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="../static/img/Logo.png" alt="NextStep Logo" class="sidebar-logo">
+            <div class="sidebar-nav">
+                <a href="landing.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="gerador_curriculo.html" class="sidebar-link">
+                    <i class="fas fa-plus"></i>
+                    <span>Criar novo currículo</span>
+                </a>
+                <a href="#" class="sidebar-link active">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Meus Curriculos</span>
+                </a>
+                <a href="capacitacao.html" class="sidebar-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Capacitação</span>
+                </a>
+                <a href="planos.html" class="sidebar-link">
+                    <i class="fas fa-crown"></i>
+                    <span>Planos</span>
+                </a>
+                <a href="conta.html" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <h1 class="page-title">Meus Currículos</h1>
+                <div class="curriculos-lista">
+                    <!-- Exemplo de currículo salvo -->
+                    <div class="curriculo-card">
+                        <div class="curriculo-info">
+                            <h3>João da Silva</h3>
+                            <p>Desenvolvedor de Software</p>
+                            <span class="curriculo-data">Salvo em 20/09/2025</span>
+                        </div>
+                        <div class="curriculo-acoes">
+                            <button class="btn btn-primary">Visualizar</button>
+                            <button class="btn btn-secondary">Editar</button>
+                            <button class="btn btn-secondary">Baixar PDF</button>
+                            <button class="btn btn-outline">Excluir</button>
+                        </div>
+                    </div>
+                    <!-- Repita o bloco acima para cada currículo salvo -->
+                    <div class="curriculo-card">
+                        <div class="curriculo-info">
+                            <h3>Maria Souza</h3>
+                            <p>Analista de Dados</p>
+                            <span class="curriculo-data">Salvo em 15/08/2025</span>
+                        </div>
+                        <div class="curriculo-acoes">
+                            <button class="btn btn-primary">Visualizar</button>
+                            <button class="btn btn-secondary">Editar</button>
+                            <button class="btn btn-secondary">Baixar PDF</button>
+                            <button class="btn btn-outline">Excluir</button>
+                        </div>
+                    </div>
+                    <!-- ... -->
+                </div>
+                <footer class="content-footer">
+                    <a href="#" class="footer-link">Ajuda</a>
+                    <a href="#" class="footer-link">Termos</a>
+                    <a href="#" class="footer-link">Contato</a>
+                </footer>
+            </div>
+        </main>
+    </div>
+      <!-- Botao Dark Mode -->
+    <a class="botao" id="darkmode-botao" href="">
+        <div class="darkmode">
+            <img id="darkmode-icon" src="../static/img/dark.png">
+        </div>
+    </a>
+    <script src="../static/js/meus_curriculos.js"></script>
+    <script src="../static/js/darkmode.js"></script>
+</body>
+</html>

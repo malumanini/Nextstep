@@ -1,0 +1,390 @@
+body { 
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: HelveticaWorld;
+    src: url(../fonts/HelveticaWorld-Regular.ttf);
+}
+/*Navbar*/
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    padding: 0px 50px;
+    background-color: #013D52;
+}
+/*Icone Menu do Navbar*/
+nav .menu-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+}
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.menu-text {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.menu-icon .bar{
+    width: 38px;
+    height: 10px;
+    background-color: #f0f0f0;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: transform 0.3s;
+}
+.menu-icon.active .bar {
+    box-shadow: -15px 0px 1px #00bdde;
+    transform: translateX(10px);
+    transition: box-shadow 0.2s, transform 0.3s;
+}
+
+/*Icone Home do Navbar*/
+nav .home-icon img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+}
+nav .home-icon img:hover {
+    width: 43px;
+    height: 45px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/*Menu do Navbar*/
+nav .menu { 
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 250px;
+    background-color: #006c80;
+    height: 100%;
+    padding: 10px;
+    font-size: 1.3em;
+    z-index: 900;
+    transition: opacity 0.3s;
+}
+nav .menu ul {
+    list-style: none;
+    padding: 0;
+}
+nav .menu ul li {
+    margin: 10px 0;
+}
+nav .menu ul li a {    
+    display: flex;
+    font-family: HelveticaWorld, sans-serif;
+    text-decoration: none;
+    text-align: left;
+    font-size: 0.8em;
+    font-weight: 700;
+    padding: 5px;
+    color: white;
+    border-radius: 35px;
+}  
+nav .menu ul li a:hover {
+    color: white;
+    background-color: #00bdde;
+    transition: background-color 0.3s ease;
+}
+#logout-botao{
+    color: white;
+    background-color: #006c80;
+    font-weight: bolder;
+    font-size: 0.8em;
+    padding: 10px;
+}
+#logout-botao:hover{
+    color: white;
+    background-color: #00a3c0;
+    transition: background-color 0.3s ease;
+}
+nav .menu li img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+nav #button-index{
+    margin-right: 100px;
+}
+.botao, .botao-logado{
+    width: 150px;
+    background-color: #0097b2;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 0px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0px;
+    border: none;
+
+} .botao:hover {
+    cursor: pointer;
+    background-color: #00bdde;
+    font-size: 1.1em;
+    box-shadow: 0 5px 10px #004753;
+} 
+
+
+
+#darkmode-botao{
+    width: 55px;
+    height: 55px;
+    background-color:  #00bdde;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 100px;
+    display: inline-block;
+    margin: 10px 0px;
+    border: none;
+    z-index: 1000;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+}
+.darkmode #darkmode-icon{
+    margin: 2px;
+    width: 30px;
+    height: 30px;
+    filter: invert(18%) sepia(32%) saturate(1172%) hue-rotate(308deg) brightness(92%) contrast(92%);
+}
+
+/*Main*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: calc(100vh - 80px);
+    padding-top: 100px;
+}
+
+/*Footer*/
+footer{
+    width: 100%;
+    min-height: 100px;
+    background-color:  #013D52;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+.div-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espaço entre ícone e texto */
+}
+
+/* Logo padrão para todas as páginas */
+.login-image {
+    width: 180px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.sidebar-logo {
+    width: 160px;
+    height: 100px;
+    object-fit: contain;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Responsividade para a logo */
+@media (max-width: 768px) {
+    .login-image {
+        width: 150px;
+        height: 70px;
+    }
+    
+    .sidebar-logo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-image {
+        width: 120px;
+        height: 70px;
+    }
+    
+    .sidebar-logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+
+/* Dark mode */
+body.darkmode,
+body.darkmode body,
+body.darkmode .main-container, 
+body.darkmode footer,
+body.darkmode .sidebar,
+body.darkmode .main-content,
+body.darkmode .secao,
+body.darkmode .campo,
+body.darkmode .botao-acao {
+    background-color: #181a1b !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+body.darkmode .sidebar {
+    background-color: #23272a !important;
+}
+
+body.darkmode .sidebar-link,
+body.darkmode .sidebar-link i {
+    color: #e0e0e0 !important;
+}
+
+body.darkmode input,
+body.darkmode textarea {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+body.darkmode .secao-titulo {
+    color: #fff !important;
+}
+
+body.darkmode .botao-acao {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+body.darkmode .btn-secondary, body.darkmode .btn-outline, body.darkmode h1{
+    color: white;
+}
+
+body.darkmode .btn-secondary:hover{
+    color: black;
+}
+
+body.darkmode .sidebar-logo,
+body.darkmode .login-image {
+     filter: invert(0.3);
+}
+
+body.darkmode .course-card, body.darkmode .skill-category, body.darkmode .cert-card, body.darkmode .phhrase-card{
+    background-color: #23272aa5 !important;
+}
+
+
+body.darkmode .course-card, body.darkmode .skill-category, body.darkmode .cert-card, body.darkmode .phhrase-card{
+    border-color: #013D52 !important;
+}
+
+
+body.darkmode .course-card, body.darkmode .skill-category, body.darkmode .cert-card, body.darkmode .phhrase-card{
+    color: white;
+}
+
+body.darkmode .course-card h3, body.darkmode .skill-category h3, body.darkmode .cert-card h3, body.darkmode .phhrase-card h3{
+    color: #00bdde !important;
+}
+
+body.darkmode .phhrase-card p{
+    color: #00bdde;
+}
+
+body.darkmode #aprimorar-resumo, body.darkmode #adicionar-experiencia, body.darkmode #adicionar-formacao, body.darkmode #adicionar-habilidade, body.darkmode #adicionar-idioma, body.darkmode #gerar-curriculo{
+     background: #013D52 !important;
+}
+
+body.darkmode #aprimorar-resumo:hover, body.darkmode #adicionar-experiencia:hover, body.darkmode #adicionar-formacao:hover, body.darkmode #adicionar-habilidade:hover, body.darkmode #adicionar-idioma:hover, body.darkmode #gerar-curriculo:hover{
+     background: #049fbb !important;
+}
+
+body.darkmode .filters-section, body.darkmode .filters-section select, body.darkmode .template-card, body.darkmode .template-preview, body.darkmode .mockup-content, body.darkmode .customization-section, body.darkmode .customization-section select, body.darkmode .tag{
+    background: #23272aa5 !important;
+    color: white !important;
+    border-color: #013D52 !important;
+}
+
+ body.darkmode .tag{
+    background-color: #1f8b9e !important;
+ }
+
+ body.darkmode .tag:hover{
+    background-color: #00bdde !important;
+ }
+
+ body.darkmode .template-name, body.darkmode label, body.darkmode .section-title{
+    color: #ffffff !important;
+ }
+
+
+body.darkmode .main-content,
+body.darkmode .plans-section,
+body.darkmode .plan-card,
+body.darkmode .benefit-card,
+body.darkmode .benefits-section,
+body.darkmode .cta-section,
+body.darkmode .planos-footer {
+    background-color: #181a1b !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+body.darkmode .plan-card,
+body.darkmode .benefit-card, 
+body.darkmode .curriculo-card {
+    background-color: #23272a !important;
+    color: #e0e0e0 !important;
+}
+
+body.darkmode .plan-card .btn,
+body.darkmode .benefit-card .btn,
+body.darkmode .btn-secondary {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+body.darkmode h3,h4, body.darkmode .price-value {
+    color: #049BB9 !important;
+}
+
+body.darkmode .btn-secondary:hover {
+    background: #333 !important;
+    border: 1px solid #a3a3a3 !important;
+}

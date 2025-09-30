@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextStep - Painel Administrativo</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="../static/img/Logo.png" alt="NextStep Logo" class="sidebar-logo">
+            <div class="sidebar-nav">
+                <a href="landing.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link active">
+                    <i class="fas fa-cogs"></i>
+                    <span>Administração</span>
+                </a>
+                <a href="usuarios.html" class="sidebar-link">
+                    <i class="fas fa-users"></i>
+                    <span>Usuários</span>
+                </a>
+                <a href="curriculos.html" class="sidebar-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Currículos</span>
+                </a>
+                <a href="relatorios.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Relatórios</span>
+                </a>
+                <a href="configuracoes.html" class="sidebar-link">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Configurações</span>
+                </a>
+                <a href="backup.html" class="sidebar-link">
+                    <i class="fas fa-database"></i>
+                    <span>Backup</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <i class="fas fa-cogs"></i>
+                        Painel Administrativo
+                    </h1>
+                    <p class="page-subtitle">Gerencie todo o sistema NextStep</p>
+                </div>
+
+                <!-- Estatísticas Gerais -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-chart-line"></i>
+                            Estatísticas Gerais
+                        </h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">1,247</h3>
+                                <p class="stat-label">Usuários Ativos</p>
+                                <span class="stat-change positive">+12% este mês</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">3,891</h3>
+                                <p class="stat-label">Currículos Gerados</p>
+                                <span class="stat-change positive">+8% este mês</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">456</h3>
+                                <p class="stat-label">Assinantes Premium</p>
+                                <span class="stat-change positive">+15% este mês</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">R$ 12,450</h3>
+                                <p class="stat-label">Receita Mensal</p>
+                                <span class="stat-change positive">+23% este mês</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ações Rápidas -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-bolt"></i>
+                            Ações Rápidas
+                        </h2>
+                    </div>
+                    <div class="actions-grid">
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>Gerenciar Usuários</h3>
+                                <p>Visualizar, editar e gerenciar usuários do sistema</p>
+                                <button class="btn btn-primary">Acessar</button>
+                            </div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>Relatórios</h3>
+                                <p>Gerar relatórios detalhados do sistema</p>
+                                <button class="btn btn-primary">Gerar</button>
+                            </div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>Configurações</h3>
+                                <p>Configurar parâmetros do sistema</p>
+                                <button class="btn btn-primary">Configurar</button>
+                            </div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>Backup</h3>
+                                <p>Realizar backup dos dados do sistema</p>
+                                <button class="btn btn-primary">Backup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atividade Recente -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-clock"></i>
+                            Atividade Recente
+                        </h2>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Novo usuário cadastrado</h4>
+                                <p>Maria Silva se cadastrou no sistema</p>
+                                <span class="activity-time">Há 5 minutos</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Currículo gerado</h4>
+                                <p>João Santos gerou um novo currículo</p>
+                                <span class="activity-time">Há 12 minutos</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Assinatura Premium</h4>
+                                <p>Ana Costa assinou o plano Premium</p>
+                                <span class="activity-time">Há 1 hora</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Download realizado</h4>
+                                <p>Pedro Lima baixou seu currículo em PDF</p>
+                                <span class="activity-time">Há 2 horas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sistema de Monitoramento -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-server"></i>
+                            Status do Sistema
+                        </h2>
+                    </div>
+                    <div class="system-status">
+                        <div class="status-item">
+                            <div class="status-label">Servidor Web</div>
+                            <div class="status-indicator online">
+                                <i class="fas fa-circle"></i>
+                                Online
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-label">Banco de Dados</div>
+                            <div class="status-indicator online">
+                                <i class="fas fa-circle"></i>
+                                Online
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-label">API de IA</div>
+                            <div class="status-indicator online">
+                                <i class="fas fa-circle"></i>
+                                Online
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-label">Armazenamento</div>
+                            <div class="status-indicator warning">
+                                <i class="fas fa-circle"></i>
+                                85% usado
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Botão Dark Mode -->
+    <a class="botao" id="darkmode-botao" href="">
+        <div class="darkmode">
+            <img id="darkmode-icon" src="../static/img/dark.png">
+        </div>
+    </a>
+
+    <script src="../static/js/admin.js"></script>
+    <script src="../static/js/darkmode.js"></script>
+</body>
+</html>

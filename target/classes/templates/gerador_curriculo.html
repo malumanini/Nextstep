@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextstep - Gerador de Currículo</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="../static/css/gerador_curriculo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-nav">
+            <div class="mobile-brand">
+                <img src="../static/img/Logo.png" alt="NextStep Logo" class="mobile-logo">
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="../static/img/Logo.png" alt="NextStep Logo" class="sidebar-logo">
+            <div class="sidebar-nav">
+                <a href="landing.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link active">
+                    <i class="fas fa-plus"></i>
+                    <span>Criar novo currículo</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Meus Curriculos</span>
+                </a>
+                <a href="capacitacao.html" class="sidebar-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Capacitação</span>
+                </a>
+                <a href="planos.html" class="sidebar-link">
+                    <i class="fas fa-crown"></i>
+                    <span>Planos</span>
+                </a>
+                <a href="conta.html" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+
+    <div class="curriculo-container">
+        <!-- Informações Pessoais -->
+        <div class="secao">
+            <div class="secao-titulo">Informações Pessoais</div>
+            <div class="linha-form">
+                <div class="campo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="João da Silva" required>
+                </div>
+                <div class="campo">
+                    <label for="titulo">Título Profissional</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Desenvolvedor de Software" required>
+                </div>
+            </div>
+            <div class="linha-form">
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" name="telefone" placeholder="(31) 91234-5678" required maxlength="20">
+                </div>
+            </div>
+            <div class="linha-form">
+                <div class="campo">
+                    <label for="linkedin">LinkedIn (opcional)</label>
+                    <input type="text" id="linkedin" name="linkedin" placeholder="linkedin.com/in/seuusuario">
+                </div>
+                <div class="campo">
+                    <label for="portfolio">Portfólio/Site (opcional)</label>
+                    <input type="text" id="portfolio" name="portfolio" placeholder="meusite.com">
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumo Profissional -->
+        <div class="secao">
+            <div class="secao-titulo">Resumo Profissional
+                <button class="botao-acao" type="button" id="aprimorar-resumo">Aprimorar com IA</button>
+            </div>
+            <div class="campo">
+                <textarea id="resumo" name="resumo" placeholder="Descreva seu perfil profissional..." required></textarea>
+            </div>
+        </div>
+
+        <!-- Experiência Profissional -->
+        <div class="secao" id="experiencia">
+            <div class="secao-titulo">Experiência Profissional</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" id="adicionar-experiencia" onclick="adicionarExperiencia()">+ Adicionar Experiência</button>
+            </div>
+            <div id="experiencia-lista">
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Empresa</label>
+                        <input type="text" name="empresa[]" placeholder="Nome da empresa" required>
+                    </div>
+                    <div class="campo">
+                        <label>Cargo</label>
+                        <input type="text" name="cargo[]" placeholder="Seu cargo" required>
+                    </div>
+                </div>
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Data de Início</label>
+                        <input type="text" name="inicio[]" placeholder="MM/AAAA" required pattern="^(0[1-9]|1[0-2])\/\d{4}$">
+                    </div>
+                    <div class="campo">
+                        <label>Data de Término</label>
+                        <input type="text" name="fim[]" placeholder="MM/AAAA ou 'Atual'" required>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label>Responsabilidades e Conquistas</label>
+                    <textarea name="responsabilidades[]" placeholder="Descreva suas principais atividades..." required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formação Acadêmica -->
+        <div class="secao" id="formacao">
+            <div class="secao-titulo">Formação Acadêmica</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" id="adicionar-formacao" onclick="adicionarFormacao()">+ Adicionar Formação</button>
+            </div>
+            <div id="formacao-lista">
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Instituição</label>
+                        <input type="text" name="instituicao[]" placeholder="Nome da instituição" required>
+                    </div>
+                    <div class="campo">
+                        <label>Curso</label>
+                        <input type="text" name="curso[]" placeholder="Nome do curso" required>
+                    </div>
+                </div>
+                <div class="linha-form">
+                    <div class="campo">
+                        <label>Ano de Conclusão</label>
+                        <input type="text" name="ano[]" placeholder="AAAA" required pattern="^\d{4}$">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="secao" id="habilidades">
+            <div class="secao-titulo">Habilidades</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" id="adicionar-habilidade" onclick="adicionarHabilidade()">+ Adicionar Habilidade</button>
+            </div>
+            <div id="habilidades-lista">
+                <div class="linha-form">
+                    <div class="campo" style="flex:2;">
+                        <input type="text" name="habilidade[]" placeholder="Ex: JavaScript" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="secao" id="idiomas">
+            <div class="secao-titulo">Idiomas</div>
+            <div class="secao-acoes">
+                <button class="botao-acao" type="button" id="adicionar-idioma" onclick="adicionarIdioma()">+ Adicionar Idioma</button>
+            </div>
+            <div id="idiomas-lista">
+                <div class="linha-form">
+                    <div class="campo" style="flex:2;">
+                        <input type="text" name="idioma[]" placeholder="Ex: Inglês (Fluente)" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="botao-acao" id="gerar-curriculo" style="width: 200px; margin: 0 auto; display: block;">Gerar Currículo</button>
+    </div>
+
+        </main>
+    </div>
+
+    
+  <!-- Botao Dark Mode -->
+    <a class="botao" id="darkmode-botao" href="">
+        <div class="darkmode">
+            <img id="darkmode-icon" src="../static/img/dark.png">
+        </div>
+    </a>
+    <script src="../static/js/gerador_curriculo.js"></script>
+    <script src="../static/js/darkmode.js"></script>
+</body>
+</html>
