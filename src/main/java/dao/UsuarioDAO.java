@@ -3,6 +3,7 @@ package dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import org.mindrot.jbcrypt.BCrypt;
 
 import model.Usuario;
 
@@ -24,15 +25,17 @@ public class UsuarioDAO {
     public void inserir(Usuario u) {
         String sql = "INSERT INTO usuario (nome, email, senha, plano) VALUES (?, ?, ?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
+            String senhaHash = BCrypt.hashpw(u.getSenha(), BCrypt.gensalt()); // gera o hash seguro
             st.setString(1, u.getNome());
             st.setString(2, u.getEmail());
-            st.setString(3, u.getSenha());
+            st.setString(3, senhaHash);
             st.setString(4, u.getPlano());
             st.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public List<Usuario> listar() {
         List<Usuario> lista = new ArrayList<>();
@@ -98,5 +101,30 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public Usuario autenticar(String email, String senhaDigitada) {
+        String sql = "SELECT * FROM usuario WHERE email = ?";
+        try (PreparedStatement st = conn.prepareStatement(sql)) {
+            st.setString(1, email);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                String senhaHash = rs.getString("senha");
+
+                // Verifica se a senha digitada confere com o hash
+                if (BCrypt.checkpw(senhaDigitada, senhaHash)) {
+                    return new Usuario(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getString("email"),
+                        senhaHash, // cuidado: não expor a senha em resposta real
+                        rs.getString("plano")
+                    );
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null; // login inválido
     }
 }
