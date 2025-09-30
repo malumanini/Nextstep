@@ -13,7 +13,7 @@ public class UsuarioDAO {
     public UsuarioDAO() {
         try {
             conn = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/produtoServices",
+                "jdbc:postgresql://localhost:5432/curriculoDB",
                 "postgres",
                 "123"
             );
