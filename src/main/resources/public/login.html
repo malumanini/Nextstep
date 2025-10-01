@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextstep - Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <nav>
+        <div class="div-menu">
+            <a href="index.html"><span class="menu-text">Nextstep</span></a>
+        </div>
+        <div class="button-container" id="button-index">
+            <a class="botao" href="cadastro.html">Cadastrar-se</a>
+            <a class="botao" href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <img src="img/Logo.png" alt="Login Image" class="login-image">
+        <div class="container">
+            <div class="main-container">
+                <h1 class="title">Login</h1>
+                <form id="loginForm">
+                    <div class="input-container">
+                        <input type="text" name="email" id="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                    </div>
+                    <div class="button-container">
+                        <button class="botao" id="loginButton" type="submit">
+                            <span id="loginText">Entrar</span>
+                            <span id="loadingText" style="display: none;">Entrando...</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <a class="botao" id="darkmode-botao" href="">
+        <div class="darkmode">
+            <img src="img/dark.png" alt="">
+        </div>
+    </a>
+
+    <footer></footer>
+
+    <script src="js/darkmode.js"></script>
+    <script src="js/login_Back-end.js"></script>
+</body>
+</html>

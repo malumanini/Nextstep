@@ -1,0 +1,247 @@
+
+        body {
+            background: #f7f8fa;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .curriculo-container {
+            max-width: 900px;
+            margin: 0 0 0 200px;
+            padding: 0 20px;
+        }
+        .curriculo-card{
+            border: 2px solid #013D52;
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin: 40px 0;
+        }
+        .secao {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 32px;
+            padding: 24px 32px;
+        }
+        .secao-titulo {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+        .linha-form {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .campo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .campo label {
+            font-size: 0.95em;
+            margin-bottom: 6px;
+            color: #222;
+        }
+
+.darkmode .campo label {
+    color:#c4c4c4;
+}
+
+        .campo input, .campo textarea {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #fafbfc;
+        }
+        .campo textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+        .secao-acoes {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .botao-acao {
+            background: #013D52;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .botao-acao:hover {
+            background: #028aa2;
+        }
+        #gerar-curriculo {
+            font-size: 1.3em;
+        }
+        .remover {
+            color: #e11d48;
+            background: none;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        
+        /* Mobile Header */
+        .mobile-header {
+            display: none;
+            background: #013D52;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mobile-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .mobile-menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .mobile-header {
+                display: block;
+            }
+            
+            .sidebar {
+                width: 100%;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-top: 100px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .curriculo-container {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .secao {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            .linha-form {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .secao-titulo {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .campo input, .campo textarea {
+                font-size: 16px; /* Previne zoom no iOS */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-nav {
+                padding: 0 15px;
+            }
+            
+            .mobile-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .main-content {
+                padding-top: 90px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .secao {
+                padding: 15px 10px;
+                margin-bottom: 15px;
+            }
+            
+            .secao-titulo {
+                font-size: 1.1rem;
+            }
+            
+            .botao-acao {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            #gerar-curriculo {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-header {
+                display: none !important;
+            }
+        }
