@@ -10,7 +10,7 @@ public class Aplicacao {
     public static void main(String[] args) {
         port(4567);
 
-        // Spark vai servir automaticamente os arquivos de src/main/resources/static e templates
+        // Spark vai servir automaticamente os arquivos de src/main/resources/public
         staticFiles.location("/public"); // htmls (opcional, mas pode usar)
        
 
