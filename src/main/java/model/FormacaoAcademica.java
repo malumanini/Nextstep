@@ -4,18 +4,18 @@ import java.sql.Date;
 
 public class FormacaoAcademica {
     private int id;
-    private int id_Usuario;
+    private int id_usuario;
     private String instituicao;
     private String curso;
-    private Date data_Inicio;
-    private Date data_Fim;
+    private Date data_inicio;
+    private Date data_fim;
 
     // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
-    public int getIdUsuario() { return id_Usuario; }
-    public void setIdUsuario(int id_Usuario) { this.id_Usuario = id_Usuario; }
+    public int getIdUsuario() { return id_usuario; }
+    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
 
     public String getInstituicao() { return instituicao; }
     public void setInstituicao(String instituicao) { this.instituicao = instituicao; }
@@ -23,9 +23,9 @@ public class FormacaoAcademica {
     public String getCurso() { return curso; }
     public void setCurso(String curso) { this.curso = curso; }
 
-    public Date getDataInicio() { return data_Inicio; }
-    public void setDataInicio(Date data_Inicio) { this.data_Inicio = data_Inicio; }
+    public Date getDataInicio() { return data_inicio; }
+    public void setDataInicio(Date data_inicio) { this.data_inicio = data_inicio; }
 
-    public Date getDataFim() { return data_Fim; }
-    public void setDataFim(Date data_Fim) { this.data_Fim = data_Fim; }
+    public Date getDataFim() { return data_fim; }
+    public void setDataFim(Date data_fim) { this.data_fim = data_fim; }
 }

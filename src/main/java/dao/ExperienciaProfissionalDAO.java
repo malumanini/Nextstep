@@ -49,8 +49,8 @@ public class ExperienciaProfissionalDAO {
                 ep.setIdUsuario(rs.getInt("id_usuario"));
                 ep.setEmpresa(rs.getString("empresa"));
                 ep.setCargo(rs.getString("cargo"));
-                ep.setDataInicio(rs.getDate("data_Inicio"));
-                ep.setDataFim(rs.getDate("data_Fim"));
+                ep.setDataInicio(rs.getDate("data_inicio"));
+                ep.setDataFim(rs.getDate("data_fim"));
                 ep.setDescricao(rs.getString("descricao"));
                 lista.add(ep);
             }
@@ -62,7 +62,7 @@ public class ExperienciaProfissionalDAO {
     }
 
     public boolean atualizar(ExperienciaProfissional ep){
-        String sql = "UPDATE ExperienciaProfissional SET empresa = ?, cargo = ?, data_Inicio = ?, data_Fim = ?, descricao = ? WHERE id = ? ";
+        String sql = "UPDATE ExperienciaProfissional SET empresa = ?, cargo = ?, data_inicio = ?, data_fim = ?, descricao = ? WHERE id = ? ";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, ep.getEmpresa());
             st.setString(2, ep.getCargo());

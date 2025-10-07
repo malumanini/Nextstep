@@ -2,28 +2,28 @@ package model;
 
 public class Contatos {
     private int id;
-    private int id_Usuario;
+    private int id_usuario;
     private String telefone;
-    private String titulo_Profissional;
-    private String link_Linkedin;
-    private String link_Portifolio;
+    private String titulo_profissional;
+    private String link_linkedin;
+    private String link_portifolio;
 
     // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
-    public int getIdUsuario() { return id_Usuario; }
-    public void setIdUsuario(int id_Usuario) { this.id_Usuario = id_Usuario; }
+    public int getIdUsuario() { return id_usuario; }
+    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
 
     public String getTelefone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
 
-    public String getTituloProfissional() { return titulo_Profissional; }
-    public void setTituloProfissional(String titulo_Profissional) { this.titulo_Profissional = titulo_Profissional; }
+    public String getTituloProfissional() { return titulo_profissional; }
+    public void setTituloProfissional(String titulo_profissional) { this.titulo_profissional = titulo_profissional; }
 
-    public String getLinkLinkedin() { return link_Linkedin; }
-    public void setLinkLinkedin(String link_Linkedin) { this.link_Linkedin = link_Linkedin; }
+    public String getLinkedin() { return link_linkedin; }
+    public void setLinkedin(String link_linkedin) { this.link_linkedin = link_linkedin; }
 
-    public String getLinkPortifolio() { return link_Portifolio; }
-    public void setLinkPortifolio(String link_Portifolio) { this.link_Portifolio = link_Portifolio; }
+    public String getPortifolio() { return link_portifolio; }
+    public void setPortifolio(String link_portifolio) { this.link_portifolio = link_portifolio; }
 }
