@@ -5,69 +5,58 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.FormacaoAcademica;
+import util.Conexao;
 
 public class FormacaoAcademicaDAO {
-    private Connection conn;
 
-    public FormacaoAcademicaDAO(){
-        try{
-            conn = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/curriculoDB",
-                "postgres",
-                "123"
-                );
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-    }
+    public void inserir(FormacaoAcademica f) {
+        String sql = "INSERT INTO FormacaoAcademica (id_usuario, instituicao, curso, data_inicio, data_fim, status) VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
 
-    public void inserir(FormacaoAcademica fa){
-        String sql = "INSERT INTO FormacaoAcademica (id_usuario, intituicao, curso, data_inicio, data_fim) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement st = conn.prepareStatement(sql)) {
-            st.setInt(1, fa.getIdUsuario());
-            st.setString(2, fa.getInstituicao());
-            st.setString(3, fa.getCurso());
-            st.setDate(4, fa.getDataInicio());
-            st.setDate(5, fa.getDataFim());
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+            ps.setInt(1, f.getIdUsuario());
+            ps.setString(2, f.getInstituicao());
+            ps.setString(3, f.getCurso());
+            ps.setDate(4, f.getDataInicio());
+            if (f.getDataFim() != null) ps.setDate(5, f.getDataFim()); else ps.setNull(5, Types.DATE);
+            ps.setString(6, f.getStatus());
+            ps.executeUpdate();
+        } catch (SQLException ex) { ex.printStackTrace(); }
     }
 
     public List<FormacaoAcademica> listarPorUsuario(int idUsuario) {
         List<FormacaoAcademica> lista = new ArrayList<>();
-        String sql = "SELECT * FROM FormacaoAcademica WHERE id_usuario = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)){
+        String sql = "SELECT * FROM FormacaoAcademica WHERE id_usuario = ? ORDER BY data_inicio DESC";
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, idUsuario);
-            ResultSet rs = stmt.executeQuery();
-
+            ps.setInt(1, idUsuario);
+            ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                FormacaoAcademica fa = new FormacaoAcademica();
-                fa.setId(rs.getInt("id"));
-                fa.setIdUsuario(rs.getInt("id_usuario"));
-                fa.setInstituicao(rs.getString("intituicao"));
-                fa.setCurso(rs.getString("curso"));
-                fa.setDataInicio(rs.getDate("data_inicio"));
-                fa.setDataFim(rs.getDate("data_fim"));
-                lista.add(fa);
+                FormacaoAcademica f = new FormacaoAcademica();
+                f.setId(rs.getInt("id"));
+                f.setIdUsuario(rs.getInt("id_usuario"));
+                f.setInstituicao(rs.getString("instituicao"));
+                f.setCurso(rs.getString("curso"));
+                f.setDataInicio(rs.getDate("data_inicio"));
+                f.setDataFim(rs.getDate("data_fim"));
+                f.setStatus(rs.getString("status"));
+                lista.add(f);
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        } catch (SQLException ex) { ex.printStackTrace(); }
         return lista;
     }
 
     public boolean atualizar(FormacaoAcademica fa){
         String sql = "UPDATE FormacaoAcademica SET intituicao = ?, curso = ?, data_inicio = ?, data_fim = ? WHERE id = ? ";
-        try (PreparedStatement st = conn.prepareStatement(sql)) {
-            st.setString(1, fa.getInstituicao());
-            st.setString(2, fa.getCurso());
-            st.setDate(3, fa.getDataInicio());
-            st.setDate(4, fa.getDataFim());
-            st.setInt(5, fa.getId());
-            return st.executeUpdate() > 0;
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, fa.getInstituicao());
+            ps.setString(2, fa.getCurso());
+            ps.setDate(3, fa.getDataInicio());
+            ps.setDate(4, fa.getDataFim());
+            ps.setInt(5, fa.getId());
+            return ps.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();
         }

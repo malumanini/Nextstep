@@ -5,6 +5,8 @@ public class Habilidade {
     private int id_usuario;
     private String nome;
 
+    public Habilidade() {}
+
     // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }

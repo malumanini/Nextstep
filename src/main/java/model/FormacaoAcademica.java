@@ -11,6 +11,8 @@ public class FormacaoAcademica {
     private Date data_fim;
     private String status;
 
+    public FormacaoAcademica() {}
+
     // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }

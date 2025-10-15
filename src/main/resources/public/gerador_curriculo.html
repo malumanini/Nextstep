@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <title>Nextstep - Gerador de Currículo</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dashboard.css">
@@ -57,10 +62,11 @@
                     <i class="fas fa-user"></i>
                     <span>Conta</span>
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="#" id="logoutLink" class="sidebar-link">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Sair</span>
                 </a>
+
             </div>
         </aside>
 
@@ -69,7 +75,7 @@
     <main class="main-content">
         <div class="content-wrapper">
 
-        <form action="" method="post" class="curriculo-container">
+        <form id="curriculoForm" class="curriculo-container">
             <!-- Informações Pessoais -->
             <div class="secao">
                 <div class="secao-titulo">Informações Pessoais</div>
@@ -124,27 +130,27 @@
                 <div id="experiencia-lista">
                     <div class="linha-form">
                         <div class="campo">
-                            <label>Empresa</label>
-                            <input type="text" name="empresa[]" placeholder="Nome da empresa" required>
+                            <label for="empresa">Empresa</label>
+                            <input id="empresa" type="text" name="empresa[]" placeholder="Nome da empresa" required>
                         </div>
                         <div class="campo">
-                            <label>Cargo</label>
-                            <input type="text" name="cargo[]" placeholder="Seu cargo" required>
+                            <label for="cargo">Cargo</label>
+                            <input id="cargo" type="text" name="cargo[]" placeholder="Seu cargo" required>
                         </div>
                     </div>
                     <div class="linha-form">
                         <div class="campo">
-                            <label>Data de Início</label>
-                            <input type="text" name="inicio[]" placeholder="MM/AAAA" required pattern="^(0[1-9]|1[0-2])\/\d{4}$">
+                            <label for="data_inicio_experiencia">Data de Início</label>
+                            <input id="data_inicio_experiencia" type="text" name="inicio[]" placeholder="MM/AAAA" required pattern="^(0[1-9]|1[0-2])\/\d{4}$">
                         </div>
                         <div class="campo">
-                            <label>Data de Término</label>
-                            <input type="text" name="fim[]" placeholder="MM/AAAA ou 'Atual'" required>
+                            <label for="data_termino_experiencia">Data de Término</label>
+                            <input id="data_termino_experiencia" type="text" name="fim[]" placeholder="MM/AAAA ou 'Atual'" required>
                         </div>
                     </div>
                     <div class="campo">
-                        <label>Responsabilidades e Conquistas</label>
-                        <textarea name="responsabilidades[]" placeholder="Descreva suas principais atividades..." required></textarea>
+                        <label for="descricao_experiencia">Responsabilidades e Conquistas</label>
+                        <textarea id="descricao_experiencia" name="responsabilidades[]" placeholder="Descreva suas principais atividades..." required></textarea>
                     </div>
                 </div>
             </div>
@@ -218,5 +224,6 @@
     </a>
     <script src="js/gerador_curriculo.js"></script>
     <script src="js/darkmode.js"></script>
+    <script src="js/logout_Back-end.js"></script>
 </body>
 </html>
