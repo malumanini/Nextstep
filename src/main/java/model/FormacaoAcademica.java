@@ -9,7 +9,6 @@ public class FormacaoAcademica {
     private String curso;
     private Date data_inicio;
     private Date data_fim;
-    private String status;
 
     public FormacaoAcademica() {}
 
@@ -31,7 +30,4 @@ public class FormacaoAcademica {
 
     public Date getDataFim() { return data_fim; }
     public void setDataFim(Date data_fim) { this.data_fim = data_fim; }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
 }

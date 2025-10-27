@@ -15,7 +15,7 @@ import java.util.*;
 public class Aplicacao {
     public static void main(String[] args) {
         port(4567);
-        staticFiles.location("/public"); // ✅ deve vir antes do filtro
+        staticFiles.location("/public"); 
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
