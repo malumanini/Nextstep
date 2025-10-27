@@ -10,7 +10,7 @@ import util.Conexao;
 public class FormacaoAcademicaDAO {
 
     public void inserir(FormacaoAcademica f) {
-        String sql = "INSERT INTO FormacaoAcademica (id_usuario, instituicao, curso, data_inicio, data_fim, status) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO FormacaoAcademica (id_usuario, instituicao, curso, data_inicio, data_fim) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = Conexao.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
@@ -19,7 +19,6 @@ public class FormacaoAcademicaDAO {
             ps.setString(3, f.getCurso());
             ps.setDate(4, f.getDataInicio());
             if (f.getDataFim() != null) ps.setDate(5, f.getDataFim()); else ps.setNull(5, Types.DATE);
-            ps.setString(6, f.getStatus());
             ps.executeUpdate();
         } catch (SQLException ex) { ex.printStackTrace(); }
     }
@@ -40,7 +39,6 @@ public class FormacaoAcademicaDAO {
                 f.setCurso(rs.getString("curso"));
                 f.setDataInicio(rs.getDate("data_inicio"));
                 f.setDataFim(rs.getDate("data_fim"));
-                f.setStatus(rs.getString("status"));
                 lista.add(f);
             }
         } catch (SQLException ex) { ex.printStackTrace(); }
