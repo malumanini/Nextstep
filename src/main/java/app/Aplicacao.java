@@ -117,7 +117,6 @@ public class Aplicacao {
                     if (f.getFim() != null && !f.getFim().isBlank()) {
                         formacao.setDataFim(Date.valueOf(LocalDate.parse(f.getFim())));
                     }
-                    formacao.setStatus(f.getStatus() == null ? "Em andamento" : f.getStatus());
                     formacaoDAO.inserir(formacao);
                 }
             }
