@@ -1,6 +1,7 @@
 package dto;
 
 public class ExperienciaDTO {
+    private int id_usuario;
     private String empresa;
     private String cargo;
     private String inicio; // yyyy-MM-dd
@@ -8,6 +9,9 @@ public class ExperienciaDTO {
     private String descricao;
 
     // getters / setters
+    public int getIdUsuario() { return id_usuario; }
+    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
+
     public String getEmpresa() { return empresa; }
     public void setEmpresa(String empresa) { this.empresa = empresa; }
     

@@ -1,6 +1,7 @@
 package dto;
 
 public class FormacaoDTO {
+    private int id_usuario;
     private String instituicao;
     private String curso;
     private String inicio; // yyyy-MM-dd
@@ -8,6 +9,9 @@ public class FormacaoDTO {
     private String status; // opcional
 
     // getters / setters
+    public int getIdUsuario() { return id_usuario; }
+    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
+
     public String getInstituicao() { return instituicao; }
     public void setInstituicao(String instituicao) { this.instituicao = instituicao; }
     

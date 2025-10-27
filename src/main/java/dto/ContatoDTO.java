@@ -1,15 +1,15 @@
 package dto;
 
 public class ContatoDTO {
-    private int idUsuario; // importante: frontend deve enviar id do usuário logado
+    private int id_usuario; // importante: frontend deve enviar id do usuário logado
     private String telefone;
     private String tituloProfissional;
     private String linkLinkedin;
     private String linkPortfolio;
 
     // getters / setters
-    public int getIdUsuario() { return idUsuario; }
-    public void setIdUsuario(int idUsuario) { this.idUsuario = idUsuario; }
+    public int getIdUsuario() { return id_usuario; }
+    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
 
     public String getTelefone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }

@@ -3,6 +3,7 @@ package dto;
 import java.util.List;
 
 public class CurriculoDTO {
+    private int id_usuario;
     private ContatoDTO contato;
     private String resumo;
     private List<ExperienciaDTO> experiencias;
@@ -10,6 +11,9 @@ public class CurriculoDTO {
     private List<String> habilidades;
 
     // getters / setters
+    public int getIdUsuario() { return id_usuario; }
+    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
+
     public ContatoDTO getContato() { return contato; }
     public void setContato(ContatoDTO contato) { this.contato = contato; }
     
