@@ -14,6 +14,6 @@ public class Idiomas {
     public int getIdUsuario() { return id_usuario; }
     public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
 
-    public String getIdNome() { return nome; }
-    public void setIdNome(String nome) { this.nome = nome; }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 }
