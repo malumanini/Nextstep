@@ -4,7 +4,7 @@ public class UsuarioDTO {
     private String nome;
     private String email;
     private String senha;
-    private String telefone;
+    private String plano;
 
     // Construtor vazio
     public UsuarioDTO() {}
@@ -19,6 +19,6 @@ public class UsuarioDTO {
     public String getSenha() { return senha; }
     public void setSenha(String senha) { this.senha = senha; }
 
-    public String getTelefone() { return telefone; }
-    public void setTelefone(String telefone) { this.telefone = telefone; }
+    public String getPlano() { return plano; }
+    public void setPlano(String plano) { this.plano = plano; }
 }

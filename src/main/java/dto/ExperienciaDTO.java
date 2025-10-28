@@ -1,11 +1,13 @@
 package dto;
 
+import java.sql.Date;
+
 public class ExperienciaDTO {
     private int id_usuario;
     private String empresa;
     private String cargo;
-    private String inicio; // yyyy-MM-dd
-    private String fim;    // yyyy-MM-dd or empty/null
+    private Date data_inicio;
+    private Date data_fim;
     private String descricao;
 
     // getters / setters
@@ -18,12 +20,12 @@ public class ExperienciaDTO {
     public String getCargo() { return cargo; }
     public void setCargo(String cargo) { this.cargo = cargo; }
     
-    public String getInicio() { return inicio; }
-    public void setInicio(String inicio) { this.inicio = inicio; }
-    
-    public String getFim() { return fim; }
-    public void setFim(String fim) { this.fim = fim; }
-    
+    public Date getDataInicio() { return data_inicio; }
+    public void setDataInicio(Date data_inicio) { this.data_inicio = data_inicio; }
+
+    public Date getDataFim() { return data_fim; }
+    public void setDataFim(Date data_fim) { this.data_fim = data_fim; }
+
     public String getDescricao() { return descricao; }
     public void setDescricao(String descricao) { this.descricao = descricao; }
 }

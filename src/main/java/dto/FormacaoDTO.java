@@ -1,12 +1,13 @@
 package dto;
 
+import java.sql.Date;
+
 public class FormacaoDTO {
     private int id_usuario;
     private String instituicao;
     private String curso;
-    private String inicio; // yyyy-MM-dd
-    private String fim;    // yyyy-MM-dd or empty/null
-    private String status; // opcional
+    private Date data_inicio;
+    private Date data_fim;
 
     // getters / setters
     public int getIdUsuario() { return id_usuario; }
@@ -18,12 +19,10 @@ public class FormacaoDTO {
     public String getCurso() { return curso; }
     public void setCurso(String curso) { this.curso = curso; }
     
-    public String getInicio() { return inicio; }
-    public void setInicio(String inicio) { this.inicio = inicio; }
+    public Date getDataInicio() { return data_inicio; }
+    public void setDataInicio(Date data_inicio) { this.data_inicio = data_inicio; }
+
+    public Date getDataFim() { return data_fim; }
+    public void setDataFim(Date data_fim) { this.data_fim = data_fim; }
     
-    public String getFim() { return fim; }
-    public void setFim(String fim) { this.fim = fim; }
-    
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
 }
