@@ -81,32 +81,32 @@
                 <div class="secao-titulo">Informações Pessoais</div>
                 <div class="linha-form">
                     <div class="campo">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="João da Silva" required>
+                        <label for="nome_contato">Nome Completo</label>
+                        <input type="text" id="nome_contato" name="nome" placeholder="João da Silva" required>
                     </div>
                     <div class="campo">
-                        <label for="titulo">Título Profissional</label>
-                        <input type="text" id="titulo" name="titulo" placeholder="Desenvolvedor de Software" required>
-                    </div>
-                </div>
-                <div class="linha-form">
-                    <div class="campo">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
-                    </div>
-                    <div class="campo">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" id="telefone" name="telefone" placeholder="(31) 91234-5678" required maxlength="20">
+                        <label for="titulo_profissional_contato">Título Profissional</label>
+                        <input type="text" id="titulo_profissional_contato" name="titulo" placeholder="Desenvolvedor de Software" required>
                     </div>
                 </div>
                 <div class="linha-form">
                     <div class="campo">
-                        <label for="linkedin">LinkedIn (opcional)</label>
-                        <input type="text" id="linkedin" name="linkedin" placeholder="linkedin.com/in/seuusuario">
+                        <label for="email_contato">Email</label>
+                        <input type="email" id="email_contato" name="email" placeholder="email@exemplo.com" required>
                     </div>
                     <div class="campo">
-                        <label for="portfolio">Portfólio/Site (opcional)</label>
-                        <input type="text" id="portfolio" name="portfolio" placeholder="meusite.com">
+                        <label for="telefone_contato">Telefone</label>
+                        <input type="text" id="telefone_contato" name="telefone" placeholder="(31) 91234-5678" required maxlength="20">
+                    </div>
+                </div>
+                <div class="linha-form">
+                    <div class="campo">
+                        <label for="link_linkedin_contato">LinkedIn (opcional)</label>
+                        <input type="text" id="link_linkedin_contato" name="link_linkedin" placeholder="linkedin.com/in/seuusuario">
+                    </div>
+                    <div class="campo">
+                        <label for="link_potfolio_contato">Portfólio/Site (opcional)</label>
+                        <input type="text" id="link_potfolio_contato" name="link_portifolio" placeholder="meusite.com">
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                     <button class="botao-acao" type="button" id="aprimorar-resumo">Aprimorar com IA</button>
                 </div>
                 <div class="campo">
-                    <textarea id="resumo" name="resumo" placeholder="Descreva seu perfil profissional..." required></textarea>
+                    <textarea id="descricao_resumo" name="descricao" placeholder="Descreva seu perfil profissional..." required></textarea>
                 </div>
             </div>
 
@@ -130,27 +130,27 @@
                 <div id="experiencia-lista">
                     <div class="linha-form">
                         <div class="campo">
-                            <label for="empresa">Empresa</label>
-                            <input id="empresa" type="text" name="empresa[]" placeholder="Nome da empresa" required>
+                            <label for="empresa_experiencia">Empresa</label>
+                            <input id="empresa_experiencia" type="text" name="empresa" placeholder="Nome da empresa" required>
                         </div>
                         <div class="campo">
-                            <label for="cargo">Cargo</label>
-                            <input id="cargo" type="text" name="cargo[]" placeholder="Seu cargo" required>
+                            <label for="cargo_experiencia">Cargo</label>
+                            <input id="cargo_experiencia" type="text" name="cargo" placeholder="Seu cargo" required>
                         </div>
                     </div>
                     <div class="linha-form">
                         <div class="campo">
                             <label for="data_inicio_experiencia">Data de Início</label>
-                            <input id="data_inicio_experiencia" type="text" name="inicio[]" placeholder="MM/AAAA" required pattern="^(0[1-9]|1[0-2])\/\d{4}$">
+                            <input id="data_inicio_experiencia" type="text" name="data_inicio" placeholder="MM/AAAA" required pattern="^(0[1-9]|1[0-2])\/\d{4}$">
                         </div>
                         <div class="campo">
                             <label for="data_termino_experiencia">Data de Término</label>
-                            <input id="data_termino_experiencia" type="text" name="fim[]" placeholder="MM/AAAA ou 'Atual'" required>
+                            <input id="data_termino_experiencia" type="text" name="data_fim" placeholder="MM/AAAA ou 'Atual'" required>
                         </div>
                     </div>
                     <div class="campo">
                         <label for="descricao_experiencia">Responsabilidades e Conquistas</label>
-                        <textarea id="descricao_experiencia" name="responsabilidades[]" placeholder="Descreva suas principais atividades..." required></textarea>
+                        <textarea id="descricao_experiencia" name="descricao" placeholder="Descreva suas principais atividades..." required></textarea>
                     </div>
                 </div>
             </div>
@@ -164,22 +164,22 @@
                 <div id="formacao-lista">
                     <div class="linha-form">
                         <div class="campo">
-                            <label>Instituição</label>
-                            <input type="text" name="instituicao[]" placeholder="Nome da instituição" required>
+                            <label for="instituicao_formacao">Instituição</label>
+                            <input type="text"id="instituicao_formacao" name="instituicao" placeholder="Nome da instituição" required>
                         </div>
                         <div class="campo">
-                            <label>Curso</label>
-                            <input type="text" name="curso[]" placeholder="Nome do curso" required>
+                            <label for="curso_formacao">Curso</label>
+                            <input type="text" id="curso_formacao" name="curso" placeholder="Nome do curso" required>
                         </div>
                     </div>
                     <div class="linha-form">
                         <div class="campo">
-                            <label>Data Inicio</label>
-                            <input type="text" name="ano[]" placeholder="AAAA" required pattern="^\d{4}$">
+                            <label for="data_incio_formacao">Data Inicio</label>
+                            <input type="text" id="data_incio_formacao" name="data_inicio" placeholder="AAAA" required pattern="^\d{4}$">
                         </div>
                         <div class="campo">
-                            <label>Data Fim</label>
-                            <input type="text" name="ano[]" placeholder="AAAA" required pattern="^\d{4}$">
+                            <label for="data_fim_formacao">Data Fim</label>
+                            <input type="text" id="data_fim_formacao" name="data_fim" placeholder="AAAA" required pattern="^\d{4}$">
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                 <div id="habilidades-lista">
                     <div class="linha-form">
                         <div class="campo" style="flex:2;">
-                            <input type="text" name="habilidade[]" placeholder="Ex: JavaScript" required>
+                            <input type="text" id="nome_habilidade" name="nome" placeholder="Ex: JavaScript" required>
                         </div>
                     </div>
                 </div>
@@ -209,7 +209,7 @@
                 <div id="idiomas-lista">
                     <div class="linha-form">
                         <div class="campo" style="flex:2;">
-                            <input type="text" name="idioma[]" placeholder="Ex: Inglês (Fluente)" required>
+                            <input type="text" id="nome_idioma" name="nome" placeholder="Ex: Inglês (Fluente)" required>
                         </div>
                     </div>
                 </div>
