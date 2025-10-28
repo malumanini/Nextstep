@@ -1,4 +1,5 @@
 dto\ExperienciaDTO.class
+dto\HabilidadeDTO.class
 dto\CurriculoDTO.class
 model\FormacaoAcademica.class
 model\Curriculo.class

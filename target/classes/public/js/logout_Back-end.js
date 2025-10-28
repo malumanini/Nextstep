@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             try {
                 await fetch("/logout");
+
+                // ✅ Limpa dados do localStorage após logout
+                localStorage.removeItem("idUsuario");
+                localStorage.removeItem("nomeUsuario");
+
+                // ✅ Redireciona para o login
                 window.location.replace("login.html");
             } catch (error) {
                 console.error("Erro ao realizar logout:", error);

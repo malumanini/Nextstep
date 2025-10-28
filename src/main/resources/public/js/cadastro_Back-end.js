@@ -11,9 +11,15 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
       body: JSON.stringify(usuario)
     });
     if (res.ok) {
-      alert("Cadastro realizado com sucesso!");
-      window.location.href = "index.html";
-    } else {
-      alert("Erro ao cadastrar usuário!");
-    }
+    const result = await res.json();
+    
+    // ✅ Salva ID e status no localStorage
+    localStorage.setItem("idUsuario", result.id);
+    localStorage.setItem("nomeUsuario", document.getElementById("nome").value);
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "index.html";
+  } else {
+    alert("Erro ao cadastrar usuário!");
+  }
 });

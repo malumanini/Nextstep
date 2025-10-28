@@ -84,78 +84,7 @@ public class Aplicacao {
         });
 
         // Currículo (POST)
-        post("/curriculo", (req, res) -> {
-            res.type("application/json");
-            CurriculoDTO dto = gson.fromJson(req.body(), CurriculoDTO.class);
-
-            if (dto.getContato() == null || dto.getContato().getIdUsuario() == 0) {
-                res.status(400);
-                return gson.toJson(Map.of("error", "idUsuario obrigatório em contato"));
-            }
-
-            int idUsuario = dto.getContato().getIdUsuario();
-
-            // Contato
-            Contato contato = new Contato();
-            contato.setIdUsuario(idUsuario);
-            contato.setTelefone(dto.getContato().getTelefone());
-            contato.setTituloProfissional(dto.getContato().getTituloProfissional());
-            contato.setLinkLinkedin(dto.getContato().getLinkLinkedin());
-            contato.setLinkPortfolio(dto.getContato().getLinkPortfolio());
-            contatoDAO.inserir(contato);
-
-            // Formações
-            if (dto.getFormacoes() != null) {
-                for (FormacaoDTO f : dto.getFormacoes()) {
-                    FormacaoAcademica formacao = new FormacaoAcademica();
-                    formacao.setIdUsuario(idUsuario);
-                    formacao.setInstituicao(f.getInstituicao());
-                    formacao.setCurso(f.getCurso());
-                    if (f.getInicio() != null && !f.getInicio().isBlank()) {
-                        formacao.setDataInicio(Date.valueOf(LocalDate.parse(f.getInicio())));
-                    }
-                    if (f.getFim() != null && !f.getFim().isBlank()) {
-                        formacao.setDataFim(Date.valueOf(LocalDate.parse(f.getFim())));
-                    }
-                    formacaoDAO.inserir(formacao);
-                }
-            }
-
-            // Experiências
-            if (dto.getExperiencias() != null) {
-                for (ExperienciaDTO e : dto.getExperiencias()) {
-                    ExperienciaProfissional exp = new ExperienciaProfissional();
-                    exp.setIdUsuario(idUsuario);
-                    exp.setEmpresa(e.getEmpresa());
-                    exp.setCargo(e.getCargo());
-                    if (e.getInicio() != null && !e.getInicio().isBlank()) exp.setDataInicio(Date.valueOf(LocalDate.parse(e.getInicio())));
-                    if (e.getFim() != null && !e.getFim().isBlank()) exp.setDataFim(Date.valueOf(LocalDate.parse(e.getFim())));
-                    exp.setDescricao(e.getDescricao());
-                    expDAO.inserir(exp);
-                }
-            }
-
-            // Habilidades
-            if (dto.getHabilidades() != null) {
-                for (String h : dto.getHabilidades()) {
-                    Habilidade hab = new Habilidade();
-                    hab.setIdUsuario(idUsuario);
-                    hab.setNome(h);
-                    habilidadeDAO.inserir(hab);
-                }
-            }
-
-            // Currículo
-            Curriculo c = new Curriculo();
-            c.setIdUsuario(idUsuario);
-            c.setDataCriacao(Date.valueOf(LocalDate.now()));
-            c.setModelo(null);
-            c.setArquivoGerado(null);
-            curriculoDAO.inserir(c);
-
-            res.status(201);
-            return gson.toJson(Map.of("status","ok","mensagem","Currículo salvo", "curriculoId", c.getId()));
-        });
+        
 
         // Currículo completo (GET)
         get("/curriculo/:idUsuario", (req, res) -> {
