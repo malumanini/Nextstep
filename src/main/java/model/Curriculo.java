@@ -1,27 +1,33 @@
 package model;
 
 import java.sql.Date;
+import java.io.Serializable;
 
-public class Curriculo {
+public class Curriculo implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private int id;
-    private int id_usuario;
-    private Date data_criacao;
+    private int idUsuario; // Chave estrangeira para a tabela Usuario
+    private Date dataCriacao;
     private String modelo;
-    private String arquivo_gerado;
+    private String arquivoGerado; // URL ou caminho do PDF/arquivo final
+
+    // Construtor padrão
+    public Curriculo() {}
 
     // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
-    public int getIdUsuario() { return id_usuario; }
-    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
+    public int getIdUsuario() { return idUsuario; }
+    public void setIdUsuario(int idUsuario) { this.idUsuario = idUsuario; }
 
-    public Date getDataCriacao() { return data_criacao; }
-    public void setDataCriacao(Date data_criacao) { this.data_criacao = data_criacao; }
+    public Date getDataCriacao() { return dataCriacao; }
+    public void setDataCriacao(Date dataCriacao) { this.dataCriacao = dataCriacao; }
 
     public String getModelo() { return modelo; }
     public void setModelo(String modelo) { this.modelo = modelo; }
 
-    public String getArquivoGerado() { return arquivo_gerado; }
-    public void setArquivoGerado(String arquivo_gerado) { this.arquivo_gerado = arquivo_gerado; }
+    public String getArquivoGerado() { return arquivoGerado; }
+    public void setArquivoGerado(String arquivoGerado) { this.arquivoGerado = arquivoGerado; }
 }

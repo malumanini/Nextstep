@@ -1,15 +1,10 @@
 package dto;
 
 public class HabilidadeDTO {
-    private int id_usuario;
     private String nome;
 
-    public HabilidadeDTO() {}
-
-    // Getters e Setters
-    public int getIdUsuario() { return id_usuario; }
-    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
-
+    // Construtores, Getters e Setters
     public String getNome() { return nome; }
+
     public void setNome(String nome) { this.nome = nome; }
 }

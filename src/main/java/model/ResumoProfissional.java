@@ -1,18 +1,23 @@
 package model;
 
-public class ResumoProfissional {
-    private int id;
-    private int id_usuario;
-    private String descricao;
+import java.io.Serializable;
 
+public class ResumoProfissional implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private int id;
+    private int idCurriculo; // Chave estrangeira
+    private String descricao; // Usamos 'descricao' para simplificar no modelo
+
+    // Construtor padrão
     public ResumoProfissional() {}
 
     // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
-    public int getIdUsuario() { return id_usuario; }
-    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
+    public int getIdCurriculo() { return idCurriculo; }
+    public void setIdCurriculo(int idCurriculo) { this.idCurriculo = idCurriculo; }
 
     public String getDescricao() { return descricao; }
     public void setDescricao(String descricao) { this.descricao = descricao; }

@@ -4,12 +4,9 @@ import static spark.Spark.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dao.*;
-import dto.*;
-import model.*;
-import util.Conexao;
+import dto.CurriculoDTO;
+import model.Usuario;
 
-import java.time.LocalDate;
-import java.sql.Date;
 import java.util.*;
 
 public class Aplicacao {
@@ -20,11 +17,8 @@ public class Aplicacao {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        ContatoDAO contatoDAO = new ContatoDAO();
-        ExperienciaProfissionalDAO expDAO = new ExperienciaProfissionalDAO();
-        FormacaoAcademicaDAO formacaoDAO = new FormacaoAcademicaDAO();
-        HabilidadeDAO habilidadeDAO = new HabilidadeDAO();
         CurriculoDAO curriculoDAO = new CurriculoDAO();
+        
 
         // 🔒 Filtro global: protege páginas e impede cache
         before((req, res) -> {
@@ -83,43 +77,24 @@ public class Aplicacao {
             return null;
         });
 
-        // Currículo (POST)
+        // =======================================================
+        // 📄 Endpoints de Currículo 
+        // =======================================================
+        post("/curriculo", (req, res) -> {
+            res.type("application/json");
+            CurriculoDTO dto = gson.fromJson(req.body(), CurriculoDTO.class);
+
+            int idGerado = curriculoDAO.cadastrarCurriculo(dto);
+
+            if (idGerado > 0) {
+                res.status(201);
+                return gson.toJson(Map.of("status", "ok", "mensagem", "Currículo criado com sucesso!", "idCurriculo", idGerado));
+            } else {
+                res.status(500);
+                return gson.toJson(Map.of("status", "erro", "mensagem", "Falha ao cadastrar currículo"));
+            }
+        });
         
-
-        // Currículo completo (GET)
-        get("/curriculo/:idUsuario", (req, res) -> {
-            res.type("application/json");
-            int idUsuario = Integer.parseInt(req.params(":idUsuario"));
-            Usuario u = usuarioDAO.buscarPorId(idUsuario);
-            if (u == null) {
-                res.status(404);
-                return gson.toJson(Map.of("error","Usuario não encontrado"));
-            }
-
-            Contato contato = new ContatoDAO().buscarPorUsuario(idUsuario);
-            List<ExperienciaProfissional> experiencias = new ExperienciaProfissionalDAO().listarPorUsuario(idUsuario);
-            List<FormacaoAcademica> formacoes = new FormacaoAcademicaDAO().listarPorUsuario(idUsuario);
-            List<Habilidade> habilidades = new HabilidadeDAO().listarPorUsuario(idUsuario);
-
-            Map<String, Object> result = new HashMap<>();
-            result.put("usuario", u);
-            result.put("contato", contato);
-            result.put("experiencias", experiencias);
-            result.put("formacoes", formacoes);
-            result.put("habilidades", habilidades);
-            return gson.toJson(result);
-        });
-
-        // Dashboard (rota protegida)
-        get("/dashboard", (req, res) -> {
-            Usuario u = req.session().attribute("usuarioLogado");
-            if (u == null) {
-                res.redirect("/login.html");
-                return null;
-            }
-            res.type("application/json");
-            return gson.toJson(Map.of("mensagem", "Bem-vindo " + u.getNome()));
-        });
 
         // Health check
         get("/health", (req, res) -> "OK");

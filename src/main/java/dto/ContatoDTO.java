@@ -1,18 +1,14 @@
 package dto;
 
 public class ContatoDTO {
-    private int id_usuario; // importante: frontend deve enviar id do usuário logado
     private String nome;
     private String email;
     private String telefone;
-    private String titulo_profissional;
-    private String link_linkedin;
-    private String link_portifolio;
+    private String tituloProfissional;
+    private String linkLinkedin;
+    private String linkPortifolio;
 
-    // getters / setters
-    public int getIdUsuario() { return id_usuario; }
-    public void setIdUsuario(int id_usuario) { this.id_usuario = id_usuario; }
-
+    // Construtores, Getters e Setters
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
 
@@ -22,12 +18,12 @@ public class ContatoDTO {
     public String getTelefone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
 
-    public String getTituloProfissional() { return titulo_profissional; }
-    public void setTituloProfissional(String titulo_profissional) { this.titulo_profissional = titulo_profissional; }
+    public String getTituloProfissional() { return tituloProfissional; }
+    public void setTituloProfissional(String tituloProfissional) { this.tituloProfissional = tituloProfissional; }
 
-    public String getLinkLinkedin() { return link_linkedin; }
-    public void setLinkLinkedin(String link_linkedin) { this.link_linkedin = link_linkedin; }
+    public String getLinkLinkedin() { return linkLinkedin; }
+    public void setLinkLinkedin(String linkLinkedin) { this.linkLinkedin = linkLinkedin; }
 
-    public String getLinkPortfolio() { return link_portifolio; }
-    public void setLinkPortfolio(String link_portifolio) { this.link_portifolio = link_portifolio; }
+    public String getLinkPortifolio() { return linkPortifolio; }
+    public void setLinkPortifolio(String linkPortifolio) { this.linkPortifolio = linkPortifolio; }
 }
