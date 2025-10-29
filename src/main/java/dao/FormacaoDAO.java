@@ -6,7 +6,7 @@ import util.Conexao;
 
 public class FormacaoDAO {
     public void inserir(FormacaoDTO dto, int idCurriculo) {
-        String sql = "INSERT INTO FormacaoAcademica (id_curriculo, instituicao, curso, data_inicio, data_fim) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO FormacaoAcademica (idCurriculo, instituicao, curso, dataInicio, dataFim) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = Conexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
