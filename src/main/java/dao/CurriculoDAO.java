@@ -15,7 +15,7 @@ public class CurriculoDAO {
     private final IdiomaDAO idiomaDAO = new IdiomaDAO();
 
     public int cadastrarCurriculo(CurriculoDTO dto) {
-        String sql = "INSERT INTO Curriculo (id_usuario, data_criacao, modelo, arquivo_gerado) VALUES (?, CURRENT_DATE, ?, ?)";
+        String sql = "INSERT INTO Curriculo (idUsuario, dataCriacao, modelo, arquivoGerado) VALUES (?, CURRENT_DATE, ?, ?)";
         int idGerado = -1;
 
         try (Connection conn = Conexao.getConnection();

@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: document.getElementById("nome_contato").value,
       email: document.getElementById("email_contato").value,
       telefone: document.getElementById("telefone_contato").value,
-      titulo_profissional: document.getElementById("titulo_profissional_contato").value,
-      link_linkedin: document.getElementById("link_linkedin_contato").value,
-      link_portifolio: document.getElementById("link_potfolio_contato").value
+      tituloProfissional: document.getElementById("titulo_profissional_contato").value,
+      linkLinkedin: document.getElementById("link_linkedin_contato").value,
+      linkPortifolio: document.getElementById("link_potfolio_contato").value
     };
 
     // ======== Resumo ========
@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         experiencias.push({
           empresa: empresa.value,
           cargo: cargo.value,
-          data_inicio: formatarData(dataInicio.value),
-          data_fim: formatarData(dataFim.value),
+          dataInicio: formatarData(dataInicio.value),
+          dataFim: formatarData(dataFim.value),
           descricao: descricao.value
         });
       }
@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
         formacoes.push({
           instituicao: instituicao.value,
           curso: curso.value,
-          data_inicio: `${dataInicio.value}-01-01`,
-          data_fim: `${dataFim.value}-12-31`
+          dataInicio: `${dataInicio.value}-01-01`,
+          dataFim: `${dataFim.value}-12-31`
         });
       }
     });

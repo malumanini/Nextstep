@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 
 public class ContatoDAO {
     public void inserir(ContatoDTO contato, int idCurriculo) {
-        String sql = "INSERT INTO Contatos (id_curriculo, nome, email, telefone, titulo_profissional, link_linkedin, link_portifolio) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Contatos (idCurriculo, nome, email, telefone, tituloProfissional, linkLinkedin, linkPortifolio) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

@@ -1,6 +1,6 @@
+C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\FormacaoDAO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dto\ResumoProfissionalDTO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dto\IdiomasDTO.java
-C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\IdiomasDAO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\model\FormacaoAcademica.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dto\UsuarioDTO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\model\Contato.java
@@ -9,14 +9,15 @@ C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\app\Aplicacao.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\model\ExperienciaProfissional.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\model\Curriculo.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\model\Habilidade.java
-C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\FormacaoAcademicaDAO.java
+C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\ExperienciaDAO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\UsuarioDAO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dto\FormacaoDTO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dto\HabilidadeDTO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\CurriculoDAO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\model\ResumoProfissional.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\ContatoDAO.java
-C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\ExperienciaProfissionalDAO.java
+C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dao\IdiomaDAO.java
+C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\controller\CurriculoController.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dto\CurriculoDTO.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\model\Usuario.java
 C:\Users\user\Desktop\NextStep\Nextstep\src\main\java\dto\ContatoDTO.java
