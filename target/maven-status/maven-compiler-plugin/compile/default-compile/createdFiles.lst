@@ -1,8 +1,11 @@
 dto\ExperienciaDTO.class
+dto\HabilidadeDTO.class
 dto\CurriculoDTO.class
 model\FormacaoAcademica.class
 model\Curriculo.class
+dao\ResumoProfissionalDAO.class
 model\Habilidade.class
+model\ResumoProfissional.class
 dto\ContatoDTO.class
 dto\UsuarioDTO.class
 model\ExperienciaProfissional.class
@@ -11,9 +14,13 @@ dao\FormacaoAcademicaDAO.class
 dao\HabilidadeDAO.class
 dto\FormacaoDTO.class
 model\Usuario.class
+dto\IdiomasDTO.class
+model\Idiomas.class
+dao\IdiomasDAO.class
 dao\UsuarioDAO.class
 dao\ContatoDAO.class
 dao\ExperienciaProfissionalDAO.class
 util\Conexao.class
 model\Contato.class
+dto\ResumoProfissionalDTO.class
 dao\CurriculoDAO.class
