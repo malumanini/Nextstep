@@ -6,21 +6,21 @@ import com.google.gson.GsonBuilder;
 import dao.*;
 import dto.CurriculoDTO;
 import model.Usuario;
-
 import java.util.*;
 
 public class Aplicacao {
     public static void main(String[] args) {
         port(4567);
-        staticFiles.location("/public"); 
+        staticFiles.location("/public");
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         CurriculoDAO curriculoDAO = new CurriculoDAO();
-        
 
+        // =======================================================
         // 🔒 Filtro global: protege páginas e impede cache
+        // =======================================================
         before((req, res) -> {
             String path = req.pathInfo();
 
@@ -33,29 +33,28 @@ public class Aplicacao {
 
             Usuario logado = req.session().attribute("usuarioLogado");
 
-            // Redireciona se não estiver logado
             if (paginasProtegidas.contains(path) && logado == null) {
                 res.redirect("/login.html");
                 halt();
             }
 
-            // Impede cache de tudo (importante para o logout funcionar direito)
+            // Impede cache de tudo
             res.header("Cache-Control", "no-store, no-cache, must-revalidate, private");
             res.header("Pragma", "no-cache");
             res.header("Expires", "0");
         });
 
-
-        // Cadastro
+        // =======================================================
+        // 👤 Cadastro e Login de Usuário
+        // =======================================================
         post("/cadastro", (req, res) -> {
             res.type("application/json");
             Usuario u = gson.fromJson(req.body(), Usuario.class);
             u.setPlano("gratuito");
             usuarioDAO.inserir(u);
-            return gson.toJson(Map.of("status","ok","id", u.getId()));
+            return gson.toJson(Map.of("status", "ok", "id", u.getId()));
         });
 
-        // Login
         post("/login", (req, res) -> {
             res.type("application/json");
             Usuario dados = gson.fromJson(req.body(), Usuario.class);
@@ -65,21 +64,22 @@ public class Aplicacao {
                 return gson.toJson(u);
             } else {
                 res.status(401);
-                return gson.toJson(Map.of("error","Email ou senha incorretos!"));
+                return gson.toJson(Map.of("error", "Email ou senha incorretos!"));
             }
         });
 
-        // Logout
         get("/logout", (req, res) -> {
-            req.session().invalidate(); // encerra completamente a sessão
+            req.session().invalidate();
             res.header("Cache-Control", "no-store, no-cache, must-revalidate, private");
             res.redirect("/login.html");
             return null;
         });
 
         // =======================================================
-        // 📄 Endpoints de Currículo 
+        // 📄 Endpoints de Currículo
         // =======================================================
+
+        // 🟢 Criar currículo
         post("/curriculo", (req, res) -> {
             res.type("application/json");
             CurriculoDTO dto = gson.fromJson(req.body(), CurriculoDTO.class);
@@ -94,9 +94,49 @@ public class Aplicacao {
                 return gson.toJson(Map.of("status", "erro", "mensagem", "Falha ao cadastrar currículo"));
             }
         });
-        
 
-        // Health check
+        // 🔵 Listar currículos de um usuário
+        get("/curriculo/:idUsuario", (req, res) -> {
+            res.type("application/json");
+            int idUsuario = Integer.parseInt(req.params(":idUsuario"));
+            return gson.toJson(curriculoDAO.listarPorUsuario(idUsuario));
+        });
+
+        // 🟠 Editar currículo (PUT)
+        put("/curriculo/:id", (req, res) -> {
+            res.type("application/json");
+            int idCurriculo = Integer.parseInt(req.params(":id"));
+            CurriculoDTO dto = gson.fromJson(req.body(), CurriculoDTO.class);
+            dto.setId(idCurriculo); // garante que o ID do currículo seja passado ao DAO
+
+            try {
+                curriculoDAO.editar(dto);
+                res.status(200);
+                return gson.toJson(Map.of("status", "ok", "mensagem", "Currículo atualizado com sucesso!"));
+            } catch (Exception e) {
+                res.status(500);
+                e.printStackTrace();
+                return gson.toJson(Map.of("status", "erro", "mensagem", "Erro ao atualizar currículo"));
+            }
+        });
+
+        // 🔴 Deletar currículo
+        delete("/curriculo/:id", (req, res) -> {
+            res.type("application/json");
+            int idCurriculo = Integer.parseInt(req.params(":id"));
+
+            try {
+                curriculoDAO.deletar(idCurriculo);
+                res.status(200);
+                return gson.toJson(Map.of("status", "ok", "mensagem", "Currículo excluído com sucesso!"));
+            } catch (Exception e) {
+                res.status(500);
+                e.printStackTrace();
+                return gson.toJson(Map.of("status", "erro", "mensagem", "Erro ao excluir currículo"));
+            }
+        });
+
+        // ✅ Health check
         get("/health", (req, res) -> "OK");
     }
 }
