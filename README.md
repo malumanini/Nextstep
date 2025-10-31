@@ -29,8 +29,7 @@ O projeto foi desenvolvido seguindo boas práticas de **arquitetura em camadas (
 - **Backend:** Java com Spark Framework  
 - **Banco de Dados:** PostgreSQL  
 - **Frontend:** HTML5, CSS3 e JavaScript (Fetch API)  
-- **Arquitetura:** MVC + DAO + DTO + APP + Maven  
-- **Ferramentas de Desenvolvimento:** VS Code, npm, JSON Server  
+- **Arquitetura:** MVC + DAO + DTO + APP + Maven   
 
 ---
 
@@ -44,6 +43,7 @@ Utilizar Inteligência Artificial para aprimorar a experiência do usuário
 Servir como base prática para estudos de engenharia de software e sistemas inteligentes
 
 Este projeto foi desenvolvido para fins acadêmicos na disciplina Trabalho Interdisciplinar II: Back-End - Ciência da Computação - Campus Lourdes.
+
 
 
 
