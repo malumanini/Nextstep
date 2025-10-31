@@ -4,7 +4,7 @@ O NextStep é um sistema que ajuda usuários a criarem currículos profissionais
 Além de gerar o currículo em diferentes formatos, o sistema também fornece recomendações de melhorias e orientações para que o usuário aumente suas chances no mercado de trabalho.
 
 ## 🧠 Sobre o Projeto
-A **Plataforma de Currículos e Gestão Profissional** é uma aplicação web desenvolvida para auxiliar usuários na criação, edição e gerenciamento de seus currículos de forma prática e moderna.  
+O **NextStep** é uma aplicação web desenvolvida para auxiliar usuários na criação, edição e gerenciamento de seus currículos de forma prática e moderna.  
 O sistema utiliza **Inteligência Artificial generativa** para aprimorar automaticamente os textos do currículo, sugerindo melhorias de linguagem, palavras-chave otimizadas para sistemas de recrutamento (ATS) e garantindo clareza e profissionalismo na redação.  
 
 O projeto foi desenvolvido seguindo boas práticas de **arquitetura em camadas (Model, DAO, DTO, APP)** e integração com **banco de dados PostgreSQL**, oferecendo uma estrutura modular, organizada e escalável.
@@ -44,6 +44,7 @@ Utilizar Inteligência Artificial para aprimorar a experiência do usuário
 Servir como base prática para estudos de engenharia de software e sistemas inteligentes
 
 Este projeto foi desenvolvido para fins acadêmicos na disciplina Trabalho Interdisciplinar II: Back-End - Ciência da Computação - Campus Lourdes.
+
 
 
 
