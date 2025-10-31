@@ -43,8 +43,7 @@ Utilizar Inteligência Artificial para aprimorar a experiência do usuário
 
 Servir como base prática para estudos de engenharia de software e sistemas inteligentes
 
-📄 Licença
-Este projeto foi desenvolvido para fins acadêmicos na disciplina Tecnologias e Inovação II – PUC Minas.
-Uso permitido para fins educacionais.
+Este projeto foi desenvolvido para fins acadêmicos na disciplina Trabalho Interdisciplinar II: Back-End - Ciência da Computação - Campus Lourdes.
+
 
 
