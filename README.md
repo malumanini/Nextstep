@@ -3,50 +3,34 @@
 O NextStep é um sistema que ajuda usuários a criarem currículos profissionais de forma prática, personalizada e otimizada com inteligência artificial.
 Além de gerar o currículo em diferentes formatos, o sistema também fornece recomendações de melhorias e orientações para que o usuário aumente suas chances no mercado de trabalho.
 
-🚀 Funcionalidades
+## 🧠 Sobre o Projeto
+A **Plataforma de Currículos e Gestão Profissional** é uma aplicação web desenvolvida para auxiliar usuários na criação, edição e gerenciamento de seus currículos de forma prática e moderna.  
+O sistema utiliza **Inteligência Artificial generativa** para aprimorar automaticamente os textos do currículo, sugerindo melhorias de linguagem, palavras-chave otimizadas para sistemas de recrutamento (ATS) e garantindo clareza e profissionalismo na redação.  
 
-Cadastro e login de usuários (conta gratuita ou premium).
+O projeto foi desenvolvido seguindo boas práticas de **arquitetura em camadas (Model, DAO, DTO, APP)** e integração com **banco de dados PostgreSQL**, oferecendo uma estrutura modular, organizada e escalável.
 
-Inserção e edição de dados pessoais, formações, experiências e habilidades.
+---
 
-Sugestões inteligentes de habilidades e palavras-chave.
+## 👩‍💻 Alunos Integrantes da Equipe
+- **Maria Luiza Manini de Oliveira**  
+- **David Cristhian Vieira Fonseca**  
+- **Matheus Mendes Ramos**  
+- **Samuel de Jesus Fernandes Mascarenhas**
 
-Otimização de textos e compatibilidade com sistemas de recrutamento (ATS).
+---
 
-Seleção de modelos personalizáveis de currículo.
+## 👨‍🏫 Professores Responsáveis
+- **Rommel Vieira Carneiro**  
+- **Amália Soares Vieira de Vasconcelos**
 
-Geração e download em PDF/DOCX.
+---
 
-Histórico de versões para revisão e melhoria contínua.
+## ⚙️ Tecnologias Utilizadas
+- **Backend:** Java com Spark Framework  
+- **Banco de Dados:** PostgreSQL  
+- **Frontend:** HTML5, CSS3 e JavaScript (Fetch API)  
+- **Arquitetura:** MVC + DAO + DTO + APP + Maven  
+- **Ferramentas de Desenvolvimento:** VS Code, npm, JSON Server  
 
-📚 Capacitação
+---
 
-Além da geração de currículos, o NextStep apoia o desenvolvimento profissional oferecendo:
-
-Recomendações de cursos gratuitos e certificações rápidas.
-
-Materiais de apoio para fortalecer habilidades técnicas e comportamentais.
-
-Sugestões personalizadas para que o usuário preencha possíveis lacunas em seu perfil.
-
-👨‍💻 Tecnologias Utilizadas
-
-Front-end: HTML, CSS, JavaScript / React
-
-Back-end: Java + Spark (API RESTful)
-
-Banco de Dados: MySQL
-
-Inteligência Artificial: APIs externas (NLP e recomendação)
-
-👥 Autores
-
-Maria Luiza Manini
-
-David Christian
-
-Matheus Mendes
-
-Samuel Mascarenhas
-
-Pontifícia Universidade Católica de Minas Gerais – Trabalho Interdisciplinar 2 (TI2) – 2025
