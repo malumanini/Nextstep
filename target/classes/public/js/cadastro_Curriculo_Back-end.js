@@ -28,38 +28,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ======== Experiências ========
     const experiencias = [];
-    document.querySelectorAll("#experiencia-lista .linha-form").forEach((linha, i) => {
-      const empresa = linha.querySelector('[name="empresa"]');
-      const cargo = linha.querySelector('[name="cargo"]');
-      const dataInicio = linha.querySelector('[name="data_inicio"]');
-      const dataFim = linha.querySelector('[name="data_fim"]');
-      const descricao = linha.querySelector('[name="descricao"]');
+    document.querySelectorAll("#experiencia-lista .linha-form").forEach((linha) => {
+      const empresa = linha.querySelector('[name="empresa"]')?.value.trim();
+      const cargo = linha.querySelector('[name="cargo"]')?.value.trim();
+      const dataInicio = linha.querySelector('[name="dataInicio"]')?.value.trim();
+      const dataFim = linha.querySelector('[name="dataFim"]')?.value.trim();
+      const descricao = linha.querySelector('[name="descricao"]')?.value.trim();
 
       if (empresa && cargo && dataInicio && dataFim && descricao) {
         experiencias.push({
-          empresa: empresa.value,
-          cargo: cargo.value,
-          dataInicio: formatarData(dataInicio.value),
-          dataFim: formatarData(dataFim.value),
-          descricao: descricao.value
+          empresa,
+          cargo,
+          dataInicio: formatarData(dataInicio),
+          dataFim: formatarData(dataFim),
+          descricao
         });
       }
     });
 
-    // ======== Formações ========
+
+   // ======== Formações ========
     const formacoes = [];
     document.querySelectorAll("#formacao-lista .linha-form").forEach((linha) => {
-      const instituicao = linha.querySelector('[name="instituicao"]');
-      const curso = linha.querySelector('[name="curso"]');
-      const dataInicio = linha.querySelector('[name="data_inicio"]');
-      const dataFim = linha.querySelector('[name="data_fim"]');
+      const instituicao = linha.querySelector('[name="instituicao"]')?.value.trim();
+      const curso = linha.querySelector('[name="curso"]')?.value.trim();
+      const dataInicio = linha.querySelector('[name="dataInicio"]')?.value.trim();
+      const dataFim = linha.querySelector('[name="dataFim"]')?.value.trim();
 
       if (instituicao && curso && dataInicio && dataFim) {
         formacoes.push({
-          instituicao: instituicao.value,
-          curso: curso.value,
-          dataInicio: `${dataInicio.value}-01-01`,
-          dataFim: `${dataFim.value}-12-31`
+          instituicao,
+          curso,
+          dataInicio: `${dataInicio}-01-01`,
+          dataFim: `${dataFim}-12-31`
         });
       }
     });
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ======== Monta o DTO completo ========
     const curriculoDTO = {
-      id_usuario: idUsuario,
+      idUsuario: idUsuario,
       contato,
       resumo,
       experiencias,

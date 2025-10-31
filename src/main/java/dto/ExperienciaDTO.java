@@ -1,13 +1,17 @@
 package dto;
 
 public class ExperienciaDTO {
+    private int id;
     private String empresa;
     private String cargo;
     private String dataInicio;
     private String dataFim;    
     private String descricao; 
 
-    // Construtores, Getters e Setters
+    // Getters e Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
     public String getEmpresa() { return empresa; }
     public void setEmpresa(String empresa) { this.empresa = empresa; }
 

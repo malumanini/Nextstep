@@ -1,12 +1,16 @@
 package dto;
 
 public class FormacaoDTO {
+    private int id;
     private String instituicao;
     private String curso;
     private String dataInicio;
     private String dataFim; 
 
-    // Construtores, Getters e Setters
+    // Getters e Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
     public String getInstituicao() { return instituicao; }
     public void setInstituicao(String instituicao) { this.instituicao = instituicao; }
 
