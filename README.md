@@ -34,3 +34,17 @@ O projeto foi desenvolvido seguindo boas práticas de **arquitetura em camadas (
 
 ---
 
+📚 Objetivos Acadêmicos
+Aplicar conceitos de arquitetura de sistemas web
+
+Integrar frontend, backend e banco de dados
+
+Utilizar Inteligência Artificial para aprimorar a experiência do usuário
+
+Servir como base prática para estudos de engenharia de software e sistemas inteligentes
+
+📄 Licença
+Este projeto foi desenvolvido para fins acadêmicos na disciplina Tecnologias e Inovação II – PUC Minas.
+Uso permitido para fins educacionais.
+
+
