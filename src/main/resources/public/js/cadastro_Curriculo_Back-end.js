@@ -26,56 +26,92 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao: document.getElementById("descricao_resumo").value
     };
 
-    // ======== Experiências ========
+
     const experiencias = [];
-    document.querySelectorAll("#experiencia-lista .linha-form").forEach((linha) => {
-      const empresa = linha.querySelector('[name="empresa"]')?.value.trim();
-      const cargo = linha.querySelector('[name="cargo"]')?.value.trim();
-      const dataInicio = linha.querySelector('[name="dataInicio"]')?.value.trim();
-      const dataFim = linha.querySelector('[name="dataFim"]')?.value.trim();
-      const descricao = linha.querySelector('[name="descricao"]')?.value.trim();
+    
+    // --- 1. Coleta a primeira (estática) experiência (usando IDs) ---
+    const staticEmpresa = document.getElementById("empresa_experiencia")?.value.trim();
+    const staticCargo = document.getElementById("cargo_experiencia")?.value.trim();
+    const staticDataInicio = document.getElementById("dataInicio_experiencia")?.value.trim();
+    const staticDataFim = document.getElementById("data_termino_experiencia")?.value.trim();
+    const staticDescricao = document.getElementById("descricao_experiencia")?.value.trim();
 
-      if (empresa && cargo && dataInicio && dataFim && descricao) {
+    if (staticEmpresa && staticCargo && staticDataInicio && staticDataFim && staticDescricao) {
         experiencias.push({
-          empresa,
-          cargo,
-          dataInicio: formatarData(dataInicio),
-          dataFim: formatarData(dataFim),
-          descricao
+            empresa: staticEmpresa,
+            cargo: staticCargo,
+            dataInicio: formatarData(staticDataInicio),
+            dataFim: formatarData(staticDataFim),
+            descricao: staticDescricao
         });
-      }
+    }
+
+    // --- 2. Coleta as experiências dinâmicas (por bloco 'experiencia-bloco') ---
+    document.querySelectorAll("#experiencia-lista .experiencia-bloco").forEach((bloco) => {
+        // Os campos dinâmicos usam notação de array e nomes de campo adaptados (ex: inicio[], responsabilidades[])
+        const empresa = bloco.querySelector('[name="empresa[]"]')?.value.trim();
+        const cargo = bloco.querySelector('[name="cargo[]"]')?.value.trim();
+        const dataInicio = bloco.querySelector('[name="inicio[]"]')?.value.trim(); 
+        const dataFim = bloco.querySelector('[name="fim[]"]')?.value.trim();        
+        const descricao = bloco.querySelector('[name="responsabilidades[]"]')?.value.trim(); 
+
+        if (empresa && cargo && dataInicio && dataFim && descricao) {
+            experiencias.push({
+                empresa,
+                cargo,
+                dataInicio: formatarData(dataInicio),
+                dataFim: formatarData(dataFim),
+                descricao
+            });
+        }
     });
 
 
-   // ======== Formações ========
     const formacoes = [];
-    document.querySelectorAll("#formacao-lista .linha-form").forEach((linha) => {
-      const instituicao = linha.querySelector('[name="instituicao"]')?.value.trim();
-      const curso = linha.querySelector('[name="curso"]')?.value.trim();
-      const dataInicio = linha.querySelector('[name="dataInicio"]')?.value.trim();
-      const dataFim = linha.querySelector('[name="dataFim"]')?.value.trim();
 
-      if (instituicao && curso && dataInicio && dataFim) {
+    // --- 1. Coleta a primeira (estática) formação (usando IDs) ---
+    const staticInstituicaoFormacao = document.getElementById("instituicao_formacao")?.value.trim();
+    const staticCursoFormacao = document.getElementById("curso_formacao")?.value.trim();
+    const staticDataInicioFormacao = document.getElementById("data_inicio_formacao")?.value.trim();
+    const staticDataFimFormacao = document.getElementById("dataFim_formacao")?.value.trim();
+    
+    if (staticInstituicaoFormacao && staticCursoFormacao && staticDataInicioFormacao && staticDataFimFormacao) {
         formacoes.push({
-          instituicao,
-          curso,
-          dataInicio: `${dataInicio}-01-01`,
-          dataFim: `${dataFim}-12-31`
+            instituicao: staticInstituicaoFormacao,
+            curso: staticCursoFormacao,
+            dataInicio: `${staticDataInicioFormacao}-01-01`,
+            dataFim: `${staticDataFimFormacao}-12-31`
         });
-      }
+    }
+
+    // --- 2. Coleta as formações dinâmicas (por bloco 'formacao-bloco') ---
+    document.querySelectorAll("#formacao-lista .formacao-bloco").forEach((bloco) => {
+        // Os campos dinâmicos usam notação de array e nomes de campo adaptados (ex: ano[])
+        const instituicao = bloco.querySelector('[name="instituicao[]"]')?.value.trim();
+        const curso = bloco.querySelector('[name="curso[]"]')?.value.trim();
+        const ano = bloco.querySelector('[name="ano[]"]')?.value.trim(); // O campo 'ano[]' representa o dataInicio/dataFim
+        
+        if (instituicao && curso && ano) {
+            formacoes.push({
+                instituicao,
+                curso,
+                dataInicio: `${ano}-01-01`,
+                dataFim: `${ano}-12-31`
+            });
+        }
     });
 
-    // ======== Habilidades ========
+    
     const habilidades = [];
-    document.querySelectorAll("#habilidades-lista input[name='nome']").forEach((input) => {
+    document.querySelectorAll("#habilidades-lista input[name='nome'], #habilidades-lista input[name='habilidade[]']").forEach((input) => {
       if (input.value.trim() !== "") {
         habilidades.push({ nome: input.value });
       }
     });
 
-    // ======== Idiomas ========
+  
     const idiomas = [];
-    document.querySelectorAll("#idiomas-lista input[name='nome']").forEach((input) => {
+    document.querySelectorAll("#idiomas-lista input[name='nome'], #idiomas-lista input[name='idioma[]']").forEach((input) => {
       if (input.value.trim() !== "") {
         idiomas.push({ nome: input.value });
       }
@@ -116,10 +152,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ============ Funções auxiliares ============
+// ============ Funções auxiliares (Mantidas) ============
 function formatarData(mesAno) {
   // Exemplo: "03/2023" → "2023-03-01"
   if (!mesAno || !mesAno.includes("/")) return null;
   const [mes, ano] = mesAno.split("/");
   return `${ano}-${mes}-01`;
 }
+
