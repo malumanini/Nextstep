@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div class="curriculo-acoes">
           <button class="btn btn-primary" data-id="${curriculo.id}" onclick="visualizarCurriculo(${curriculo.id})">Visualizar</button>
           <button class="btn btn-secondary" onclick="editarCurriculo(${curriculo.id})">Editar</button>
-          <button class="btn btn-secondary" onclick="baixarPDF(${curriculo.id})">Baixar PDF</button>
           <button class="btn btn-outline" onclick="excluirCurriculo(${curriculo.id})">Excluir</button>
         </div>
       `;
@@ -59,10 +58,6 @@ function visualizarCurriculo(id) {
 
 function editarCurriculo(id) {
   console.log("Editar currículo:", id);
-}
-
-function baixarPDF(id) {
-  console.log("Baixar PDF:", id);
 }
 
 async function excluirCurriculo(id) {
