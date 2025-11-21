@@ -44,7 +44,17 @@ Servir como base prática para estudos de engenharia de software e sistemas inte
 
 Este projeto foi desenvolvido para fins acadêmicos na disciplina Trabalho Interdisciplinar II: Back-End - Ciência da Computação - Campus Lourdes.
 
+## ⚙ Diagramas
 
+### Diagrama DER (Diagrama entidade relacionamento)
 
+![Texto descritivo da imagem](Diagramas/DERwhite.png)
 
+### Diagrama DSC (Diagrama de Esquema)
+
+![Texto descritivo da imagem](Diagramas/DSC.png)
+
+### Diagrama Entidade-Relacionamento Estendido em notação Pé de Galinha
+
+![Texto descritivo da imagem](Diagramas/ER-PeDeGalinha.png)
 
