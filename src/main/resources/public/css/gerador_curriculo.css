@@ -155,6 +155,75 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
+        #preview-curriculo .curriculo-ats {
+    padding: 40px;
+    font-size: 11pt; 
+    line-height: 1.4;
+}
+
+/* Cabeçalho */
+.header-ats h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-info-ats {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Títulos de Seção */
+.section-title-ats {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 3px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Experiência e Formação */
+.experience-box-ats,
+.education-box-ats {
+    margin-bottom: 15px;
+}
+
+.experience-title-ats,
+.education-title-ats {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.experience-date-ats,
+.education-date-ats {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 2px 0 5px 0;
+}
+
+.experience-description-ats {
+  
+    margin-top: 5px;
+}
+
+/* Habilidades */
+.skills-container-ats {
+    display: block; /* Garante que não haja layout complexo de coluna */
+}
+
+.skill-tag-ats {
+    display: inline-block;
+    background: #f4f4f4;
+    padding: 3px 8px;
+    margin: 2px;
+    border-radius: 4px;
+}
+
         /* Responsividade */
         @media (max-width: 768px) {
             .mobile-header {
