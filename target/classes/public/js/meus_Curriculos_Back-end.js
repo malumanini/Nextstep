@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           <span class="curriculo-data">Salvo em ${data}</span>
         </div>
         <div class="curriculo-acoes">
-          <button class="btn btn-primary" data-id="${curriculo.id}" onclick="visualizarCurriculo(${curriculo.id})">Visualizar</button>
           <button class="btn btn-secondary" onclick="editarCurriculo(${curriculo.id})">Editar</button>
           <button class="btn btn-outline" onclick="excluirCurriculo(${curriculo.id})">Excluir</button>
         </div>
