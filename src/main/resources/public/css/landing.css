@@ -207,7 +207,7 @@ section,
 /* Header */
 .landing-header {
     background: #013D52;
-    padding: 0;
+    padding: 15px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -228,16 +228,13 @@ section,
 }
 
 .header-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 40px;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     box-sizing: border-box;
-    position: relative;
-    gap: 20px;
 }
 
 @media (max-width: 1200px) {
@@ -250,12 +247,11 @@ section,
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-shrink: 0;
 }
 
 .nav-logo {
-    width: 150px;
-    height: 70px;
+    width: 160px;
+    height: 64px;
     object-fit: contain;
 }
 
@@ -269,8 +265,7 @@ section,
     display: flex;
     align-items: center;
     gap: 30px;
-    flex-shrink: 0;
-    white-space: nowrap;
+    transform: translateX(-30px);
 }
 
 .nav-link {
@@ -313,11 +308,13 @@ section,
 .hero-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 60px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-title {
