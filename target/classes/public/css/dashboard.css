@@ -203,7 +203,7 @@ body {
 }
 
 .content-wrapper {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     width: 100%;
     flex: 1;
@@ -222,11 +222,16 @@ body {
 
 /* Cards Container */
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 30px;
     margin-bottom: 40px;
     flex: 1;
+}
+
+.cards-container .card {
+    max-width: 500px;
+    width: 100%;
 }
 
 /* Desktop specific improvements */
@@ -236,7 +241,7 @@ body {
     }
     
     .content-wrapper {
-        max-width: 1400px;
+        max-width: 1600px;
     }
     
     .page-title {
@@ -246,10 +251,22 @@ body {
     }
     
     .cards-container {
-        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
         gap: 40px;
-        max-width: 1200px;
         margin: 0 auto 60px auto;
+        max-width: 900px;
+        width: 100%;
+    }
+    
+    .cards-container .card {
+        max-width: 800px !important;
+        width: 800px !important;
+        flex-shrink: 0;
+    }
+    
+    .content-wrapper .cards-container .card {
+        max-width: 800px !important;
+        width: 800px !important;
     }
     
     .card {
@@ -288,8 +305,13 @@ body {
     }
     
     .cards-container {
-        max-width: 1400px;
+        max-width: 600px;
         gap: 50px;
+    }
+    
+    .cards-container .card {
+        max-width: 500px;
+        width: 100%;
     }
     
     .card {
@@ -310,6 +332,8 @@ body {
     padding: 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 500px;
+    width: 100%;
 }
 
 .card:hover {
@@ -328,6 +352,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    justify-content: space-between;
+    min-height: 300px;
 }
 
 /* CV Preview */
