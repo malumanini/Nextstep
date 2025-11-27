@@ -61,8 +61,8 @@ section,
 }
 
 .mobile-logo {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
@@ -147,8 +147,8 @@ section,
 }
 
 .mobile-menu-logo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -987,7 +987,7 @@ body.darkmode .section-subtitle {
 
 body.darkmode .nav-logo,
 body.darkmode .footer-logo {
-    filter: invert(0.3);
+    filter: none;
 }
 
 /* Dark Mode Button - Fixo no canto inferior direito */
@@ -1323,8 +1323,8 @@ body.darkmode .footer-logo {
 }
 
 .mobile-logo {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -1407,8 +1407,8 @@ body.darkmode .footer-logo {
 }
 
 .mobile-menu-logo {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
