@@ -287,6 +287,13 @@ body {
     margin-bottom: 50px;
 }
 
+.hero-buttons .btn {
+    min-width: 220px;
+    padding: 18px 48px;
+    font-size: 1.2rem;
+    border-radius: 16px;
+}
+
 .btn {
     padding: 15px 30px;
     border-radius: 12px;
@@ -1001,6 +1008,13 @@ body.darkmode .footer-logo {
         gap: 15px;
         margin-bottom: 40px;
     }
+
+    .hero-buttons .btn {
+        min-width: 100%;
+        padding: 14px 24px;
+        font-size: 1.05rem;
+        border-radius: 12px;
+    }
     
     .btn {
         padding: 12px 25px;
@@ -1123,6 +1137,12 @@ body.darkmode .footer-logo {
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+
+    .hero-buttons .btn {
+        min-width: 100%;
+        padding: 12px 20px;
+        font-size: 0.95rem;
     }
     
     .section-title {
