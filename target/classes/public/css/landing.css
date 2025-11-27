@@ -1,12 +1,38 @@
 /* Landing Page CSS */
 
-body {
+html, body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: #333;
     background: #f8f9fa;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    padding-top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+section,
+.landing-footer {
+    width: 100%;
 }
 
 /* Mobile Header */
@@ -181,28 +207,50 @@ body {
 /* Header */
 .landing-header {
     background: #013D52;
-    padding: 15px 0;
+    padding: 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 0;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.landing-header nav {
+    position: relative;
+    height: auto;
+    padding: 0;
+    background: transparent;
 }
 
 .header-nav {
-    width: 98%;
-    margin: 0;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .header-nav {
+        padding: 15px 20px;
+    }
 }
 
 .nav-brand {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
 }
 
 .nav-logo {
@@ -221,6 +269,8 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .nav-link {
@@ -254,7 +304,10 @@ body {
     padding: 120px 0 80px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
     min-height: 100vh;
+    width: 100%;
 }
 
 .hero-content {
@@ -289,6 +342,7 @@ body {
 
 .hero-buttons .btn {
     min-width: 220px;
+    width: auto;
     padding: 18px 48px;
     font-size: 1.2rem;
     border-radius: 16px;
@@ -882,7 +936,10 @@ body.darkmode {
     color: #e0e0e0 !important;
 }
 
-body.darkmode .landing-header,
+body.darkmode .landing-header {
+    background-color: #013D52 !important;
+}
+
 body.darkmode .landing-footer {
     background-color: #23272a !important;
 }
@@ -901,8 +958,26 @@ body.darkmode .feature-card,
 body.darkmode .pricing-card,
 body.darkmode .testimonial-card {
     background-color: #23272a !important;
-    color: #e0e0e0 !important;
+    color: #ffffff !important;
     border-color: #333 !important;
+}
+
+body.darkmode .pricing-header h3,
+body.darkmode .pricing-header p {
+    color: #ffffff !important;
+}
+
+body.darkmode .price-value,
+body.darkmode .price-period {
+    color: #ffffff !important;
+}
+
+body.darkmode .feature-item span {
+    color: #ffffff !important;
+}
+
+body.darkmode .feature-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 body.darkmode .section-title {
@@ -929,6 +1004,8 @@ body.darkmode .footer-logo {
     height: 55px !important;
     margin: 0 !important;
 }
+
+
 
 /* Responsive Design */
 
@@ -982,8 +1059,9 @@ body.darkmode .footer-logo {
     
     /* Ajustar hero section */
     .hero-section {
-        padding: 100px 0 60px;
+        padding: 100px 20px 60px;
         min-height: auto;
+        flex-direction: column;
     }
     
     .hero-content {
@@ -991,6 +1069,7 @@ body.darkmode .footer-logo {
         gap: 30px;
         text-align: center;
         padding: 0 15px;
+        width: 100%;
     }
     
     .hero-title {
@@ -1007,13 +1086,35 @@ body.darkmode .footer-logo {
         flex-direction: column;
         gap: 15px;
         margin-bottom: 40px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-image {
+        max-width: 360px;
+    }
+
+    .cv-mockup {
+        transform: none;
+        padding: 20px;
+    }
+
+    .cv-preview {
+        width: 260px;
+        height: 340px;
     }
 
     .hero-buttons .btn {
-        min-width: 100%;
-        padding: 14px 24px;
+        min-width: unset;
+        width: 100%;
+        max-width: 320px;
+        padding: 12px 20px;
         font-size: 1.05rem;
         border-radius: 12px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
     }
     
     .btn {
@@ -1140,9 +1241,24 @@ body.darkmode .footer-logo {
     }
 
     .hero-buttons .btn {
-        min-width: 100%;
-        padding: 12px 20px;
+        min-width: unset;
+        width: 100%;
+        max-width: 280px;
+        padding: 10px 18px;
         font-size: 0.95rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        max-width: 300px;
+    }
+
+    .cv-preview {
+        width: 220px;
+        height: 300px;
     }
     
     .section-title {
