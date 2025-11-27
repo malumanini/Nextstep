@@ -911,6 +911,18 @@ body.darkmode .footer-logo {
     filter: invert(0.3);
 }
 
+/* Dark Mode Button - Fixo no canto inferior direito */
+#darkmode-botao {
+    position: fixed !important;
+    right: 30px !important;
+    bottom: 30px !important;
+    z-index: 99999 !important;
+    display: flex !important;
+    width: 55px !important;
+    height: 55px !important;
+    margin: 0 !important;
+}
+
 /* Responsive Design */
 
 /* Tablet (768px a 1024px) */
@@ -1604,4 +1616,17 @@ body.darkmode .footer-logo {
     .cta-content h2 {
         font-size: 1.8rem;
     }
+}
+/* Garantir que o botão dark mode fique sempre fixo */
+#darkmode-botao {
+    position: fixed !important;
+    right: 30px !important;
+    bottom: 30px !important;
+    z-index: 99999 !important;
+    display: flex !important;
+    width: 55px !important;
+    height: 55px !important;
+    margin: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
