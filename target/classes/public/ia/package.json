@@ -1,0 +1,13 @@
+{
+  "name": "nextstep-ats-service",
+  "version": "1.0.0",
+  "description": "Serviço de IA para otimização de currículos.",
+  "main": "aprimorarATS.js",
+  "type": "module",
+  "scripts": {
+    "start": "node aprimorarATS.js"
+  },
+  "dependencies": {
+    "dotenv":"^16.4.5"
+}
+}

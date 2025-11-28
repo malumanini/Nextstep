@@ -45,7 +45,7 @@ public class Aplicacao {
         });
 
         // =======================================================
-        // 👤 Cadastro e Login de Usuário
+        // 👤 Cadastro, Login e logout de Usuário
         // =======================================================
         post("/cadastro", (req, res) -> {
             res.type("application/json");
@@ -93,6 +93,18 @@ public class Aplicacao {
                 res.status(500);
                 return gson.toJson(Map.of("status", "erro", "mensagem", "Falha ao cadastrar currículo"));
             }
+        });
+
+        // 🔵 Retorna as informações do currículo
+        get("/curriculo/id/:id", (req, res) -> {
+            res.type("application/json");
+            int idCurriculo = Integer.parseInt(req.params(":id"));
+            CurriculoDTO dto = curriculoDAO.buscarPorId(idCurriculo);
+            if (dto == null) {
+                res.status(404);
+                return gson.toJson(Map.of("erro", "Currículo não encontrado"));
+            }
+            return gson.toJson(dto);
         });
 
         // 🔵 Listar currículos de um usuário

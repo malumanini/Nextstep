@@ -224,6 +224,122 @@
     border-radius: 4px;
 }
 
+.envelope{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn-envelope{
+    border: none;
+    cursor: pointer;
+    font-size: 14px !important;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #013D52;
+    color: white;
+}
+
+/* 1. Base do Modal e Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Inicia oculto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: #333;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 2. Estilos do Score e Feedback */
+#score-display {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.score-number {
+    font-size: 4em;
+    font-weight: 900;
+    color: #007bff; /* Cor principal */
+    line-height: 1em;
+}
+
+.score-label {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.feedback-area {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: left;
+}
+
+.dicas-lista {
+    list-style-type: disc;
+    margin: 15px 0 20px 20px;
+    padding: 0;
+}
+
+.dicas-lista li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.feedback-notice {
+    font-style: italic;
+    color: #999;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+/* 3. Loader (Aparência de Spinner) */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff; /* Cor do spinner */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none !important;
+}
+
         /* Responsividade */
         @media (max-width: 768px) {
             .mobile-header {

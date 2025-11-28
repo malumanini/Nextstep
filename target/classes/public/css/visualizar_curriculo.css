@@ -1,0 +1,112 @@
+body {
+    background: #f6f6f6;
+    padding: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.top-buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+}
+
+.top-buttons button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.top-buttons button:hover {
+    background: #1d4ed8;
+}
+
+/* ESTRUTURA GERAL ATS - CLAREZA E SIMPLICIDADE */
+
+#curriculo-container {
+    font-family: Arial, sans-serif; /* Fonte simples e legível */
+    line-height: 1.4;
+    color: #333;
+    padding: 30px;
+    max-width: 800px; /* Limite a largura para melhor visualização */
+    margin: 0 auto;
+}
+
+/* Títulos e Seções */
+.header-ats {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.header-ats h1 {
+    font-size: 24pt; /* Tamanho maior para o nome (ATS Key) */
+    margin: 0;
+}
+
+.job-title-ats, .section-block-ats h2 {
+    font-size: 14pt;
+    margin: 5px 0 10px 0;
+}
+
+.section-block-ats {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ccc; /* Linhas sutis para separação visual */
+}
+
+/* Conteúdo de Contato */
+.contact-info-ats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 10pt;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Listas (Experiências e Habilidades) */
+.task-list-ats, .skills-list-ats, .language-list-ats {
+    list-style-type: disc; /* Use bullets padrão */
+    margin: 5px 0 10px 20px;
+    padding: 0;
+}
+
+.task-list-ats li, .skills-list-ats li, .language-list-ats li {
+    font-size: 10pt;
+    margin-bottom: 3px;
+}
+
+/* Datas e Subtítulos */
+.experience-block-ats h3, .education-block-ats h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.dates-ats {
+    font-style: italic;
+    color: #555;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    font-size: 9pt;
+}
+
+/* Habilidades (Formato de Lista Simples é o melhor para ATS) */
+.skills-list-ats {
+    list-style-type: none; /* Remove bullet para formatar como blocos */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list-ats li {
+    background-color: #f0f0f0; /* Cor de fundo suave */
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight:500;
+}

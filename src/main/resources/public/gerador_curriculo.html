@@ -44,11 +44,11 @@
                     <i class="fas fa-chart-bar"></i>
                     <span>Dashboard</span>
                 </a>
-                <a href="#" class="sidebar-link active">
+                <a href="gerador_curriculo.html" class="sidebar-link active">
                     <i class="fas fa-plus"></i>
                     <span>Criar novo currículo</span>
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="meus_curriculos.html" class="sidebar-link">
                     <i class="fas fa-briefcase"></i>
                     <span>Meus Curriculos</span>
                 </a>
@@ -83,6 +83,7 @@
                         <div class="secao-titulo">Informações Pessoais</div>
                         <div class="linha-form">
                             <div class="campo">
+                                <input type="hidden" id="id_contato" name="id_contato">
                                 <label for="nome_contato">Nome Completo</label>
                                 <input type="text" id="nome_contato" name="nome" placeholder="João da Silva" required>
                             </div>
@@ -120,10 +121,15 @@
 
                     <!-- Resumo Profissional -->
                     <div class="secao">
+
                         <div class="secao-titulo">Resumo Profissional
                             <button class="botao-acao" type="button" id="aprimorar-resumo">Aprimorar com IA</button>
                         </div>
+
+                        <div id="ia-status-message" class="ia-message" style="margin-top: 10px; min-height:20px;"></div>
+
                         <div class="campo">
+                            <input type="hidden" id="id_resumo" name="id_resumo">
                             <textarea id="descricao_resumo" name="descricao"
                                 placeholder="Descreva seu perfil profissional..." required></textarea>
                         </div>
@@ -140,6 +146,7 @@
                             <div class="item-experiencia">
                                 <div class="linha-form">
                                     <div class="campo">
+                                        <input type="hidden" name="id">
                                         <label for="empresa_experiencia">Empresa</label>
                                         <input id="empresa_experiencia" type="text" name="empresa"
                                             placeholder="Nome da empresa" required>
@@ -182,6 +189,7 @@
                             <div class="item-formacao">
                                 <div class="linha-form">
                                     <div class="campo">
+                                        <input type="hidden" name="id">
                                         <label for="instituicao_formacao">Instituição</label>
                                         <input type="text" id="instituicao_formacao" name="instituicao"
                                             placeholder="Nome da instituição" required>
@@ -218,6 +226,7 @@
                         <div id="habilidades-lista">
                             <div class="linha-form">
                                 <div class="campo" style="flex:2;">
+                                    <input type="hidden" name="id">
                                     <input type="text" id="nome_habilidade" name="nome" placeholder="Ex: JavaScript"
                                         required>
                                 </div>
@@ -234,23 +243,43 @@
                         <div id="idiomas-lista">
                             <div class="linha-form">
                                 <div class="campo" style="flex:2;">
+                                    <input type="hidden" name="id">
                                     <input type="text" id="nome_idioma" name="nome" placeholder="Ex: Inglês (Fluente)"
                                         required>
                                 </div>
                             </div>
                         </div>
                     </div>
+                        
+                    <div class="envelope">
+                        <button type="submit" class="btn-envelope" id="gerar-curriculo">Gerar Currículo</button>
+                        <button type="button" class="btn-envelope" id="avaliar-ats-btn">Avaliar Score ATS</button>
+                    </div>
 
-                    <button type="submit" class="botao-acao" id="gerar-curriculo"
-                        style="width: 200px; margin: 0 auto; display: block;">Gerar Currículo</button>
+                    <div id="ats-score-modal" class="modal-overlay">
+                        <div class="modal-content">
+                            <button type="button" class="modal-close-btn" id="fechar-modal-ats">&times;</button>
+                            
+                            <h2>Score de Compatibilidade ATS</h2>
+                            <div id="score-display">
+                                <div id="score-loader" class="loader"></div>
+                                <div id="score-value" class="score-number hidden">--</div>
+                                <p id="score-label" class="score-label">Analisando 12 critérios...</p>
+                            </div>
 
+                            <div id="ats-feedback-area" class="feedback-area hidden">
+                                <h3>Diagnóstico do ATS</h3>
+                                <div id="ats-score-rating" class="rating-bar"></div>
+                                
+                                <p class="feedback-subtitle">Principais Recomendações:</p>
+                                <ul id="dicas-lista" class="dicas-lista">
+                                    </ul>
 
-                        <button type="button" class="" id="preview"
-                        style="width: 200px; margin: 0 auto; display: block;">preview</button>
+                                <p class="feedback-notice">Score realista baseado no conteúdo atual. Para melhorar, use o botão "Aprimorar com IA" em cada seção.</p>
+                            </div>
+                        </div>
+                    </div>
                 </form>
-
-                <div id="preview-curriculo"></div>
-
         </main>
 
 
@@ -264,7 +293,9 @@
 
         <script src="js/cadastro_Curriculo_Back-end.js"></script>
         <script src="js/cadastro_Curriculo_Add_Campo.js"></script>
-        <script src="js/darkmode.js"></script>
+        <script src="js/editarCurriculo_Back-end.js"></script>
+        <script src="js/aprimorarIA.js"></script>
+        <script src="js/darkmode.js" defer></script>
         <script src="js/logout_Back-end.js"></script>
 </body>
 

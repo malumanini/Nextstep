@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Nextstep - Meus Currículos</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/visualizar_curriculo.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        .btn-secondary, .btn-outline {
+            color: black;
+        }
+        
+    </style>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-nav">
+            <div class="mobile-brand">
+                <img src="img/Logo.png" alt="NextStep Logo" class="mobile-logo">
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="img/Logo.png" alt="NextStep Logo" class="sidebar-logo">
+            <div class="sidebar-nav">
+                <a href="landing.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="gerador_curriculo.html" class="sidebar-link">
+                    <i class="fas fa-plus"></i>
+                    <span>Criar novo currículo</span>
+                </a>
+                <a href="#" class="sidebar-link active">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Meus Curriculos</span>
+                </a>
+                <a href="capacitacao.html" class="sidebar-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Capacitação</span>
+                </a>
+                <a href="planos.html" class="sidebar-link">
+                    <i class="fas fa-crown"></i>
+                    <span>Planos</span>
+                </a>
+                <a href="conta.html" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </a>
+                <a href="#" id="logoutLink" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <div class="top-buttons">
+            <button onclick="history.back()">⬅ Voltar</button>
+            <button id="btnPDF">📄 Baixar PDF</button>
+        </div>
+
+        <div id="curriculo-container" class="curriculo-ats"></div>
+    </div>
+
+    <!-- Botao Dark Mode -->
+    <a class="botao" id="darkmode-botao" href="">
+        <div class="darkmode">
+            <img id="darkmode-icon" src="img/dark.png">
+        </div>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="js/visualizar_curriculo.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/logout_Back-end.js"></script>
+</body>
+</html>

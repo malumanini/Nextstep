@@ -30,6 +30,7 @@ public class ContatoDAO {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 ContatoDTO c = new ContatoDTO();
+                c.setId(rs.getInt("id"));
                 c.setNome(rs.getString("nome"));
                 c.setEmail(rs.getString("email"));
                 c.setTelefone(rs.getString("telefone"));
@@ -42,18 +43,56 @@ public class ContatoDAO {
         return lista;
     }
 
-    public void editar(ContatoDTO contato, int idCurriculo) {
-        String sql = "UPDATE Contatos SET nome=?, email=?, telefone=?, tituloProfissional=?, linkLinkedin=?, linkPortifolio=? WHERE idCurriculo=?";
-        try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, contato.getNome());
-            stmt.setString(2, contato.getEmail());
-            stmt.setString(3, contato.getTelefone());
-            stmt.setString(4, contato.getTituloProfissional());
-            stmt.setString(5, contato.getLinkLinkedin());
-            stmt.setString(6, contato.getLinkPortifolio());
-            stmt.setInt(7, idCurriculo);
+     public ContatoDTO buscarPorCurriculo(int idCurriculo) {
+
+        String sql = "SELECT * FROM Contatos WHERE idCurriculo = ?";
+        ContatoDTO c = null;
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, idCurriculo);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                c = new ContatoDTO();
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setTituloProfissional(rs.getString("tituloProfissional"));
+                c.setEmail(rs.getString("email"));
+                c.setTelefone(rs.getString("telefone"));
+                c.setLinkLinkedin(rs.getString("linkLinkedin"));
+                c.setLinkPortifolio(rs.getString("linkPortifolio"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return c;
+    }
+
+    public void atualizar(ContatoDTO dto) {
+
+        String sql = "UPDATE Contatos SET nome=?, tituloProfissional=?, email=?, telefone=?, linkLinkedin=?, linkPortifolio=? "
+                   + "WHERE id=?";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, dto.getNome());
+            stmt.setString(2, dto.getTituloProfissional());
+            stmt.setString(3, dto.getEmail());
+            stmt.setString(4, dto.getTelefone());
+            stmt.setString(5, dto.getLinkLinkedin());
+            stmt.setString(6, dto.getLinkPortifolio());
+            stmt.setInt(7, dto.getId());
+
             stmt.executeUpdate();
-        } catch (SQLException e) { e.printStackTrace(); }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void deletar(int idCurriculo) {
