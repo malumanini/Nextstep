@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexao {
-    private static final String URL = "jdbc:postgresql://localhost:5432/curriculoDB";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "123";
+    private static final String URL = System.getenv().getOrDefault(
+        "DATABASE_URL", 
+        "jdbc:postgresql://localhost:5432/curriculoDB"
+    );
+    private static final String USER = System.getenv().getOrDefault("DB_USER", "postgres");
+    private static final String PASSWORD = System.getenv().getOrDefault("DB_PASSWORD", "123");
 
     public static Connection getConnection() {
         try {

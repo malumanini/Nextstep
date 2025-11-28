@@ -5,7 +5,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Dados do projeto -->
     <groupId>com.nextstep</groupId>
     <artifactId>produto-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -15,13 +14,13 @@
     <description>Projeto Nextstep com Spark Framework e PostgreSQL</description>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>   <!-- Java 11 -->
+        <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-
-        <!-- Spark Framework (web microframework) -->
+        <!-- Spark Framework -->
         <dependency>
             <groupId>com.sparkjava</groupId>
             <artifactId>spark-core</artifactId>
@@ -42,15 +41,14 @@
             <version>0.4</version>
         </dependency>
 
-
-        <!-- Gson (JSON parser, útil no CRUD) -->
+        <!-- Gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.11.0</version>
         </dependency>
 
-        <!-- JUnit (testes) -->
+        <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -58,18 +56,15 @@
             <scope>test</scope>
         </dependency>
         
-        <!-- Logs do sistema -->
         <dependency>
-    		<groupId>org.slf4j</groupId>
-    		<artifactId>slf4j-simple</artifactId>
-    		<version>2.0.13</version>
-		</dependency>
-
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.13</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Plugin para compilar o projeto com Maven -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -80,7 +75,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin para rodar a aplicação via Maven -->
+            <!-- Exec plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -88,6 +83,37 @@
                 <configuration>
                     <mainClass>app.Aplicacao</mainClass>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>app.Aplicacao</mainClass>
+                                </transformer>
+                            </transformers>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
