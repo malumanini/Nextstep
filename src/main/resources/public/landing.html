@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/landing.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
 </head>
 <body>
     <!-- Mobile Header -->
@@ -14,7 +15,6 @@
         <div class="mobile-nav">
             <div class="mobile-brand">
                 <img src="img/Logo.png" alt="NextStep Logo" class="mobile-logo">
-                <span class="mobile-brand-text">NextStep</span>
             </div>
             <button class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span class="hamburger-line"></span>
@@ -29,7 +29,6 @@
         <div class="mobile-menu-content">
             <div class="mobile-menu-header">
                 <img src="img/Logo.png" alt="NextStep Logo" class="mobile-menu-logo">
-                <span class="mobile-menu-brand">NextStep</span>
                 <button class="mobile-menu-close" id="mobile-menu-close">
                     <i class="fas fa-times"></i>
                 </button>
@@ -37,9 +36,8 @@
             <nav class="mobile-menu-nav">
                 <a href="#features" class="mobile-menu-link">Recursos</a>
                 <a href="#pricing" class="mobile-menu-link">Preços</a>
-                <a href="#testimonials" class="mobile-menu-link">Depoimentos</a>
                 <a href="login.html" class="mobile-menu-link">Login</a>
-                <a href="cadastrar.html" class="mobile-menu-cta">Começar Grátis</a>
+                <a href="cadastro.html" class="mobile-menu-cta">Começar Grátis</a>
             </nav>
         </div>
     </div>
@@ -48,14 +46,13 @@
     <header class="landing-header">
         <nav class="header-nav">
             <div class="nav-brand">
-                <img src="img/Logo.png" alt="NextStep Logo" class="nav-logo">
+                <img src="img/Logo.png" alt="NextStep Logo" class="nav-logo" style="width: 160px; height: 64px;">
             </div>
             <div class="nav-links">
                 <a href="#features" class="nav-link">Recursos</a>
                 <a href="#pricing" class="nav-link">Preços</a>
-                <a href="#testimonials" class="nav-link">Depoimentos</a>
                 <a href="login.html" class="nav-link">Login</a>
-                <a href="cadastrar.html" class="nav-link btn-login">Começar Grátis</a>
+                <a href="cadastro.html" class="nav-link btn-login">Começar Grátis</a>
             </div>
         </nav>
     </header>
@@ -66,28 +63,10 @@
             <h1 class="hero-title">Transforme Sua Carreira com Currículos Inteligentes</h1>
             <p class="hero-subtitle">Crie currículos profissionais otimizados para sistemas ATS e aumente suas chances de conseguir a vaga dos seus sonhos</p>
             <div class="hero-buttons">
-                <a href="cadastrar.html" class="btn btn-primary">
+                <a href="cadastro.html" class="btn btn-primary">
                     <i class="fas fa-rocket"></i>
                     Começar Agora
                 </a>
-                <a href="#demo" class="btn btn-outline">
-                    <i class="fas fa-play"></i>
-                    Ver Demonstração
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">10K+</span>
-                    <span class="stat-label">Currículos Criados</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Taxa de Sucesso</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">24h</span>
-                    <span class="stat-label">Suporte Disponível</span>
-                </div>
             </div>
         </div>
         <div class="hero-image">
@@ -151,7 +130,7 @@
                         <i class="fas fa-download"></i>
                     </div>
                     <h3>Múltiplos Formatos</h3>
-                    <p>Exporte seu currículo em PDF, DOCX e outros formatos compatíveis com ATS</p>
+                    <p>Exporte seu currículo em PDF, e outros formatos compatíveis com ATS</p>
                 </div>
 
                 <div class="feature-card">
@@ -202,7 +181,7 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Baixe seu Currículo</h3>
-                        <p>Gere e baixe seu currículo otimizado em PDF ou DOCX</p>
+                        <p>Gere e baixe seu currículo otimizado em PDF</p>
                     </div>
                 </div>
             </div>
@@ -245,7 +224,7 @@
                             <span>Suporte por email</span>
                         </div>
                     </div>
-                    <a href="cadastrar.html" class="btn btn-outline">Começar Grátis</a>
+                    <a href="cadastro.html" class="btn btn-outline">Começar Grátis</a>
                 </div>
 
                 <div class="pricing-card featured">
@@ -269,7 +248,7 @@
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>PDF + DOCX</span>
+                            <span>PDF</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
@@ -301,56 +280,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">O que nossos usuários dizem</h2>
-                <p class="section-subtitle">Histórias reais de profissionais que transformaram suas carreiras</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Consegui 3 entrevistas na primeira semana após usar o NextStep. O currículo ficou muito mais profissional!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h5>Maria Silva</h5>
-                            <span>Desenvolvedora Frontend</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"A IA do NextStep me ajudou a destacar competências que eu nem sabia que tinha. Resultado: promoção em 2 meses!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">J</div>
-                        <div class="author-info">
-                            <h5>João Santos</h5>
-                            <span>Analista de Dados</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Finalmente um gerador de currículo que entende o mercado brasileiro. Recomendo para todos!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h5>Ana Costa</h5>
-                            <span>Designer UX/UI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -359,7 +288,7 @@
                 <h2>Pronto para dar o próximo passo na sua carreira?</h2>
                 <p>Junte-se a milhares de profissionais que já transformaram suas carreiras com o NextStep</p>
                 <div class="cta-buttons">
-                    <a href="cadastrar.html" class="btn btn-premium cta-btn">
+                    <a href="cadastro.html" class="btn btn-premium cta-btn">
                         <i class="fas fa-rocket"></i>
                         Começar Agora
                     </a>
@@ -375,28 +304,16 @@
     <!-- Footer -->
     <footer class="landing-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="img/Logo.png" alt="NextStep Logo" class="footer-logo">
-                    <span class="brand-text">NextStep</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#features" class="footer-link">Recursos</a>
-                    <a href="#pricing" class="footer-link">Preços</a>
-                    <a href="#" class="footer-link">Ajuda</a>
-                    <a href="#" class="footer-link">Contato</a>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 NextStep. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Dark Mode Button -->
+    <!-- Botao Dark Mode -->
     <a class="botao" id="darkmode-botao" href="">
         <div class="darkmode">
-            <img id="darkmode-icon" src="img/dark.png">
+            <img id="darkmode-icon" src="img/dark.png" alt="">
         </div>
     </a>
 

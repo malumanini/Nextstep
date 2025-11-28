@@ -85,13 +85,106 @@
         #gerar-curriculo {
             font-size: 1.3em;
         }
-        .remover {
-            color: #e11d48;
-            background: none;
-            border: none;
-            font-size: 1.1em;
+        
+        .botao-preview {
+            background: white;
+            color: #013D52;
+            border: 2px solid #013D52;
+            border-radius: 6px;
+            padding: 10px 24px;
+            font-weight: 500;
             cursor: pointer;
+            transition: all 0.2s;
+            width: 200px;
+            margin: 15px auto 0;
+            display: block;
+            font-size: 1em;
+        }
+        
+        .botao-preview:hover {
+            background: #013D52;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(1, 61, 82, 0.2);
+        }
+        
+        body.darkmode .botao-preview {
+            background: #23272a;
+            color: #e0e0e0;
+            border-color: #097992;
+        }
+        
+        body.darkmode .botao-preview:hover {
+            background: #097992;
+            color: white;
+            border-color: #097992;
+        }
+        .remover {
+            background: white;
+            color: #e11d48;
+            border: 2px solid #e11d48;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95em;
             margin-left: 8px;
+        }
+        
+        .remover:hover {
+            background: #e11d48;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(225, 29, 72, 0.2);
+        }
+        
+        body.darkmode .remover {
+            background: #23272a;
+            color: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+        
+        body.darkmode .remover:hover {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
+        }
+        
+        .remover-habilidade,
+        .remover-idioma {
+            background: white;
+            color: #e11d48;
+            border: 2px solid #e11d48;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95em;
+            margin-left: 8px;
+        }
+        
+        .remover-habilidade:hover,
+        .remover-idioma:hover {
+            background: #e11d48;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(225, 29, 72, 0.2);
+        }
+        
+        body.darkmode .remover-habilidade,
+        body.darkmode .remover-idioma {
+            background: #23272a;
+            color: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+        
+        body.darkmode .remover-habilidade:hover,
+        body.darkmode .remover-idioma:hover {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
         }
         
         /* Mobile Header */
@@ -422,6 +515,12 @@
                 width: 100%;
                 padding: 15px;
                 font-size: 1.1rem;
+            }
+            
+            .botao-preview {
+                width: 100%;
+                margin-top: 15px;
+                padding: 12px;
             }
         }
 

@@ -154,29 +154,64 @@ nav #button-index{
     background-color: #00bdde;
     font-size: 1.1em;
     box-shadow: 0 5px 10px #004753;
+}
+
+/* Exceção: botão dark mode não deve herdar estilos de .botao */
+#darkmode-botao.botao {
+    width: 55px !important;
+    height: 55px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0 !important;
+    display: flex !important;
 } 
 
 
 
 #darkmode-botao{
-    width: 55px;
-    height: 55px;
-    background-color:  #00bdde;
-    color: rgba(0, 0, 0, 0.7);
-    border-radius: 100px;
-    display: inline-block;
-    margin: 10px 0px;
-    border: none;
-    z-index: 1000;
-    position: fixed;
-    right: 30px;
-    bottom: 10px;
+    width: 55px !important;
+    height: 55px !important;
+    background-color:  #00bdde !important;
+    color: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    z-index: 99999 !important;
+    position: fixed !important;
+    right: 30px !important;
+    bottom: 30px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    top: auto !important;
+    left: auto !important;
+}
+
+#darkmode-botao:hover {
+    background-color: #00a3c0;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 .darkmode #darkmode-icon{
-    margin: 2px;
+    margin: 0;
     width: 30px;
     height: 30px;
     filter: invert(18%) sepia(32%) saturate(1172%) hue-rotate(308deg) brightness(92%) contrast(92%);
+    display: block;
+}
+
+#darkmode-botao .darkmode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 /*Main*/
@@ -234,6 +269,19 @@ footer{
         width: 120px;
         height: 120px;
     }
+
+    /* Reduzir tamanho do botão dark mode no mobile */
+    #darkmode-botao {
+        width: 45px !important;
+        height: 45px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+
+    .darkmode #darkmode-icon {
+        width: 24px !important;
+        height: 24px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -245,6 +293,19 @@ footer{
     .sidebar-logo {
         width: 100px;
         height: 100px;
+    }
+
+    /* Reduzir ainda mais o botão dark mode em telas muito pequenas */
+    #darkmode-botao {
+        width: 40px !important;
+        height: 40px !important;
+        right: 15px !important;
+        bottom: 15px !important;
+    }
+
+    .darkmode #darkmode-icon {
+        width: 20px !important;
+        height: 20px !important;
     }
 }
 
