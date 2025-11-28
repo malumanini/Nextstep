@@ -10,13 +10,8 @@ import java.util.*;
 
 public class Aplicacao {
     public static void main(String[] args) {
-        String portStr = System.getenv("PORT");
-        if (portStr != null) {
-            port(Integer.parseInt(portStr));
-        } else {
-            port(4567);
-        }
-                
+        port(4567);
+        
         staticFiles.location("/public");
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
