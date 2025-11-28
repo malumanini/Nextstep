@@ -13,6 +13,7 @@ public class Aplicacao {
         port(4567);
         
         staticFiles.location("/public");
+        org.apache.log4j.BasicConfigurator.configure();
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
