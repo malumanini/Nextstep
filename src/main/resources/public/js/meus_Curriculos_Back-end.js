@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <span class="curriculo-data">Salvo em ${data}</span>
         </div>
         <div class="curriculo-acoes">
+          <button class="btn btn-secondary" onclick="visualizarCurriculo(${curriculo.id})">Visualizar</button>
           <button class="btn btn-secondary" onclick="editarCurriculo(${curriculo.id})">Editar</button>
           <button class="btn btn-outline" onclick="excluirCurriculo(${curriculo.id})">Excluir</button>
         </div>
@@ -55,8 +56,13 @@ function visualizarCurriculo(id) {
   // redirecionar para página de visualização (implementaremos depois)
 }
 
+// Função de edição do currículo
 function editarCurriculo(id) {
-  console.log("Editar currículo:", id);
+  window.location.href = `gerador_curriculo.html?id=${id}`;
+}
+
+function visualizarCurriculo(id) {
+  window.location.href = `visualizar_curriculo.html?id=${id}`;
 }
 
 async function excluirCurriculo(id) {

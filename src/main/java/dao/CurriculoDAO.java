@@ -79,18 +79,81 @@ public class CurriculoDAO {
         return lista;
     }
 
+    public CurriculoDTO buscarPorId(int idCurriculo) {
+        String sql = "SELECT * FROM Curriculo WHERE id = ?";
+        CurriculoDTO c = null;
+
+        try (Connection conn = Conexao.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, idCurriculo);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                c = new CurriculoDTO();
+
+                c.setId(idCurriculo);
+                c.setIdUsuario(rs.getInt("idUsuario"));
+                c.setDataCriacao(rs.getString("dataCriacao"));
+                c.setModelo(rs.getString("modelo"));
+                c.setArquivoGerado(rs.getString("arquivoGerado"));
+
+                // 🔹 Carrega dados das outras tabelas
+                c.setContato(contatoDAO.listarPorCurriculo(idCurriculo).stream().findFirst().orElse(null));
+                c.setResumo(resumoDAO.listarPorCurriculo(idCurriculo).stream().findFirst().orElse(null));
+                c.setExperiencias(experienciaDAO.listarPorCurriculo(idCurriculo));
+                c.setFormacoes(formacaoDAO.listarPorCurriculo(idCurriculo));
+                c.setHabilidades(habilidadeDAO.listarPorCurriculo(idCurriculo));
+                c.setIdiomas(idiomaDAO.listarPorCurriculo(idCurriculo));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return c;
+    }
+
+    // EDITAR — ATUALIZA SEM APAGAR TUDO
     public void editar(CurriculoDTO dto) {
+
         String sql = "UPDATE Curriculo SET modelo=?, arquivoGerado=? WHERE id=?";
 
-        try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
             stmt.setString(1, dto.getModelo());
             stmt.setString(2, dto.getArquivoGerado());
             stmt.setInt(3, dto.getId());
+
             stmt.executeUpdate();
 
-            if (dto.getContato() != null) contatoDAO.editar(dto.getContato(), dto.getId());
-            if (dto.getResumo() != null) resumoDAO.editar(dto.getResumo(), dto.getId());
-        } catch (SQLException e) { e.printStackTrace(); }
+
+            // Contato
+            if (dto.getContato() != null) {
+                if (dto.getContato().getId() <= 0)
+                    contatoDAO.inserir(dto.getContato(), dto.getId());
+                else
+                    contatoDAO.atualizar(dto.getContato());
+            }
+
+            // Resumo
+            if (dto.getResumo() != null) {
+                if (dto.getResumo().getId() == 0)
+                    resumoDAO.inserir(dto.getResumo(), dto.getId());
+                else
+                    resumoDAO.atualizar(dto.getResumo());
+            }
+
+            // Atualização Inteligente
+            experienciaDAO.atualizarLista(dto.getId(), dto.getExperiencias());
+            formacaoDAO.atualizarLista(dto.getId(), dto.getFormacoes());
+            habilidadeDAO.atualizarLista(dto.getId(), dto.getHabilidades());
+            idiomaDAO.atualizarLista(dto.getId(), dto.getIdiomas());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void deletar(int idCurriculo) {

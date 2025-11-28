@@ -1,54 +1,42 @@
+// BLOQUEAR SCRIPT DE CADASTRO QUANDO ESTÁ EM MODO DE EDIÇÃO
+if (window.location.search.includes("id=")) {
+  console.warn("Modo edição detectado → bloqueando script de cadastro");
+  window.IS_EDIT_MODE = true;
+} else {
+  window.IS_EDIT_MODE = false;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.IS_EDIT_MODE) return;
   const form = document.getElementById("curriculoForm");
-
-  // ================= PREVIEW ==================
-  document.getElementById("preview").addEventListener("click", () => {
-    const dto = montarDTO();
-
-    console.log("DEBUG: DTO COMPLETO ENVIADO AO PREVIEW:", dto);
-
-    renderCurriculoPreview({
-      nome: dto.contato.nome,
-      titulo: dto.contato.tituloProfissional,
-      email: dto.contato.email,
-      telefone: dto.contato.telefone,
-      linkedin: dto.contato.linkLinkedin,
-      portfolio: dto.contato.linkPortifolio,
-      resumo: dto.resumo,
-      experiencias: dto.experiencias,
-      formacoes: dto.formacoes,
-      habilidades: dto.habilidades,
-      idiomas: dto.idiomas,
-    });
-  });
-  // =======================================================
-
-  // ... (código anterior)
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Tratativa de usuário logado
     const idUsuario = parseInt(localStorage.getItem("idUsuario"));
     if (!idUsuario) {
       alert("Usuário não autenticado. Faça login novamente.");
       window.location.href = "login.html";
       return;
-    } // ======== Contato e Resumo  ========
+    } 
 
+    // ======== Contato e Resumo  ========
     const contato = {
       nome: document.getElementById("nome_contato").value,
       email: document.getElementById("email_contato").value,
       telefone: document.getElementById("telefone_contato").value,
       tituloProfissional: document.getElementById("titulo_profissional_contato")
         .value,
-      linkLinkedin: document.getElementById("link_linkedin_contato").value,
-      linkPortifolio: document.getElementById("link_potfolio_contato").value,
+      linkLinkedin: document.getElementById("link_linkedin_contato").value.trim(),
+      linkPortifolio: document.getElementById("link_potfolio_contato").value.trim(),
     };
 
     const resumo = {
       descricao: document.getElementById("descricao_resumo").value,
-    }; // ======== Experiências  ========
+    }; 
 
+    // ======== Experiências  ========
     const experiencias = [];
    
     document

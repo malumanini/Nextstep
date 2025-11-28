@@ -25,6 +25,7 @@ public class ResumoProfissionalDAO {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 ResumoProfissionalDTO r = new ResumoProfissionalDTO();
+                r.setId(rs.getInt("id"));
                 r.setDescricao(rs.getString("descricao"));
                 lista.add(r);
             }
@@ -32,13 +33,45 @@ public class ResumoProfissionalDAO {
         return lista;
     }
 
-    public void editar(ResumoProfissionalDTO dto, int idCurriculo) {
-        String sql = "UPDATE ResumoProfissional SET descricao = ? WHERE idCurriculo = ?";
-        try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+     public ResumoProfissionalDTO buscarPorCurriculo(int idCurriculo) {
+
+        String sql = "SELECT * FROM ResumoProfissional WHERE idCurriculo = ?";
+        ResumoProfissionalDTO r = null;
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, idCurriculo);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                r = new ResumoProfissionalDTO();
+                r.setId(rs.getInt("id"));
+                r.setDescricao(rs.getString("descricao"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return r;
+    }
+
+    public void atualizar(ResumoProfissionalDTO dto) {
+
+        String sql = "UPDATE ResumoProfissional SET descricao=? WHERE id=?";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
             stmt.setString(1, dto.getDescricao());
-            stmt.setInt(2, idCurriculo);
+            stmt.setInt(2, dto.getId());
+
             stmt.executeUpdate();
-        } catch (SQLException e) { e.printStackTrace(); }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void deletar(int idCurriculo) {
