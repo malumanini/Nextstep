@@ -1,4 +1,4 @@
-📄 NextStep – Gerador Inteligente de Currículos
+## NextStep – Gerador Inteligente de Currículos
 
 O NextStep é um sistema que ajuda usuários a criarem currículos profissionais de forma prática, personalizada e otimizada com inteligência artificial.
 Além de gerar o currículo em diferentes formatos, o sistema também fornece recomendações de melhorias e orientações para que o usuário aumente suas chances no mercado de trabalho.
@@ -59,6 +59,7 @@ Este projeto foi desenvolvido para fins acadêmicos na disciplina Trabalho Inter
 ### Diagrama Entidade-Relacionamento Estendido em notação Pé de Galinha
 
 ![Texto descritivo da imagem](Diagramas/ER-PeDeGalinha.png)
+
 
 
 
