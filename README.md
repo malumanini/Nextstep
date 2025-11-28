@@ -9,7 +9,7 @@ O sistema utiliza **Inteligência Artificial generativa** para aprimorar automat
 
 O projeto foi desenvolvido seguindo boas práticas de **arquitetura em camadas (Model, DAO, DTO, APP)** e integração com **banco de dados PostgreSQL**, oferecendo uma estrutura modular, organizada e escalável.
 
-## Para **Assistir o vídeo da apresentação do projeto** clique ou copie o link a seguir: https://youtu.be/kX_pPM48xT4
+## Para **assistir o vídeo da apresentação do projeto** clique ou copie o link a seguir: https://youtu.be/kX_pPM48xT4
 
 ---
 
@@ -59,5 +59,6 @@ Este projeto foi desenvolvido para fins acadêmicos na disciplina Trabalho Inter
 ### Diagrama Entidade-Relacionamento Estendido em notação Pé de Galinha
 
 ![Texto descritivo da imagem](Diagramas/ER-PeDeGalinha.png)
+
 
 
